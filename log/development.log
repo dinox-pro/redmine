@@ -1353,3 +1353,268 @@ Migrating to ChangeProjectsHomepageLimit (94)
   [4;36;1mSQL (0.001472)[0m   [0;1mSHOW FIELDS FROM `workflows`[0m
   [4;35;1mSQL (0.003112)[0m   [0mdescribe `workflows`[0m
   [4;36;1mSQL (0.003978)[0m   [0;1mSHOW KEYS FROM `workflows`[0m
+  [4;36;1mSQL (0.001362)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mRepository Columns (0.004934)[0m   [0mSHOW FIELDS FROM `repositories`[0m
+/!\ FAILSAFE /!\  Sun Jun 29 23:54:21 -0500 2008
+  Status: 500 Internal Server Error
+  No route matches "/themes" with {:method=>:get}
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+  [4;36;1mSQL (0.000178)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000772)[0m   [0mSHOW TABLES[0m
+  [4;36;1mRepository Columns (0.004228)[0m   [0;1mSHOW FIELDS FROM `repositories`[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-06-29 23:59:26) [GET]
+  Session ID: 862b73712e42429c31ec79e5318d30b7
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+  [4;35;1mSQL (0.004088)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSetting Columns (0.001164)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+  [4;35;1mSQL (0.003517)[0m   [0mSELECT max(updated_on) AS max_updated_on FROM `settings` [0m
+  [4;36;1mSQL (0.003652)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.002837)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.009890)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProject Columns (0.039544)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mSQL (0.001364)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mIssue Columns (0.001791)[0m   [0mSHOW FIELDS FROM `issues`[0m
+  [4;36;1mSQL (0.009528)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000871)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000882)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAnonymousUser Columns (0.001784)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mAnonymousUser Load (0.000844)[0m   [0;1mSELECT * FROM `users` WHERE ( (`users`.`type` = 'AnonymousUser' ) ) LIMIT 1[0m
+  [4;35;1mSetting Load (0.000213)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'login_required') LIMIT 1[0m
+  [4;36;1mNews Columns (0.001463)[0m   [0;1mSHOW FIELDS FROM `news`[0m
+  [4;35;1mMember Columns (0.001337)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (0.003248)[0m   [0;1mSELECT count(DISTINCT `members`.id) AS count_all FROM `members` LEFT OUTER JOIN `projects` ON `projects`.id = `members`.project_id LEFT OUTER JOIN `roles` ON `roles`.id = `members`.role_id WHERE (members.user_id = 16 AND (projects.status=1)) [0m
+  [4;35;1mNews Load Including Associations (0.000969)[0m   [0mSELECT `news`.`id` AS t0_r0, `news`.`project_id` AS t0_r1, `news`.`title` AS t0_r2, `news`.`summary` AS t0_r3, `news`.`description` AS t0_r4, `news`.`author_id` AS t0_r5, `news`.`created_on` AS t0_r6, `news`.`comments_count` AS t0_r7, `users`.`id` AS t1_r0, `users`.`login` AS t1_r1, `users`.`hashed_password` AS t1_r2, `users`.`firstname` AS t1_r3, `users`.`lastname` AS t1_r4, `users`.`mail` AS t1_r5, `users`.`mail_notification` AS t1_r6, `users`.`admin` AS t1_r7, `users`.`status` AS t1_r8, `users`.`last_login_on` AS t1_r9, `users`.`language` AS t1_r10, `users`.`auth_source_id` AS t1_r11, `users`.`created_on` AS t1_r12, `users`.`updated_on` AS t1_r13, `users`.`type` AS t1_r14, `projects`.`id` AS t2_r0, `projects`.`name` AS t2_r1, `projects`.`description` AS t2_r2, `projects`.`homepage` AS t2_r3, `projects`.`is_public` AS t2_r4, `projects`.`parent_id` AS t2_r5, `projects`.`projects_count` AS t2_r6, `projects`.`created_on` AS t2_r7, `projects`.`updated_on` AS t2_r8, `projects`.`identifier` AS t2_r9, `projects`.`status` AS t2_r10, `projects`.`ui_theme` AS t2_r11 FROM `news` LEFT OUTER JOIN `users` ON `users`.id = `news`.author_id LEFT OUTER JOIN `projects` ON `projects`.id = `news`.project_id WHERE (projects.status=1 AND projects.is_public = 1) ORDER BY news.created_on DESC LIMIT 5[0m
+  [4;36;1mProject Load (0.002380)[0m   [0;1mSELECT * FROM `projects` WHERE (projects.status=1 AND projects.is_public = 1) ORDER BY created_on DESC LIMIT 5[0m
+Rendering template within layouts/base
+Rendering welcome/index
+  [4;35;1mSetting Load (0.000202)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'welcome_text') LIMIT 1[0m
+  [4;36;1mSetting Load (0.000228)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'app_title') LIMIT 1[0m
+  [4;35;1mSetting Load (0.013672)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'ui_theme') LIMIT 1[0m
+  [4;36;1mSetting Load (0.000256)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'self_registration') LIMIT 1[0m
+Completed in 3.09279 (0 reqs/sec) | Rendering: 0.05396 (1%) | DB: 0.10572 (3%) | 200 OK [http://tracker.local/]
+  [4;35;1mSQL (0.000810)[0m   [0mSHOW TABLES[0m
+  [4;36;1mRepository Columns (0.001564)[0m   [0;1mSHOW FIELDS FROM `repositories`[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2008-06-29 23:59:44) [GET]
+  Session ID: 862b73712e42429c31ec79e5318d30b7
+  Parameters: {"action"=>"login", "controller"=>"account"}
+  [4;35;1mSetting Columns (0.001921)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mSQL (0.000188)[0m   [0;1mSELECT max(updated_on) AS max_updated_on FROM `settings` [0m
+  [4;35;1mSQL (0.000805)[0m   [0mSHOW TABLES[0m
+  [4;36;1mUser Columns (0.002375)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.002820)[0m   [0mSHOW TABLES[0m
+  [4;36;1mProject Columns (0.002895)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mSQL (0.000913)[0m   [0mSHOW TABLES[0m
+  [4;36;1mIssue Columns (0.021772)[0m   [0;1mSHOW FIELDS FROM `issues`[0m
+  [4;35;1mSQL (0.001751)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.001166)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.002094)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAnonymousUser Columns (0.020143)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mAnonymousUser Load (0.000516)[0m   [0mSELECT * FROM `users` WHERE ( (`users`.`type` = 'AnonymousUser' ) ) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE ( (`users`.`type` = 'AnonymousUser' ) ) LIMIT 1[0m
+Rendering template within layouts/base
+Rendering account/login
+  [4;35;1mSetting Load (0.000224)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'autologin') LIMIT 1[0m
+  [4;36;1mSetting Load (0.000207)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'lost_password') LIMIT 1[0m
+  [4;35;1mSetting Load (0.000219)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'app_title') LIMIT 1[0m
+  [4;36;1mSetting Load (0.000208)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'ui_theme') LIMIT 1[0m
+  [4;35;1mSetting Load (0.018288)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'self_registration') LIMIT 1[0m
+  [4;36;1mMember Columns (0.001627)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mSQL (0.000215)[0m   [0mSELECT count(DISTINCT `members`.id) AS count_all FROM `members` LEFT OUTER JOIN `projects` ON `projects`.id = `members`.project_id LEFT OUTER JOIN `roles` ON `roles`.id = `members`.role_id WHERE (members.user_id = 16 AND (projects.status=1)) [0m
+Completed in 1.50961 (0 reqs/sec) | Rendering: 0.54395 (36%) | DB: 0.08272 (5%) | 200 OK [http://tracker.local/login]
+  [4;36;1mSQL (0.002748)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mRepository Columns (0.009911)[0m   [0mSHOW FIELDS FROM `repositories`[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2008-06-29 23:59:57) [POST]
+  Session ID: 862b73712e42429c31ec79e5318d30b7
+  Parameters: {"action"=>"login", "username"=>"jim", "controller"=>"account", "password"=>"[FILTERED]", "login"=>"Login »"}
+  [4;36;1mSetting Columns (0.001800)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+  [4;35;1mSQL (0.000194)[0m   [0mSELECT max(updated_on) AS max_updated_on FROM `settings` [0m
+  [4;36;1mSQL (0.002043)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.004018)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.002878)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProject Columns (0.002929)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mSQL (0.000871)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mIssue Columns (0.006546)[0m   [0mSHOW FIELDS FROM `issues`[0m
+  [4;36;1mSQL (0.011730)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.005926)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.004557)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAnonymousUser Columns (0.001559)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mAnonymousUser Load (0.000210)[0m   [0;1mSELECT * FROM `users` WHERE ( (`users`.`type` = 'AnonymousUser' ) ) LIMIT 1[0m
+  [4;35;1mUser Load (0.005026)[0m   [0mSELECT * FROM `users` WHERE (login='jim') LIMIT 1[0m
+  [4;36;1mSQL (0.005280)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.000712)[0m   [0mUPDATE `users` SET `login` = 'jim', `hashed_password` = '4c7f5cb33eb40f6465e05ced4c41735648da4576', `auth_source_id` = NULL, `lastname` = 'Mulholland', `status` = 1, `mail_notification` = 0, `type` = 'User', `admin` = 1, `last_login_on` = '2008-06-29 23:59:58', `updated_on` = '2008-06-29 23:59:58', `language` = 'en', `mail` = 'jim.mulholland@praexis.com', `firstname` = 'Jim', `created_on` = '2007-07-26 17:14:04' WHERE `id` = 2[0m
+  [4;36;1mCustomField Load (0.005040)[0m   [0;1mSELECT * FROM `custom_fields` WHERE (type = 'UserCustomField') ORDER BY position[0m
+  [4;35;1mSQL (0.003417)[0m   [0mCOMMIT[0m
+Redirected to http://tracker.local/my/page
+Completed in 1.09566 (0 reqs/sec) | DB: 0.07740 (7%) | 302 Found [http://tracker.local/login]
+  [4;36;1mSQL (0.002743)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mRepository Columns (0.001283)[0m   [0mSHOW FIELDS FROM `repositories`[0m
+
+
+Processing MyController#page (for 127.0.0.1 at 2008-06-30 00:00:00) [GET]
+  Session ID: 862b73712e42429c31ec79e5318d30b7
+  Parameters: {"action"=>"page", "controller"=>"my"}
+  [4;36;1mSetting Columns (0.001197)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+  [4;35;1mSQL (0.000176)[0m   [0mSELECT max(updated_on) AS max_updated_on FROM `settings` [0m
+  [4;36;1mSQL (0.000886)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.002435)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.001103)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProject Columns (0.019304)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mSQL (0.000968)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mIssue Columns (0.014405)[0m   [0mSHOW FIELDS FROM `issues`[0m
+  [4;36;1mSQL (0.000943)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000915)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000909)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Load (0.000725)[0m   [0mSELECT * FROM `users` WHERE (status = 1) AND (`users`.`id` = 2) [0m
+  [4;36;1mUserPreference Load (0.000194)[0m   [0;1mSELECT * FROM `user_preferences` WHERE (user_preferences.user_id = 2) LIMIT 1[0m
+  [4;35;1mUserPreference Columns (0.013378)[0m   [0mSHOW FIELDS FROM `user_preferences`[0m
+Rendering template within layouts/base
+Rendering my/page
+  [4;36;1mProject Load (0.000903)[0m   [0;1mSELECT projects.* FROM projects INNER JOIN members ON projects.id = members.project_id WHERE ((members.user_id = 2) AND ((projects.status=1))) [0m
+  [4;35;1mSQL (0.020082)[0m   [0mSHOW TABLES[0m
+  [4;36;1mEnumeration Columns (0.001897)[0m   [0;1mSHOW FIELDS FROM `enumerations`[0m
+  [4;35;1mDocument Columns (0.020493)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mSQL (0.000854)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mTracker Columns (0.003844)[0m   [0mSHOW FIELDS FROM `trackers`[0m
+  [4;36;1mIssue Load Including Associations (0.010106)[0m   [0;1mSELECT `issues`.`id` AS t0_r0, `issues`.`tracker_id` AS t0_r1, `issues`.`project_id` AS t0_r2, `issues`.`subject` AS t0_r3, `issues`.`description` AS t0_r4, `issues`.`due_date` AS t0_r5, `issues`.`category_id` AS t0_r6, `issues`.`status_id` AS t0_r7, `issues`.`assigned_to_id` AS t0_r8, `issues`.`priority_id` AS t0_r9, `issues`.`fixed_version_id` AS t0_r10, `issues`.`author_id` AS t0_r11, `issues`.`lock_version` AS t0_r12, `issues`.`created_on` AS t0_r13, `issues`.`updated_on` AS t0_r14, `issues`.`start_date` AS t0_r15, `issues`.`done_ratio` AS t0_r16, `issues`.`estimated_hours` AS t0_r17, `projects`.`id` AS t1_r0, `projects`.`name` AS t1_r1, `projects`.`description` AS t1_r2, `projects`.`homepage` AS t1_r3, `projects`.`is_public` AS t1_r4, `projects`.`parent_id` AS t1_r5, `projects`.`projects_count` AS t1_r6, `projects`.`created_on` AS t1_r7, `projects`.`updated_on` AS t1_r8, `projects`.`identifier` AS t1_r9, `projects`.`status` AS t1_r10, `projects`.`ui_theme` AS t1_r11, `trackers`.`id` AS t2_r0, `trackers`.`name` AS t2_r1, `trackers`.`is_in_chlog` AS t2_r2, `trackers`.`position` AS t2_r3, `trackers`.`is_in_roadmap` AS t2_r4, `enumerations`.`id` AS t3_r0, `enumerations`.`opt` AS t3_r1, `enumerations`.`name` AS t3_r2, `enumerations`.`position` AS t3_r3, `enumerations`.`is_default` AS t3_r4, `users`.`id` AS t4_r0, `users`.`login` AS t4_r1, `users`.`hashed_password` AS t4_r2, `users`.`firstname` AS t4_r3, `users`.`lastname` AS t4_r4, `users`.`mail` AS t4_r5, `users`.`mail_notification` AS t4_r6, `users`.`admin` AS t4_r7, `users`.`status` AS t4_r8, `users`.`last_login_on` AS t4_r9, `users`.`language` AS t4_r10, `users`.`auth_source_id` AS t4_r11, `users`.`created_on` AS t4_r12, `users`.`updated_on` AS t4_r13, `users`.`type` AS t4_r14 FROM `issues` LEFT OUTER JOIN `projects` ON `projects`.id = `issues`.project_id LEFT OUTER JOIN `trackers` ON `trackers`.id = `issues`.tracker_id LEFT OUTER JOIN `enumerations` ON `enumerations`.id = `issues`.priority_id LEFT OUTER JOIN `users` ON `users`.id = `issues`.assigned_to_id WHERE (issues.project_id in (3,1,5,10,11,12,14,16,17,19) AND ((start_date>='2008-06-29' and start_date<='2008-07-05') or (due_date>='2008-06-29' and due_date<='2008-07-05'))) [0m
+Rendered common/_calendar (0.06069)
+Rendered my/blocks/_calendar (1.22011)
+  [4;35;1mIssueStatus Columns (0.010508)[0m   [0mSHOW FIELDS FROM `issue_statuses`[0m
+  [4;36;1mIssue Load Including Associations (0.008438)[0m   [0;1mSELECT `issues`.`id` AS t0_r0, `issues`.`tracker_id` AS t0_r1, `issues`.`project_id` AS t0_r2, `issues`.`subject` AS t0_r3, `issues`.`description` AS t0_r4, `issues`.`due_date` AS t0_r5, `issues`.`category_id` AS t0_r6, `issues`.`status_id` AS t0_r7, `issues`.`assigned_to_id` AS t0_r8, `issues`.`priority_id` AS t0_r9, `issues`.`fixed_version_id` AS t0_r10, `issues`.`author_id` AS t0_r11, `issues`.`lock_version` AS t0_r12, `issues`.`created_on` AS t0_r13, `issues`.`updated_on` AS t0_r14, `issues`.`start_date` AS t0_r15, `issues`.`done_ratio` AS t0_r16, `issues`.`estimated_hours` AS t0_r17, `issue_statuses`.`id` AS t1_r0, `issue_statuses`.`name` AS t1_r1, `issue_statuses`.`is_closed` AS t1_r2, `issue_statuses`.`is_default` AS t1_r3, `issue_statuses`.`position` AS t1_r4, `projects`.`id` AS t2_r0, `projects`.`name` AS t2_r1, `projects`.`description` AS t2_r2, `projects`.`homepage` AS t2_r3, `projects`.`is_public` AS t2_r4, `projects`.`parent_id` AS t2_r5, `projects`.`projects_count` AS t2_r6, `projects`.`created_on` AS t2_r7, `projects`.`updated_on` AS t2_r8, `projects`.`identifier` AS t2_r9, `projects`.`status` AS t2_r10, `projects`.`ui_theme` AS t2_r11, `trackers`.`id` AS t3_r0, `trackers`.`name` AS t3_r1, `trackers`.`is_in_chlog` AS t3_r2, `trackers`.`position` AS t3_r3, `trackers`.`is_in_roadmap` AS t3_r4, `enumerations`.`id` AS t4_r0, `enumerations`.`opt` AS t4_r1, `enumerations`.`name` AS t4_r2, `enumerations`.`position` AS t4_r3, `enumerations`.`is_default` AS t4_r4 FROM `issues` LEFT OUTER JOIN `issue_statuses` ON `issue_statuses`.id = `issues`.status_id LEFT OUTER JOIN `projects` ON `projects`.id = `issues`.project_id LEFT OUTER JOIN `trackers` ON `trackers`.id = `issues`.tracker_id LEFT OUTER JOIN `enumerations` ON `enumerations`.id = `issues`.priority_id WHERE (assigned_to_id=2 AND issue_statuses.is_closed=0 AND projects.status=1) ORDER BY enumerations.position DESC, issues.updated_on DESC LIMIT 10[0m
+  [4;35;1mSetting Load (0.012915)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'date_format') LIMIT 1[0m
+  [4;36;1mSetting Load (0.000212)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'time_format') LIMIT 1[0m
+Rendered issues/_list_simple (0.18177)
+  [4;35;1mToken Load (0.010757)[0m   [0mSELECT * FROM `tokens` WHERE (tokens.user_id = 2 AND (action='feeds')) LIMIT 1[0m
+  [4;36;1mToken Columns (0.006467)[0m   [0;1mSHOW FIELDS FROM `tokens`[0m
+Rendered my/blocks/_issuesassignedtome (0.45373)
+  [4;35;1mTimeEntry Columns (0.014444)[0m   [0mSHOW FIELDS FROM `time_entries`[0m
+  [4;36;1mTimeEntry Load Including Associations (0.005037)[0m   [0;1mSELECT `time_entries`.`id` AS t0_r0, `time_entries`.`project_id` AS t0_r1, `time_entries`.`user_id` AS t0_r2, `time_entries`.`issue_id` AS t0_r3, `time_entries`.`hours` AS t0_r4, `time_entries`.`comments` AS t0_r5, `time_entries`.`activity_id` AS t0_r6, `time_entries`.`spent_on` AS t0_r7, `time_entries`.`tyear` AS t0_r8, `time_entries`.`tmonth` AS t0_r9, `time_entries`.`tweek` AS t0_r10, `time_entries`.`created_on` AS t0_r11, `time_entries`.`updated_on` AS t0_r12, `enumerations`.`id` AS t1_r0, `enumerations`.`opt` AS t1_r1, `enumerations`.`name` AS t1_r2, `enumerations`.`position` AS t1_r3, `enumerations`.`is_default` AS t1_r4, `projects`.`id` AS t2_r0, `projects`.`name` AS t2_r1, `projects`.`description` AS t2_r2, `projects`.`homepage` AS t2_r3, `projects`.`is_public` AS t2_r4, `projects`.`parent_id` AS t2_r5, `projects`.`projects_count` AS t2_r6, `projects`.`created_on` AS t2_r7, `projects`.`updated_on` AS t2_r8, `projects`.`identifier` AS t2_r9, `projects`.`status` AS t2_r10, `projects`.`ui_theme` AS t2_r11, `issues`.`id` AS t3_r0, `issues`.`tracker_id` AS t3_r1, `issues`.`project_id` AS t3_r2, `issues`.`subject` AS t3_r3, `issues`.`description` AS t3_r4, `issues`.`due_date` AS t3_r5, `issues`.`category_id` AS t3_r6, `issues`.`status_id` AS t3_r7, `issues`.`assigned_to_id` AS t3_r8, `issues`.`priority_id` AS t3_r9, `issues`.`fixed_version_id` AS t3_r10, `issues`.`author_id` AS t3_r11, `issues`.`lock_version` AS t3_r12, `issues`.`created_on` AS t3_r13, `issues`.`updated_on` AS t3_r14, `issues`.`start_date` AS t3_r15, `issues`.`done_ratio` AS t3_r16, `issues`.`estimated_hours` AS t3_r17, `trackers`.`id` AS t4_r0, `trackers`.`name` AS t4_r1, `trackers`.`is_in_chlog` AS t4_r2, `trackers`.`position` AS t4_r3, `trackers`.`is_in_roadmap` AS t4_r4, `issue_statuses`.`id` AS t5_r0, `issue_statuses`.`name` AS t5_r1, `issue_statuses`.`is_closed` AS t5_r2, `issue_statuses`.`is_default` AS t5_r3, `issue_statuses`.`position` AS t5_r4 FROM `time_entries` LEFT OUTER JOIN `enumerations` ON `enumerations`.id = `time_entries`.activity_id LEFT OUTER JOIN `projects` ON `projects`.id = `time_entries`.project_id LEFT OUTER JOIN `issues` ON `issues`.id = `time_entries`.issue_id LEFT OUTER JOIN `trackers` ON `trackers`.id = `issues`.tracker_id LEFT OUTER JOIN `issue_statuses` ON `issue_statuses`.id = `issues`.status_id WHERE (time_entries.user_id = 2 AND time_entries.spent_on BETWEEN '2008-06-24' AND '2008-06-30') ORDER BY time_entries.spent_on DESC, projects.name ASC, trackers.position ASC, issues.id ASC[0m
+Rendered my/blocks/_timelog (0.08176)
+  [4;35;1mIssue Load Including Associations (0.015382)[0m   [0mSELECT `issues`.`id` AS t0_r0, `issues`.`tracker_id` AS t0_r1, `issues`.`project_id` AS t0_r2, `issues`.`subject` AS t0_r3, `issues`.`description` AS t0_r4, `issues`.`due_date` AS t0_r5, `issues`.`category_id` AS t0_r6, `issues`.`status_id` AS t0_r7, `issues`.`assigned_to_id` AS t0_r8, `issues`.`priority_id` AS t0_r9, `issues`.`fixed_version_id` AS t0_r10, `issues`.`author_id` AS t0_r11, `issues`.`lock_version` AS t0_r12, `issues`.`created_on` AS t0_r13, `issues`.`updated_on` AS t0_r14, `issues`.`start_date` AS t0_r15, `issues`.`done_ratio` AS t0_r16, `issues`.`estimated_hours` AS t0_r17, `issue_statuses`.`id` AS t1_r0, `issue_statuses`.`name` AS t1_r1, `issue_statuses`.`is_closed` AS t1_r2, `issue_statuses`.`is_default` AS t1_r3, `issue_statuses`.`position` AS t1_r4, `projects`.`id` AS t2_r0, `projects`.`name` AS t2_r1, `projects`.`description` AS t2_r2, `projects`.`homepage` AS t2_r3, `projects`.`is_public` AS t2_r4, `projects`.`parent_id` AS t2_r5, `projects`.`projects_count` AS t2_r6, `projects`.`created_on` AS t2_r7, `projects`.`updated_on` AS t2_r8, `projects`.`identifier` AS t2_r9, `projects`.`status` AS t2_r10, `projects`.`ui_theme` AS t2_r11, `trackers`.`id` AS t3_r0, `trackers`.`name` AS t3_r1, `trackers`.`is_in_chlog` AS t3_r2, `trackers`.`position` AS t3_r3, `trackers`.`is_in_roadmap` AS t3_r4 FROM `issues` LEFT OUTER JOIN `issue_statuses` ON `issue_statuses`.id = `issues`.status_id LEFT OUTER JOIN `projects` ON `projects`.id = `issues`.project_id LEFT OUTER JOIN `trackers` ON `trackers`.id = `issues`.tracker_id WHERE (author_id=2 AND projects.status=1) ORDER BY issues.updated_on DESC LIMIT 10[0m
+  [4;36;1mEnumeration Load (0.001491)[0m   [0;1mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;36;1mEnumeration Load (0.000205)[0m   [0;1mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 5) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 5) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 5) [0m
+Rendered issues/_list_simple (0.05788)
+Rendered my/blocks/_issuesreportedbyme (0.10731)
+  [4;36;1mSetting Load (0.000256)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'ui_theme') LIMIT 1[0m
+  [4;35;1mSetting Load (0.000223)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'app_title') LIMIT 1[0m
+  [4;36;1mMember Columns (0.001308)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mSQL (0.003921)[0m   [0mSELECT count(DISTINCT `members`.id) AS count_all FROM `members` LEFT OUTER JOIN `projects` ON `projects`.id = `members`.project_id LEFT OUTER JOIN `roles` ON `roles`.id = `members`.role_id WHERE (members.user_id = 2 AND (projects.status=1)) [0m
+  [4;36;1mProject Load Including Associations (0.017553)[0m   [0;1mSELECT `projects`.`id` AS t0_r0, `projects`.`name` AS t0_r1, `projects`.`description` AS t0_r2, `projects`.`homepage` AS t0_r3, `projects`.`is_public` AS t0_r4, `projects`.`parent_id` AS t0_r5, `projects`.`projects_count` AS t0_r6, `projects`.`created_on` AS t0_r7, `projects`.`updated_on` AS t0_r8, `projects`.`identifier` AS t0_r9, `projects`.`status` AS t0_r10, `projects`.`ui_theme` AS t0_r11, `parents_projects`.`id` AS t1_r0, `parents_projects`.`name` AS t1_r1, `parents_projects`.`description` AS t1_r2, `parents_projects`.`homepage` AS t1_r3, `parents_projects`.`is_public` AS t1_r4, `parents_projects`.`parent_id` AS t1_r5, `parents_projects`.`projects_count` AS t1_r6, `parents_projects`.`created_on` AS t1_r7, `parents_projects`.`updated_on` AS t1_r8, `parents_projects`.`identifier` AS t1_r9, `parents_projects`.`status` AS t1_r10, `parents_projects`.`ui_theme` AS t1_r11 FROM projects LEFT OUTER JOIN `projects` parents_projects ON `parents_projects`.id = `projects`.parent_id INNER JOIN members ON projects.id = members.project_id WHERE ((members.user_id = 2) AND ((projects.status=1))) [0m
+Rendered layouts/_project_selector (0.06131)
+Completed in 3.89835 (0 reqs/sec) | Rendering: 2.45601 (63%) | DB: 0.22886 (5%) | 200 OK [http://tracker.local/my/page]
+  [4;36;1mSQL (0.000225)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000863)[0m   [0mSHOW TABLES[0m
+  [4;36;1mRepository Columns (0.002125)[0m   [0;1mSHOW FIELDS FROM `repositories`[0m
+
+
+Processing MyController#page (for 127.0.0.1 at 2008-06-30 00:11:34) [GET]
+  Session ID: 862b73712e42429c31ec79e5318d30b7
+  Parameters: {"action"=>"page", "controller"=>"my"}
+  [4;35;1mSQL (0.000145)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSetting Columns (0.001266)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+  [4;35;1mSQL (0.000259)[0m   [0mSELECT max(updated_on) AS max_updated_on FROM `settings` [0m
+  [4;36;1mSQL (0.006014)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.001785)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.038558)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProject Columns (0.001536)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mSQL (0.010917)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mIssue Columns (0.002232)[0m   [0mSHOW FIELDS FROM `issues`[0m
+  [4;36;1mSQL (0.005192)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000846)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000943)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Load (0.000274)[0m   [0mSELECT * FROM `users` WHERE (status = 1) AND (`users`.`id` = 2) [0m
+  [4;36;1mUserPreference Load (0.000188)[0m   [0;1mSELECT * FROM `user_preferences` WHERE (user_preferences.user_id = 2) LIMIT 1[0m
+  [4;35;1mUserPreference Columns (0.001228)[0m   [0mSHOW FIELDS FROM `user_preferences`[0m
+Rendering template within layouts/base
+Rendering my/page
+  [4;36;1mProject Load (0.000400)[0m   [0;1mSELECT projects.* FROM projects INNER JOIN members ON projects.id = members.project_id WHERE ((members.user_id = 2) AND ((projects.status=1))) [0m
+  [4;35;1mSQL (0.001235)[0m   [0mSHOW TABLES[0m
+  [4;36;1mEnumeration Columns (0.001322)[0m   [0;1mSHOW FIELDS FROM `enumerations`[0m
+  [4;35;1mDocument Columns (0.002265)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mSQL (0.001721)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mTracker Columns (0.002006)[0m   [0mSHOW FIELDS FROM `trackers`[0m
+  [4;36;1mIssue Load Including Associations (0.000375)[0m   [0;1mSELECT `issues`.`id` AS t0_r0, `issues`.`tracker_id` AS t0_r1, `issues`.`project_id` AS t0_r2, `issues`.`subject` AS t0_r3, `issues`.`description` AS t0_r4, `issues`.`due_date` AS t0_r5, `issues`.`category_id` AS t0_r6, `issues`.`status_id` AS t0_r7, `issues`.`assigned_to_id` AS t0_r8, `issues`.`priority_id` AS t0_r9, `issues`.`fixed_version_id` AS t0_r10, `issues`.`author_id` AS t0_r11, `issues`.`lock_version` AS t0_r12, `issues`.`created_on` AS t0_r13, `issues`.`updated_on` AS t0_r14, `issues`.`start_date` AS t0_r15, `issues`.`done_ratio` AS t0_r16, `issues`.`estimated_hours` AS t0_r17, `projects`.`id` AS t1_r0, `projects`.`name` AS t1_r1, `projects`.`description` AS t1_r2, `projects`.`homepage` AS t1_r3, `projects`.`is_public` AS t1_r4, `projects`.`parent_id` AS t1_r5, `projects`.`projects_count` AS t1_r6, `projects`.`created_on` AS t1_r7, `projects`.`updated_on` AS t1_r8, `projects`.`identifier` AS t1_r9, `projects`.`status` AS t1_r10, `projects`.`ui_theme` AS t1_r11, `trackers`.`id` AS t2_r0, `trackers`.`name` AS t2_r1, `trackers`.`is_in_chlog` AS t2_r2, `trackers`.`position` AS t2_r3, `trackers`.`is_in_roadmap` AS t2_r4, `enumerations`.`id` AS t3_r0, `enumerations`.`opt` AS t3_r1, `enumerations`.`name` AS t3_r2, `enumerations`.`position` AS t3_r3, `enumerations`.`is_default` AS t3_r4, `users`.`id` AS t4_r0, `users`.`login` AS t4_r1, `users`.`hashed_password` AS t4_r2, `users`.`firstname` AS t4_r3, `users`.`lastname` AS t4_r4, `users`.`mail` AS t4_r5, `users`.`mail_notification` AS t4_r6, `users`.`admin` AS t4_r7, `users`.`status` AS t4_r8, `users`.`last_login_on` AS t4_r9, `users`.`language` AS t4_r10, `users`.`auth_source_id` AS t4_r11, `users`.`created_on` AS t4_r12, `users`.`updated_on` AS t4_r13, `users`.`type` AS t4_r14 FROM `issues` LEFT OUTER JOIN `projects` ON `projects`.id = `issues`.project_id LEFT OUTER JOIN `trackers` ON `trackers`.id = `issues`.tracker_id LEFT OUTER JOIN `enumerations` ON `enumerations`.id = `issues`.priority_id LEFT OUTER JOIN `users` ON `users`.id = `issues`.assigned_to_id WHERE (issues.project_id in (3,1,5,10,11,12,14,16,17,19) AND ((start_date>='2008-06-29' and start_date<='2008-07-05') or (due_date>='2008-06-29' and due_date<='2008-07-05'))) [0m
+Rendered common/_calendar (0.03577)
+Rendered my/blocks/_calendar (1.30069)
+  [4;35;1mIssueStatus Columns (0.001207)[0m   [0mSHOW FIELDS FROM `issue_statuses`[0m
+  [4;36;1mIssue Load Including Associations (0.001077)[0m   [0;1mSELECT `issues`.`id` AS t0_r0, `issues`.`tracker_id` AS t0_r1, `issues`.`project_id` AS t0_r2, `issues`.`subject` AS t0_r3, `issues`.`description` AS t0_r4, `issues`.`due_date` AS t0_r5, `issues`.`category_id` AS t0_r6, `issues`.`status_id` AS t0_r7, `issues`.`assigned_to_id` AS t0_r8, `issues`.`priority_id` AS t0_r9, `issues`.`fixed_version_id` AS t0_r10, `issues`.`author_id` AS t0_r11, `issues`.`lock_version` AS t0_r12, `issues`.`created_on` AS t0_r13, `issues`.`updated_on` AS t0_r14, `issues`.`start_date` AS t0_r15, `issues`.`done_ratio` AS t0_r16, `issues`.`estimated_hours` AS t0_r17, `issue_statuses`.`id` AS t1_r0, `issue_statuses`.`name` AS t1_r1, `issue_statuses`.`is_closed` AS t1_r2, `issue_statuses`.`is_default` AS t1_r3, `issue_statuses`.`position` AS t1_r4, `projects`.`id` AS t2_r0, `projects`.`name` AS t2_r1, `projects`.`description` AS t2_r2, `projects`.`homepage` AS t2_r3, `projects`.`is_public` AS t2_r4, `projects`.`parent_id` AS t2_r5, `projects`.`projects_count` AS t2_r6, `projects`.`created_on` AS t2_r7, `projects`.`updated_on` AS t2_r8, `projects`.`identifier` AS t2_r9, `projects`.`status` AS t2_r10, `projects`.`ui_theme` AS t2_r11, `trackers`.`id` AS t3_r0, `trackers`.`name` AS t3_r1, `trackers`.`is_in_chlog` AS t3_r2, `trackers`.`position` AS t3_r3, `trackers`.`is_in_roadmap` AS t3_r4, `enumerations`.`id` AS t4_r0, `enumerations`.`opt` AS t4_r1, `enumerations`.`name` AS t4_r2, `enumerations`.`position` AS t4_r3, `enumerations`.`is_default` AS t4_r4 FROM `issues` LEFT OUTER JOIN `issue_statuses` ON `issue_statuses`.id = `issues`.status_id LEFT OUTER JOIN `projects` ON `projects`.id = `issues`.project_id LEFT OUTER JOIN `trackers` ON `trackers`.id = `issues`.tracker_id LEFT OUTER JOIN `enumerations` ON `enumerations`.id = `issues`.priority_id WHERE (assigned_to_id=2 AND issue_statuses.is_closed=0 AND projects.status=1) ORDER BY enumerations.position DESC, issues.updated_on DESC LIMIT 10[0m
+  [4;35;1mSetting Load (0.000215)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'date_format') LIMIT 1[0m
+  [4;36;1mSetting Load (0.003319)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'time_format') LIMIT 1[0m
+Rendered issues/_list_simple (0.19935)
+  [4;35;1mToken Load (0.000229)[0m   [0mSELECT * FROM `tokens` WHERE (tokens.user_id = 2 AND (action='feeds')) LIMIT 1[0m
+  [4;36;1mToken Columns (0.001127)[0m   [0;1mSHOW FIELDS FROM `tokens`[0m
+Rendered my/blocks/_issuesassignedtome (0.52798)
+  [4;35;1mTimeEntry Columns (0.005325)[0m   [0mSHOW FIELDS FROM `time_entries`[0m
+  [4;36;1mTimeEntry Load Including Associations (0.001155)[0m   [0;1mSELECT `time_entries`.`id` AS t0_r0, `time_entries`.`project_id` AS t0_r1, `time_entries`.`user_id` AS t0_r2, `time_entries`.`issue_id` AS t0_r3, `time_entries`.`hours` AS t0_r4, `time_entries`.`comments` AS t0_r5, `time_entries`.`activity_id` AS t0_r6, `time_entries`.`spent_on` AS t0_r7, `time_entries`.`tyear` AS t0_r8, `time_entries`.`tmonth` AS t0_r9, `time_entries`.`tweek` AS t0_r10, `time_entries`.`created_on` AS t0_r11, `time_entries`.`updated_on` AS t0_r12, `enumerations`.`id` AS t1_r0, `enumerations`.`opt` AS t1_r1, `enumerations`.`name` AS t1_r2, `enumerations`.`position` AS t1_r3, `enumerations`.`is_default` AS t1_r4, `projects`.`id` AS t2_r0, `projects`.`name` AS t2_r1, `projects`.`description` AS t2_r2, `projects`.`homepage` AS t2_r3, `projects`.`is_public` AS t2_r4, `projects`.`parent_id` AS t2_r5, `projects`.`projects_count` AS t2_r6, `projects`.`created_on` AS t2_r7, `projects`.`updated_on` AS t2_r8, `projects`.`identifier` AS t2_r9, `projects`.`status` AS t2_r10, `projects`.`ui_theme` AS t2_r11, `issues`.`id` AS t3_r0, `issues`.`tracker_id` AS t3_r1, `issues`.`project_id` AS t3_r2, `issues`.`subject` AS t3_r3, `issues`.`description` AS t3_r4, `issues`.`due_date` AS t3_r5, `issues`.`category_id` AS t3_r6, `issues`.`status_id` AS t3_r7, `issues`.`assigned_to_id` AS t3_r8, `issues`.`priority_id` AS t3_r9, `issues`.`fixed_version_id` AS t3_r10, `issues`.`author_id` AS t3_r11, `issues`.`lock_version` AS t3_r12, `issues`.`created_on` AS t3_r13, `issues`.`updated_on` AS t3_r14, `issues`.`start_date` AS t3_r15, `issues`.`done_ratio` AS t3_r16, `issues`.`estimated_hours` AS t3_r17, `trackers`.`id` AS t4_r0, `trackers`.`name` AS t4_r1, `trackers`.`is_in_chlog` AS t4_r2, `trackers`.`position` AS t4_r3, `trackers`.`is_in_roadmap` AS t4_r4, `issue_statuses`.`id` AS t5_r0, `issue_statuses`.`name` AS t5_r1, `issue_statuses`.`is_closed` AS t5_r2, `issue_statuses`.`is_default` AS t5_r3, `issue_statuses`.`position` AS t5_r4 FROM `time_entries` LEFT OUTER JOIN `enumerations` ON `enumerations`.id = `time_entries`.activity_id LEFT OUTER JOIN `projects` ON `projects`.id = `time_entries`.project_id LEFT OUTER JOIN `issues` ON `issues`.id = `time_entries`.issue_id LEFT OUTER JOIN `trackers` ON `trackers`.id = `issues`.tracker_id LEFT OUTER JOIN `issue_statuses` ON `issue_statuses`.id = `issues`.status_id WHERE (time_entries.user_id = 2 AND time_entries.spent_on BETWEEN '2008-06-24' AND '2008-06-30') ORDER BY time_entries.spent_on DESC, projects.name ASC, trackers.position ASC, issues.id ASC[0m
+Rendered my/blocks/_timelog (0.04826)
+  [4;35;1mIssue Load Including Associations (0.000361)[0m   [0mSELECT `issues`.`id` AS t0_r0, `issues`.`tracker_id` AS t0_r1, `issues`.`project_id` AS t0_r2, `issues`.`subject` AS t0_r3, `issues`.`description` AS t0_r4, `issues`.`due_date` AS t0_r5, `issues`.`category_id` AS t0_r6, `issues`.`status_id` AS t0_r7, `issues`.`assigned_to_id` AS t0_r8, `issues`.`priority_id` AS t0_r9, `issues`.`fixed_version_id` AS t0_r10, `issues`.`author_id` AS t0_r11, `issues`.`lock_version` AS t0_r12, `issues`.`created_on` AS t0_r13, `issues`.`updated_on` AS t0_r14, `issues`.`start_date` AS t0_r15, `issues`.`done_ratio` AS t0_r16, `issues`.`estimated_hours` AS t0_r17, `issue_statuses`.`id` AS t1_r0, `issue_statuses`.`name` AS t1_r1, `issue_statuses`.`is_closed` AS t1_r2, `issue_statuses`.`is_default` AS t1_r3, `issue_statuses`.`position` AS t1_r4, `projects`.`id` AS t2_r0, `projects`.`name` AS t2_r1, `projects`.`description` AS t2_r2, `projects`.`homepage` AS t2_r3, `projects`.`is_public` AS t2_r4, `projects`.`parent_id` AS t2_r5, `projects`.`projects_count` AS t2_r6, `projects`.`created_on` AS t2_r7, `projects`.`updated_on` AS t2_r8, `projects`.`identifier` AS t2_r9, `projects`.`status` AS t2_r10, `projects`.`ui_theme` AS t2_r11, `trackers`.`id` AS t3_r0, `trackers`.`name` AS t3_r1, `trackers`.`is_in_chlog` AS t3_r2, `trackers`.`position` AS t3_r3, `trackers`.`is_in_roadmap` AS t3_r4 FROM `issues` LEFT OUTER JOIN `issue_statuses` ON `issue_statuses`.id = `issues`.status_id LEFT OUTER JOIN `projects` ON `projects`.id = `issues`.project_id LEFT OUTER JOIN `trackers` ON `trackers`.id = `issues`.tracker_id WHERE (author_id=2 AND projects.status=1) ORDER BY issues.updated_on DESC LIMIT 10[0m
+  [4;36;1mEnumeration Load (0.000232)[0m   [0;1mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;36;1mEnumeration Load (0.000254)[0m   [0;1mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 5) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 5) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 5) [0m
+Rendered issues/_list_simple (0.08727)
+Rendered my/blocks/_issuesreportedbyme (0.10693)
+  [4;36;1mSetting Load (0.000226)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'ui_theme') LIMIT 1[0m
+  [4;35;1mSetting Load (0.000287)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'app_title') LIMIT 1[0m
+  [4;36;1mMember Columns (0.001301)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mSQL (0.009404)[0m   [0mSELECT count(DISTINCT `members`.id) AS count_all FROM `members` LEFT OUTER JOIN `projects` ON `projects`.id = `members`.project_id LEFT OUTER JOIN `roles` ON `roles`.id = `members`.role_id WHERE (members.user_id = 2 AND (projects.status=1)) [0m
+  [4;36;1mProject Load Including Associations (0.020287)[0m   [0;1mSELECT `projects`.`id` AS t0_r0, `projects`.`name` AS t0_r1, `projects`.`description` AS t0_r2, `projects`.`homepage` AS t0_r3, `projects`.`is_public` AS t0_r4, `projects`.`parent_id` AS t0_r5, `projects`.`projects_count` AS t0_r6, `projects`.`created_on` AS t0_r7, `projects`.`updated_on` AS t0_r8, `projects`.`identifier` AS t0_r9, `projects`.`status` AS t0_r10, `projects`.`ui_theme` AS t0_r11, `parents_projects`.`id` AS t1_r0, `parents_projects`.`name` AS t1_r1, `parents_projects`.`description` AS t1_r2, `parents_projects`.`homepage` AS t1_r3, `parents_projects`.`is_public` AS t1_r4, `parents_projects`.`parent_id` AS t1_r5, `parents_projects`.`projects_count` AS t1_r6, `parents_projects`.`created_on` AS t1_r7, `parents_projects`.`updated_on` AS t1_r8, `parents_projects`.`identifier` AS t1_r9, `parents_projects`.`status` AS t1_r10, `parents_projects`.`ui_theme` AS t1_r11 FROM projects LEFT OUTER JOIN `projects` parents_projects ON `parents_projects`.id = `projects`.parent_id INNER JOIN members ON projects.id = members.project_id WHERE ((members.user_id = 2) AND ((projects.status=1))) [0m
+Rendered layouts/_project_selector (0.54417)
+Completed in 6.62550 (0 reqs/sec) | Rendering: 2.66347 (40%) | DB: 0.12671 (1%) | 200 OK [http://tracker.local/my/page]

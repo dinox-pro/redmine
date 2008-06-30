@@ -2,7 +2,7 @@
 #	Application
 #############################################################
 
-set :application, "tracker"
+set :application, "redmine"
 set :deploy_to, "/var/www/#{application}"
 
 #############################################################
@@ -57,6 +57,10 @@ task :copy_config_files, :roles => :app do
   run "cp #{deploy_to}/shared/config/* #{release_path}/config/"
 end
 
+desc "Reset symlink to public/files directory to not overwrite uploaded store images."
+task :after_symlink, :roles => [ :app, :db, :web ] do
+  run "ln -nfs #{deploy_to}shared/system/files #{release_path}"
+end
 
 after :deploy, "passenger:restart"
 
