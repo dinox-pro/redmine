@@ -44,6 +44,7 @@ end
 desc "Reset symlink to public/files directory to not overwrite uploaded store images."
 task :after_update_code, :roles => [ :app, :db, :web ] do
 	copy_config_files
+	update_submodules
 end
 
 desc "Create Shared directory and subdirectories;"
@@ -55,6 +56,11 @@ desc "Copy config files local to deployment site into deployed rails config dire
 task :copy_config_files, :roles => :app do
   create_shared_directory
   run "cp #{deploy_to}/shared/config/* #{release_path}/config/"
+end
+
+desc "Update git submodules"
+task :update_submodules, :roles => :app do
+  run "cd #{deploy_to}/current; git submodule init; git submodule update;"
 end
 
 desc "Reset symlink to public/files directory to not overwrite uploaded store images."

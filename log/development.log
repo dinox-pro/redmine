@@ -5056,3 +5056,217 @@ Rendered layouts/_project_selector (0.04137)
   [4;35;1mSQL (0.001952)[0m   [0mSELECT count(*) AS count_all FROM `boards` WHERE (boards.project_id = 16) [0m
   [4;36;1mRepository Load (0.017696)[0m   [0;1mSELECT * FROM `repositories` WHERE (repositories.project_id = 16) LIMIT 1[0m
 Completed in 3.32413 (0 reqs/sec) | Rendering: 0.91126 (27%) | DB: 0.10358 (3%) | 200 OK [http://tracker.local/statuses/index/cbr]
+Google Calendar
+Attempting to copy plugin assets from '/home/jim/Sites/redmine/vendor/plugins/redmine_status/public' to '/home/jim/Sites/redmine/public/plugin_assets'
+checking plugin 'engines' for 'application_helper'
+checking plugin 'actionwebservice' for 'application_helper'
+checking plugin 'acts_as_customizable' for 'application_helper'
+checking plugin 'acts_as_event' for 'application_helper'
+checking plugin 'acts_as_list' for 'application_helper'
+checking plugin 'acts_as_searchable' for 'application_helper'
+checking plugin 'acts_as_tree' for 'application_helper'
+checking plugin 'acts_as_versioned' for 'application_helper'
+checking plugin 'acts_as_watchable' for 'application_helper'
+checking plugin 'backup_fu' for 'application_helper'
+checking plugin 'classic_pagination' for 'application_helper'
+checking plugin 'coderay-0.7.6.227' for 'application_helper'
+checking plugin 'gloc-1.1.0' for 'application_helper'
+checking plugin 'redmine_google_calendar' for 'application_helper'
+checking plugin 'redmine_status' for 'application_helper'
+checking plugin 'rfpdf' for 'application_helper'
+checking plugin 'ruby-net-ldap-0.0.4' for 'application_helper'
+loading from application: application_helper
+  [4;36;1mSQL (0.002549)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.001766)[0m   [0mSHOW TABLES[0m
+  [4;36;1mRepository Columns (0.001912)[0m   [0;1mSHOW FIELDS FROM `repositories`[0m
+checking plugin 'engines' for 'admin_controller'
+checking plugin 'actionwebservice' for 'admin_controller'
+checking plugin 'acts_as_customizable' for 'admin_controller'
+checking plugin 'acts_as_event' for 'admin_controller'
+checking plugin 'acts_as_list' for 'admin_controller'
+checking plugin 'acts_as_searchable' for 'admin_controller'
+checking plugin 'acts_as_tree' for 'admin_controller'
+checking plugin 'acts_as_versioned' for 'admin_controller'
+checking plugin 'acts_as_watchable' for 'admin_controller'
+checking plugin 'backup_fu' for 'admin_controller'
+checking plugin 'classic_pagination' for 'admin_controller'
+checking plugin 'coderay-0.7.6.227' for 'admin_controller'
+checking plugin 'gloc-1.1.0' for 'admin_controller'
+checking plugin 'redmine_google_calendar' for 'admin_controller'
+checking plugin 'redmine_status' for 'admin_controller'
+checking plugin 'rfpdf' for 'admin_controller'
+checking plugin 'ruby-net-ldap-0.0.4' for 'admin_controller'
+loading from application: admin_controller
+checking plugin 'engines' for 'admin_helper'
+checking plugin 'actionwebservice' for 'admin_helper'
+checking plugin 'acts_as_customizable' for 'admin_helper'
+checking plugin 'acts_as_event' for 'admin_helper'
+checking plugin 'acts_as_list' for 'admin_helper'
+checking plugin 'acts_as_searchable' for 'admin_helper'
+checking plugin 'acts_as_tree' for 'admin_helper'
+checking plugin 'acts_as_versioned' for 'admin_helper'
+checking plugin 'acts_as_watchable' for 'admin_helper'
+checking plugin 'backup_fu' for 'admin_helper'
+checking plugin 'classic_pagination' for 'admin_helper'
+checking plugin 'coderay-0.7.6.227' for 'admin_helper'
+checking plugin 'gloc-1.1.0' for 'admin_helper'
+checking plugin 'redmine_google_calendar' for 'admin_helper'
+checking plugin 'redmine_status' for 'admin_helper'
+checking plugin 'rfpdf' for 'admin_helper'
+checking plugin 'ruby-net-ldap-0.0.4' for 'admin_helper'
+loading from application: admin_helper
+checking plugin 'engines' for 'sort_helper'
+checking plugin 'actionwebservice' for 'sort_helper'
+checking plugin 'acts_as_customizable' for 'sort_helper'
+checking plugin 'acts_as_event' for 'sort_helper'
+checking plugin 'acts_as_list' for 'sort_helper'
+checking plugin 'acts_as_searchable' for 'sort_helper'
+checking plugin 'acts_as_tree' for 'sort_helper'
+checking plugin 'acts_as_versioned' for 'sort_helper'
+checking plugin 'acts_as_watchable' for 'sort_helper'
+checking plugin 'backup_fu' for 'sort_helper'
+checking plugin 'classic_pagination' for 'sort_helper'
+checking plugin 'coderay-0.7.6.227' for 'sort_helper'
+checking plugin 'gloc-1.1.0' for 'sort_helper'
+checking plugin 'redmine_google_calendar' for 'sort_helper'
+checking plugin 'redmine_status' for 'sort_helper'
+checking plugin 'rfpdf' for 'sort_helper'
+checking plugin 'ruby-net-ldap-0.0.4' for 'sort_helper'
+loading from application: sort_helper
+
+
+Processing AdminController#index (for 127.0.0.1 at 2008-06-30 12:37:27) [GET]
+  Session ID: 3fb4e78cee8a719410a853c915108dec
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+  [4;35;1mSQL (0.000156)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSetting Columns (0.001304)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+  [4;35;1mSQL (0.000400)[0m   [0mSELECT max(updated_on) AS max_updated_on FROM `settings` [0m
+  [4;36;1mSQL (0.000949)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.001774)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.000957)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProject Columns (0.003245)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mSQL (0.000993)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mIssue Columns (0.007137)[0m   [0mSHOW FIELDS FROM `issues`[0m
+  [4;36;1mSQL (0.038097)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.001199)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.010157)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSetting Load (0.002550)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'autologin') LIMIT 1[0m
+  [4;36;1mSQL (0.005299)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mToken Columns (0.002704)[0m   [0mSHOW FIELDS FROM `tokens`[0m
+  [4;36;1mToken Load (0.000248)[0m   [0;1mSELECT * FROM `tokens` WHERE (`tokens`.`action` = 'autologin' AND `tokens`.`value` = 'KAh28B2xXg4WOgCiNp2tCnWRWckoTKDCySFwVfyZ') LIMIT 1[0m
+  [4;35;1mUser Load (0.003557)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+  [4;36;1mRole Load (0.000221)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`builtin` = 0) LIMIT 1[0m
+Rendering template within layouts/base
+Rendering admin/index
+  [4;35;1mSetting Load (0.015741)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'app_title') LIMIT 1[0m
+  [4;36;1mSetting Load (0.000277)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'ui_theme') LIMIT 1[0m
+  [4;35;1mMember Columns (0.001334)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (0.001345)[0m   [0;1mSELECT count(DISTINCT `members`.id) AS count_all FROM `members` LEFT OUTER JOIN `projects` ON `projects`.id = `members`.project_id LEFT OUTER JOIN `roles` ON `roles`.id = `members`.role_id WHERE (members.user_id = 2 AND (projects.status=1)) [0m
+  [4;35;1mProject Load Including Associations (0.004795)[0m   [0mSELECT `projects`.`id` AS t0_r0, `projects`.`name` AS t0_r1, `projects`.`description` AS t0_r2, `projects`.`homepage` AS t0_r3, `projects`.`is_public` AS t0_r4, `projects`.`parent_id` AS t0_r5, `projects`.`projects_count` AS t0_r6, `projects`.`created_on` AS t0_r7, `projects`.`updated_on` AS t0_r8, `projects`.`identifier` AS t0_r9, `projects`.`status` AS t0_r10, `projects`.`ui_theme` AS t0_r11, `parents_projects`.`id` AS t1_r0, `parents_projects`.`name` AS t1_r1, `parents_projects`.`description` AS t1_r2, `parents_projects`.`homepage` AS t1_r3, `parents_projects`.`is_public` AS t1_r4, `parents_projects`.`parent_id` AS t1_r5, `parents_projects`.`projects_count` AS t1_r6, `parents_projects`.`created_on` AS t1_r7, `parents_projects`.`updated_on` AS t1_r8, `parents_projects`.`identifier` AS t1_r9, `parents_projects`.`status` AS t1_r10, `parents_projects`.`ui_theme` AS t1_r11 FROM projects LEFT OUTER JOIN `projects` parents_projects ON `parents_projects`.id = `projects`.parent_id INNER JOIN members ON projects.id = members.project_id WHERE ((members.user_id = 2) AND ((projects.status=1))) [0m
+Rendered layouts/_project_selector (0.09224)
+Completed in 2.52995 (0 reqs/sec) | Rendering: 0.17547 (6%) | DB: 0.10444 (4%) | 200 OK [http://tracker.local/admin]
+checking plugin 'engines' for 'application_helper'
+checking plugin 'actionwebservice' for 'application_helper'
+checking plugin 'acts_as_customizable' for 'application_helper'
+checking plugin 'acts_as_event' for 'application_helper'
+checking plugin 'acts_as_list' for 'application_helper'
+checking plugin 'acts_as_searchable' for 'application_helper'
+checking plugin 'acts_as_tree' for 'application_helper'
+checking plugin 'acts_as_versioned' for 'application_helper'
+checking plugin 'acts_as_watchable' for 'application_helper'
+checking plugin 'backup_fu' for 'application_helper'
+checking plugin 'classic_pagination' for 'application_helper'
+checking plugin 'coderay-0.7.6.227' for 'application_helper'
+checking plugin 'gloc-1.1.0' for 'application_helper'
+checking plugin 'redmine_google_calendar' for 'application_helper'
+checking plugin 'redmine_status' for 'application_helper'
+checking plugin 'rfpdf' for 'application_helper'
+checking plugin 'ruby-net-ldap-0.0.4' for 'application_helper'
+loading from application: application_helper
+  [4;36;1mSQL (0.000992)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mRepository Columns (0.005913)[0m   [0mSHOW FIELDS FROM `repositories`[0m
+checking plugin 'engines' for 'admin_controller'
+checking plugin 'actionwebservice' for 'admin_controller'
+checking plugin 'acts_as_customizable' for 'admin_controller'
+checking plugin 'acts_as_event' for 'admin_controller'
+checking plugin 'acts_as_list' for 'admin_controller'
+checking plugin 'acts_as_searchable' for 'admin_controller'
+checking plugin 'acts_as_tree' for 'admin_controller'
+checking plugin 'acts_as_versioned' for 'admin_controller'
+checking plugin 'acts_as_watchable' for 'admin_controller'
+checking plugin 'backup_fu' for 'admin_controller'
+checking plugin 'classic_pagination' for 'admin_controller'
+checking plugin 'coderay-0.7.6.227' for 'admin_controller'
+checking plugin 'gloc-1.1.0' for 'admin_controller'
+checking plugin 'redmine_google_calendar' for 'admin_controller'
+checking plugin 'redmine_status' for 'admin_controller'
+checking plugin 'rfpdf' for 'admin_controller'
+checking plugin 'ruby-net-ldap-0.0.4' for 'admin_controller'
+loading from application: admin_controller
+checking plugin 'engines' for 'admin_helper'
+checking plugin 'actionwebservice' for 'admin_helper'
+checking plugin 'acts_as_customizable' for 'admin_helper'
+checking plugin 'acts_as_event' for 'admin_helper'
+checking plugin 'acts_as_list' for 'admin_helper'
+checking plugin 'acts_as_searchable' for 'admin_helper'
+checking plugin 'acts_as_tree' for 'admin_helper'
+checking plugin 'acts_as_versioned' for 'admin_helper'
+checking plugin 'acts_as_watchable' for 'admin_helper'
+checking plugin 'backup_fu' for 'admin_helper'
+checking plugin 'classic_pagination' for 'admin_helper'
+checking plugin 'coderay-0.7.6.227' for 'admin_helper'
+checking plugin 'gloc-1.1.0' for 'admin_helper'
+checking plugin 'redmine_google_calendar' for 'admin_helper'
+checking plugin 'redmine_status' for 'admin_helper'
+checking plugin 'rfpdf' for 'admin_helper'
+checking plugin 'ruby-net-ldap-0.0.4' for 'admin_helper'
+loading from application: admin_helper
+checking plugin 'engines' for 'sort_helper'
+checking plugin 'actionwebservice' for 'sort_helper'
+checking plugin 'acts_as_customizable' for 'sort_helper'
+checking plugin 'acts_as_event' for 'sort_helper'
+checking plugin 'acts_as_list' for 'sort_helper'
+checking plugin 'acts_as_searchable' for 'sort_helper'
+checking plugin 'acts_as_tree' for 'sort_helper'
+checking plugin 'acts_as_versioned' for 'sort_helper'
+checking plugin 'acts_as_watchable' for 'sort_helper'
+checking plugin 'backup_fu' for 'sort_helper'
+checking plugin 'classic_pagination' for 'sort_helper'
+checking plugin 'coderay-0.7.6.227' for 'sort_helper'
+checking plugin 'gloc-1.1.0' for 'sort_helper'
+checking plugin 'redmine_google_calendar' for 'sort_helper'
+checking plugin 'redmine_status' for 'sort_helper'
+checking plugin 'rfpdf' for 'sort_helper'
+checking plugin 'ruby-net-ldap-0.0.4' for 'sort_helper'
+loading from application: sort_helper
+
+
+Processing AdminController#info (for 127.0.0.1 at 2008-06-30 12:37:36) [GET]
+  Session ID: 3fb4e78cee8a719410a853c915108dec
+  Parameters: {"action"=>"info", "controller"=>"admin"}
+  [4;36;1mSetting Columns (0.001081)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+  [4;35;1mSQL (0.006444)[0m   [0mSELECT max(updated_on) AS max_updated_on FROM `settings` [0m
+  [4;36;1mSQL (0.011255)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.002011)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.007254)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProject Columns (0.001570)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mSQL (0.006679)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mIssue Columns (0.002205)[0m   [0mSHOW FIELDS FROM `issues`[0m
+  [4;36;1mSQL (0.027884)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.003241)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000797)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSetting Load (0.000301)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'autologin') LIMIT 1[0m
+  [4;36;1mSQL (0.001274)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mToken Columns (0.001277)[0m   [0mSHOW FIELDS FROM `tokens`[0m
+  [4;36;1mToken Load (0.000776)[0m   [0;1mSELECT * FROM `tokens` WHERE (`tokens`.`action` = 'autologin' AND `tokens`.`value` = 'KAh28B2xXg4WOgCiNp2tCnWRWckoTKDCySFwVfyZ') LIMIT 1[0m
+  [4;35;1mUser Load (0.000264)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+  [4;36;1mUser Load (0.000286)[0m   [0;1mSELECT * FROM `users` WHERE (login='admin' and hashed_password='d033e22ae348aeb5660fc2140aec35850c4da997') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering admin/info
+  [4;35;1mSetting Load (0.002923)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'app_title') LIMIT 1[0m
+  [4;36;1mSetting Load (0.000235)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'ui_theme') LIMIT 1[0m
+  [4;35;1mMember Columns (0.014494)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (0.004852)[0m   [0;1mSELECT count(DISTINCT `members`.id) AS count_all FROM `members` LEFT OUTER JOIN `projects` ON `projects`.id = `members`.project_id LEFT OUTER JOIN `roles` ON `roles`.id = `members`.role_id WHERE (members.user_id = 2 AND (projects.status=1)) [0m
+  [4;35;1mProject Load Including Associations (0.000303)[0m   [0mSELECT `projects`.`id` AS t0_r0, `projects`.`name` AS t0_r1, `projects`.`description` AS t0_r2, `projects`.`homepage` AS t0_r3, `projects`.`is_public` AS t0_r4, `projects`.`parent_id` AS t0_r5, `projects`.`projects_count` AS t0_r6, `projects`.`created_on` AS t0_r7, `projects`.`updated_on` AS t0_r8, `projects`.`identifier` AS t0_r9, `projects`.`status` AS t0_r10, `projects`.`ui_theme` AS t0_r11, `parents_projects`.`id` AS t1_r0, `parents_projects`.`name` AS t1_r1, `parents_projects`.`description` AS t1_r2, `parents_projects`.`homepage` AS t1_r3, `parents_projects`.`is_public` AS t1_r4, `parents_projects`.`parent_id` AS t1_r5, `parents_projects`.`projects_count` AS t1_r6, `parents_projects`.`created_on` AS t1_r7, `parents_projects`.`updated_on` AS t1_r8, `parents_projects`.`identifier` AS t1_r9, `parents_projects`.`status` AS t1_r10, `parents_projects`.`ui_theme` AS t1_r11 FROM projects LEFT OUTER JOIN `projects` parents_projects ON `parents_projects`.id = `projects`.parent_id INNER JOIN members ON projects.id = members.project_id WHERE ((members.user_id = 2) AND ((projects.status=1))) [0m
+Rendered layouts/_project_selector (0.04014)
+Completed in 2.37175 (0 reqs/sec) | Rendering: 0.18957 (7%) | DB: 0.10431 (4%) | 200 OK [http://tracker.local/admin/info]
