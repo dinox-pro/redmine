@@ -53,14 +53,17 @@ Rails::Initializer.run do |config|
   # See Rails::Configuration for more options
   
 	# SMTP server configuration
+	require "smtp_tls"
+
 	config.action_mailer.smtp_settings = {
-		:address => "127.0.0.1",
-		:port => 25,
-		:domain => "somenet.foo",
-		:authentication => :login,
-		:user_name => "redmine@somenet.foo",
-		:password => "redmine",
+		:address => "smtp.gmail.com",
+		:port => 587,
+		:domain => "praexis.com",
+		:authentication => :plain,
+		:user_name => "mailer@praexis.com",
+		:password => "!SvnTrac",
 	}
+
 	
 	config.action_mailer.perform_deliveries = true
 

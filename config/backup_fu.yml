@@ -1,0 +1,7 @@
+# The app_name is used as the backup filename prefix
+app_name: redmine
+# You must create the s3_bucket specified below via an external tool like S3 Browser, etc
+s3_bucket: static.squeejee.com
+aws_access_key_id: 0PMGP5FQN9HQHGNJA7G2
+aws_secret_access_key: Plf2bMWya8TYt20rU1kw7lJBr0cjV6BTVtNGbggS
+static_paths: "/mnt/app/redmine/shared/system/files" 

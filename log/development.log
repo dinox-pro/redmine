@@ -1,0 +1,1098 @@
+# Logfile created on Sun Jun 29 22:57:18 -0500 2008
+
+Processing Base#index (for 127.0.0.1 at 2008-06-29 22:57:44) [GET]
+  Session ID: 9684be110c1b2f0555185c57015cc09c
+  Parameters: {}
+
+
+Mysql::Error (Unknown database 'redmine_development'):
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/mysql_adapter.rb:471:in `real_connect'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/mysql_adapter.rb:471:in `connect'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/mysql_adapter.rb:165:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/mysql_adapter.rb:88:in `new'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/mysql_adapter.rb:88:in `mysql_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/connection_specification.rb:291:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/connection_specification.rb:291:in `connection='
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/connection_specification.rb:259:in `retrieve_connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/connection_specification.rb:78:in `connection'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/base.rb:1063:in `table_exists?'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/base.rb:1153:in `inspect'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/core_ext/symbol.rb:11:in `__send__'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/core_ext/symbol.rb:11:in `to_proc'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:426:in `collect'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:426:in `log_call'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:222:in `load_missing_constant'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:469:in `const_missing'
+    /app/models/repository.rb:20
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:203:in `load_without_new_constant_marking'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:203:in `load_file'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:202:in `load_file'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:94:in `require_or_load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:248:in `load_missing_constant'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:453:in `const_missing'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:465:in `const_missing'
+    /app/models/repository/subversion.rb:20
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:203:in `load_without_new_constant_marking'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:203:in `load_file'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:202:in `load_file'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:94:in `require_or_load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:60:in `depend_on'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:442:in `require_dependency'
+    /app/controllers/application.rb:26
+    /app/controllers/application.rb:25:in `each'
+    /app/controllers/application.rb:25
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:203:in `load_without_new_constant_marking'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:203:in `load_file'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:202:in `load_file'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:94:in `require_or_load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:60:in `depend_on'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:442:in `require_dependency'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:141:in `prepare_application'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:178:in `send!'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:178:in `run_callbacks'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:175:in `each'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:175:in `send!'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:175:in `run_callbacks'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:114:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+  [4;36;1mSQL (0.000246)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000971)[0m   [0mSHOW TABLES[0m
+  [4;36;1mRepository Columns (0.001568)[0m   [0;1mSHOW FIELDS FROM `repositories`[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-06-29 23:03:11) [GET]
+  Session ID: 9684be110c1b2f0555185c57015cc09c
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+  [4;35;1mSetting Columns (0.003110)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mSQL (0.031249)[0m   [0;1mSELECT max(updated_on) AS max_updated_on FROM `settings` [0m
+  [4;35;1mSQL (0.001009)[0m   [0mSHOW TABLES[0m
+  [4;36;1mUser Columns (0.013722)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.000863)[0m   [0mSHOW TABLES[0m
+  [4;36;1mProject Columns (0.025035)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mSQL (0.003444)[0m   [0mSHOW TABLES[0m
+  [4;36;1mIssue Columns (0.014936)[0m   [0;1mSHOW FIELDS FROM `issues`[0m
+  [4;35;1mSQL (0.001023)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000877)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000981)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAnonymousUser Columns (0.020214)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mAnonymousUser Load (0.008545)[0m   [0mSELECT * FROM `users` WHERE ( (`users`.`type` = 'AnonymousUser' ) ) LIMIT 1[0m
+  [4;36;1mSetting Load (0.008639)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'login_required') LIMIT 1[0m
+  [4;35;1mNews Columns (0.001956)[0m   [0mSHOW FIELDS FROM `news`[0m
+  [4;36;1mMember Columns (0.001367)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mSQL (0.009028)[0m   [0mSELECT count(DISTINCT `members`.id) AS count_all FROM `members` LEFT OUTER JOIN `projects` ON `projects`.id = `members`.project_id LEFT OUTER JOIN `roles` ON `roles`.id = `members`.role_id WHERE (members.user_id = 16 AND (projects.status=1)) [0m
+  [4;36;1mNews Load Including Associations (0.005311)[0m   [0;1mSELECT `news`.`id` AS t0_r0, `news`.`project_id` AS t0_r1, `news`.`title` AS t0_r2, `news`.`summary` AS t0_r3, `news`.`description` AS t0_r4, `news`.`author_id` AS t0_r5, `news`.`created_on` AS t0_r6, `news`.`comments_count` AS t0_r7, `users`.`id` AS t1_r0, `users`.`login` AS t1_r1, `users`.`hashed_password` AS t1_r2, `users`.`firstname` AS t1_r3, `users`.`lastname` AS t1_r4, `users`.`mail` AS t1_r5, `users`.`mail_notification` AS t1_r6, `users`.`admin` AS t1_r7, `users`.`status` AS t1_r8, `users`.`last_login_on` AS t1_r9, `users`.`language` AS t1_r10, `users`.`auth_source_id` AS t1_r11, `users`.`created_on` AS t1_r12, `users`.`updated_on` AS t1_r13, `users`.`type` AS t1_r14, `projects`.`id` AS t2_r0, `projects`.`name` AS t2_r1, `projects`.`description` AS t2_r2, `projects`.`homepage` AS t2_r3, `projects`.`is_public` AS t2_r4, `projects`.`parent_id` AS t2_r5, `projects`.`projects_count` AS t2_r6, `projects`.`created_on` AS t2_r7, `projects`.`updated_on` AS t2_r8, `projects`.`identifier` AS t2_r9, `projects`.`status` AS t2_r10, `projects`.`ui_theme` AS t2_r11 FROM `news` LEFT OUTER JOIN `users` ON `users`.id = `news`.author_id LEFT OUTER JOIN `projects` ON `projects`.id = `news`.project_id WHERE (projects.status=1 AND projects.is_public = 1) ORDER BY news.created_on DESC LIMIT 5[0m
+  [4;35;1mProject Load (0.001624)[0m   [0mSELECT * FROM `projects` WHERE (projects.status=1 AND projects.is_public = 1) ORDER BY created_on DESC LIMIT 5[0m
+Rendering template within layouts/base
+Rendering welcome/index
+  [4;36;1mSetting Load (0.003798)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'welcome_text') LIMIT 1[0m
+  [4;35;1mSetting Load (0.000680)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'app_title') LIMIT 1[0m
+  [4;36;1mSetting Load (0.000686)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'ui_theme') LIMIT 1[0m
+  [4;35;1mSetting Load (0.001407)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'self_registration') LIMIT 1[0m
+Completed in 3.81952 (0 reqs/sec) | Rendering: 0.18460 (4%) | DB: 0.16229 (4%) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.000798)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mRepository Columns (0.001513)[0m   [0mSHOW FIELDS FROM `repositories`[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2008-06-29 23:03:21) [GET]
+  Session ID: 9684be110c1b2f0555185c57015cc09c
+  Parameters: {"action"=>"login", "controller"=>"account"}
+  [4;36;1mSetting Columns (0.001236)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+  [4;35;1mSQL (0.001338)[0m   [0mSELECT max(updated_on) AS max_updated_on FROM `settings` [0m
+  [4;36;1mSQL (0.000901)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.002055)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.001026)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProject Columns (0.001871)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mSQL (0.001205)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mIssue Columns (0.002395)[0m   [0mSHOW FIELDS FROM `issues`[0m
+  [4;36;1mSQL (0.000927)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000910)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.004583)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mAnonymousUser Columns (0.008044)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mAnonymousUser Load (0.000251)[0m   [0;1mSELECT * FROM `users` WHERE ( (`users`.`type` = 'AnonymousUser' ) ) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `users` WHERE ( (`users`.`type` = 'AnonymousUser' ) ) LIMIT 1[0m
+Rendering template within layouts/base
+Rendering account/login
+  [4;36;1mSetting Load (0.004109)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'autologin') LIMIT 1[0m
+  [4;35;1mSetting Load (0.001537)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'lost_password') LIMIT 1[0m
+  [4;36;1mSetting Load (0.002648)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'app_title') LIMIT 1[0m
+  [4;35;1mSetting Load (0.001876)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'ui_theme') LIMIT 1[0m
+  [4;36;1mSetting Load (0.008086)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'self_registration') LIMIT 1[0m
+  [4;35;1mMember Columns (0.014181)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (0.000236)[0m   [0;1mSELECT count(DISTINCT `members`.id) AS count_all FROM `members` LEFT OUTER JOIN `projects` ON `projects`.id = `members`.project_id LEFT OUTER JOIN `roles` ON `roles`.id = `members`.role_id WHERE (members.user_id = 16 AND (projects.status=1)) [0m
+Completed in 1.85106 (0 reqs/sec) | Rendering: 0.31155 (16%) | DB: 0.06173 (3%) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.000846)[0m   [0mSHOW TABLES[0m
+  [4;36;1mRepository Columns (0.020265)[0m   [0;1mSHOW FIELDS FROM `repositories`[0m
+
+
+Processing AccountController#login (for 127.0.0.1 at 2008-06-29 23:03:35) [POST]
+  Session ID: 9684be110c1b2f0555185c57015cc09c
+  Parameters: {"action"=>"login", "username"=>"jim", "autologin"=>"1", "controller"=>"account", "password"=>"[FILTERED]", "login"=>"Login »"}
+  [4;35;1mSetting Columns (0.005803)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mSQL (0.005220)[0m   [0;1mSELECT max(updated_on) AS max_updated_on FROM `settings` [0m
+  [4;35;1mSQL (0.000907)[0m   [0mSHOW TABLES[0m
+  [4;36;1mUser Columns (0.003222)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.000860)[0m   [0mSHOW TABLES[0m
+  [4;36;1mProject Columns (0.001810)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mSQL (0.001723)[0m   [0mSHOW TABLES[0m
+  [4;36;1mIssue Columns (0.004175)[0m   [0;1mSHOW FIELDS FROM `issues`[0m
+  [4;35;1mSQL (0.015169)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000895)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.030006)[0m   [0mSHOW TABLES[0m
+  [4;36;1mAnonymousUser Columns (0.018369)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mAnonymousUser Load (0.000248)[0m   [0mSELECT * FROM `users` WHERE ( (`users`.`type` = 'AnonymousUser' ) ) LIMIT 1[0m
+  [4;36;1mUser Load (0.000684)[0m   [0;1mSELECT * FROM `users` WHERE (login='jim') LIMIT 1[0m
+  [4;35;1mSQL (0.000196)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.001330)[0m   [0;1mUPDATE `users` SET `login` = 'jim', `hashed_password` = '4c7f5cb33eb40f6465e05ced4c41735648da4576', `auth_source_id` = NULL, `lastname` = 'Mulholland', `status` = 1, `mail_notification` = 0, `type` = 'User', `admin` = 1, `last_login_on` = '2008-06-29 23:03:37', `updated_on` = '2008-06-29 23:03:37', `language` = 'en', `mail` = 'jim.mulholland@praexis.com', `firstname` = 'Jim', `created_on` = '2007-07-26 17:14:04' WHERE `id` = 2[0m
+  [4;35;1mCustomField Load (0.000996)[0m   [0mSELECT * FROM `custom_fields` WHERE (type = 'UserCustomField') ORDER BY position[0m
+  [4;36;1mSQL (0.012152)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSetting Load (0.000220)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'autologin') LIMIT 1[0m
+  [4;36;1mToken Columns (0.013223)[0m   [0;1mSHOW FIELDS FROM `tokens`[0m
+  [4;35;1mSQL (0.000231)[0m   [0mBEGIN[0m
+  [4;36;1mToken Create (0.000581)[0m   [0;1mINSERT INTO `tokens` (`created_on`, `action`, `value`, `user_id`) VALUES('2008-06-29 23:03:37', 'autologin', '8SRvDIIi6AF0Lcjr8Js8vYbbqjgnuwWUEY0NsseQ', 2)[0m
+  [4;35;1mSQL (0.000407)[0m   [0mCOMMIT[0m
+Cookie set: autologin=8SRvDIIi6AF0Lcjr8Js8vYbbqjgnuwWUEY0NsseQ; path=/; expires=Tue, 30 Jun 2009 04:03:37 GMT
+Redirected to http://localhost:3000/my/page
+Completed in 1.66559 (0 reqs/sec) | DB: 0.13954 (8%) | 302 Found [http://localhost/login]
+  [4;36;1mSQL (0.007844)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mRepository Columns (0.007221)[0m   [0mSHOW FIELDS FROM `repositories`[0m
+
+
+Processing MyController#page (for 127.0.0.1 at 2008-06-29 23:03:40) [GET]
+  Session ID: 9684be110c1b2f0555185c57015cc09c
+  Parameters: {"action"=>"page", "controller"=>"my"}
+  [4;36;1mSetting Columns (0.004556)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+  [4;35;1mSQL (0.000213)[0m   [0mSELECT max(updated_on) AS max_updated_on FROM `settings` [0m
+  [4;36;1mSQL (0.000912)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Columns (0.001678)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.000948)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mProject Columns (0.001638)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mSQL (0.002979)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mIssue Columns (0.007486)[0m   [0mSHOW FIELDS FROM `issues`[0m
+  [4;36;1mSQL (0.005772)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.006741)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.006227)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mUser Load (0.003212)[0m   [0mSELECT * FROM `users` WHERE (status = 1) AND (`users`.`id` = 2) [0m
+  [4;36;1mUserPreference Load (0.000776)[0m   [0;1mSELECT * FROM `user_preferences` WHERE (user_preferences.user_id = 2) LIMIT 1[0m
+  [4;35;1mUserPreference Columns (0.001246)[0m   [0mSHOW FIELDS FROM `user_preferences`[0m
+Rendering template within layouts/base
+Rendering my/page
+  [4;36;1mProject Load (0.000888)[0m   [0;1mSELECT projects.* FROM projects INNER JOIN members ON projects.id = members.project_id WHERE ((members.user_id = 2) AND ((projects.status=1))) [0m
+  [4;35;1mSQL (0.001001)[0m   [0mSHOW TABLES[0m
+  [4;36;1mEnumeration Columns (0.001404)[0m   [0;1mSHOW FIELDS FROM `enumerations`[0m
+  [4;35;1mDocument Columns (0.001467)[0m   [0mSHOW FIELDS FROM `documents`[0m
+  [4;36;1mSQL (0.001205)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mTracker Columns (0.007902)[0m   [0mSHOW FIELDS FROM `trackers`[0m
+  [4;36;1mIssue Load Including Associations (0.010326)[0m   [0;1mSELECT `issues`.`id` AS t0_r0, `issues`.`tracker_id` AS t0_r1, `issues`.`project_id` AS t0_r2, `issues`.`subject` AS t0_r3, `issues`.`description` AS t0_r4, `issues`.`due_date` AS t0_r5, `issues`.`category_id` AS t0_r6, `issues`.`status_id` AS t0_r7, `issues`.`assigned_to_id` AS t0_r8, `issues`.`priority_id` AS t0_r9, `issues`.`fixed_version_id` AS t0_r10, `issues`.`author_id` AS t0_r11, `issues`.`lock_version` AS t0_r12, `issues`.`created_on` AS t0_r13, `issues`.`updated_on` AS t0_r14, `issues`.`start_date` AS t0_r15, `issues`.`done_ratio` AS t0_r16, `issues`.`estimated_hours` AS t0_r17, `projects`.`id` AS t1_r0, `projects`.`name` AS t1_r1, `projects`.`description` AS t1_r2, `projects`.`homepage` AS t1_r3, `projects`.`is_public` AS t1_r4, `projects`.`parent_id` AS t1_r5, `projects`.`projects_count` AS t1_r6, `projects`.`created_on` AS t1_r7, `projects`.`updated_on` AS t1_r8, `projects`.`identifier` AS t1_r9, `projects`.`status` AS t1_r10, `projects`.`ui_theme` AS t1_r11, `trackers`.`id` AS t2_r0, `trackers`.`name` AS t2_r1, `trackers`.`is_in_chlog` AS t2_r2, `trackers`.`position` AS t2_r3, `trackers`.`is_in_roadmap` AS t2_r4, `enumerations`.`id` AS t3_r0, `enumerations`.`opt` AS t3_r1, `enumerations`.`name` AS t3_r2, `enumerations`.`position` AS t3_r3, `enumerations`.`is_default` AS t3_r4, `users`.`id` AS t4_r0, `users`.`login` AS t4_r1, `users`.`hashed_password` AS t4_r2, `users`.`firstname` AS t4_r3, `users`.`lastname` AS t4_r4, `users`.`mail` AS t4_r5, `users`.`mail_notification` AS t4_r6, `users`.`admin` AS t4_r7, `users`.`status` AS t4_r8, `users`.`last_login_on` AS t4_r9, `users`.`language` AS t4_r10, `users`.`auth_source_id` AS t4_r11, `users`.`created_on` AS t4_r12, `users`.`updated_on` AS t4_r13, `users`.`type` AS t4_r14 FROM `issues` LEFT OUTER JOIN `projects` ON `projects`.id = `issues`.project_id LEFT OUTER JOIN `trackers` ON `trackers`.id = `issues`.tracker_id LEFT OUTER JOIN `enumerations` ON `enumerations`.id = `issues`.priority_id LEFT OUTER JOIN `users` ON `users`.id = `issues`.assigned_to_id WHERE (issues.project_id in (3,1,5,10,11,12,14,16,17,19) AND ((start_date>='2008-06-29' and start_date<='2008-07-05') or (due_date>='2008-06-29' and due_date<='2008-07-05'))) [0m
+Rendered common/_calendar (0.06813)
+Rendered my/blocks/_calendar (0.36628)
+  [4;35;1mIssueStatus Columns (0.001596)[0m   [0mSHOW FIELDS FROM `issue_statuses`[0m
+  [4;36;1mIssue Load Including Associations (0.008509)[0m   [0;1mSELECT `issues`.`id` AS t0_r0, `issues`.`tracker_id` AS t0_r1, `issues`.`project_id` AS t0_r2, `issues`.`subject` AS t0_r3, `issues`.`description` AS t0_r4, `issues`.`due_date` AS t0_r5, `issues`.`category_id` AS t0_r6, `issues`.`status_id` AS t0_r7, `issues`.`assigned_to_id` AS t0_r8, `issues`.`priority_id` AS t0_r9, `issues`.`fixed_version_id` AS t0_r10, `issues`.`author_id` AS t0_r11, `issues`.`lock_version` AS t0_r12, `issues`.`created_on` AS t0_r13, `issues`.`updated_on` AS t0_r14, `issues`.`start_date` AS t0_r15, `issues`.`done_ratio` AS t0_r16, `issues`.`estimated_hours` AS t0_r17, `issue_statuses`.`id` AS t1_r0, `issue_statuses`.`name` AS t1_r1, `issue_statuses`.`is_closed` AS t1_r2, `issue_statuses`.`is_default` AS t1_r3, `issue_statuses`.`position` AS t1_r4, `projects`.`id` AS t2_r0, `projects`.`name` AS t2_r1, `projects`.`description` AS t2_r2, `projects`.`homepage` AS t2_r3, `projects`.`is_public` AS t2_r4, `projects`.`parent_id` AS t2_r5, `projects`.`projects_count` AS t2_r6, `projects`.`created_on` AS t2_r7, `projects`.`updated_on` AS t2_r8, `projects`.`identifier` AS t2_r9, `projects`.`status` AS t2_r10, `projects`.`ui_theme` AS t2_r11, `trackers`.`id` AS t3_r0, `trackers`.`name` AS t3_r1, `trackers`.`is_in_chlog` AS t3_r2, `trackers`.`position` AS t3_r3, `trackers`.`is_in_roadmap` AS t3_r4, `enumerations`.`id` AS t4_r0, `enumerations`.`opt` AS t4_r1, `enumerations`.`name` AS t4_r2, `enumerations`.`position` AS t4_r3, `enumerations`.`is_default` AS t4_r4 FROM `issues` LEFT OUTER JOIN `issue_statuses` ON `issue_statuses`.id = `issues`.status_id LEFT OUTER JOIN `projects` ON `projects`.id = `issues`.project_id LEFT OUTER JOIN `trackers` ON `trackers`.id = `issues`.tracker_id LEFT OUTER JOIN `enumerations` ON `enumerations`.id = `issues`.priority_id WHERE (assigned_to_id=2 AND issue_statuses.is_closed=0 AND projects.status=1) ORDER BY enumerations.position DESC, issues.updated_on DESC LIMIT 10[0m
+  [4;35;1mSetting Load (0.002323)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'date_format') LIMIT 1[0m
+  [4;36;1mSetting Load (0.002160)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'time_format') LIMIT 1[0m
+Rendered issues/_list_simple (1.16366)
+  [4;35;1mToken Load (0.001447)[0m   [0mSELECT * FROM `tokens` WHERE (tokens.user_id = 2 AND (action='feeds')) LIMIT 1[0m
+  [4;36;1mToken Columns (0.002970)[0m   [0;1mSHOW FIELDS FROM `tokens`[0m
+Rendered my/blocks/_issuesassignedtome (1.35689)
+  [4;35;1mTimeEntry Columns (0.006524)[0m   [0mSHOW FIELDS FROM `time_entries`[0m
+  [4;36;1mTimeEntry Load Including Associations (0.002116)[0m   [0;1mSELECT `time_entries`.`id` AS t0_r0, `time_entries`.`project_id` AS t0_r1, `time_entries`.`user_id` AS t0_r2, `time_entries`.`issue_id` AS t0_r3, `time_entries`.`hours` AS t0_r4, `time_entries`.`comments` AS t0_r5, `time_entries`.`activity_id` AS t0_r6, `time_entries`.`spent_on` AS t0_r7, `time_entries`.`tyear` AS t0_r8, `time_entries`.`tmonth` AS t0_r9, `time_entries`.`tweek` AS t0_r10, `time_entries`.`created_on` AS t0_r11, `time_entries`.`updated_on` AS t0_r12, `enumerations`.`id` AS t1_r0, `enumerations`.`opt` AS t1_r1, `enumerations`.`name` AS t1_r2, `enumerations`.`position` AS t1_r3, `enumerations`.`is_default` AS t1_r4, `projects`.`id` AS t2_r0, `projects`.`name` AS t2_r1, `projects`.`description` AS t2_r2, `projects`.`homepage` AS t2_r3, `projects`.`is_public` AS t2_r4, `projects`.`parent_id` AS t2_r5, `projects`.`projects_count` AS t2_r6, `projects`.`created_on` AS t2_r7, `projects`.`updated_on` AS t2_r8, `projects`.`identifier` AS t2_r9, `projects`.`status` AS t2_r10, `projects`.`ui_theme` AS t2_r11, `issues`.`id` AS t3_r0, `issues`.`tracker_id` AS t3_r1, `issues`.`project_id` AS t3_r2, `issues`.`subject` AS t3_r3, `issues`.`description` AS t3_r4, `issues`.`due_date` AS t3_r5, `issues`.`category_id` AS t3_r6, `issues`.`status_id` AS t3_r7, `issues`.`assigned_to_id` AS t3_r8, `issues`.`priority_id` AS t3_r9, `issues`.`fixed_version_id` AS t3_r10, `issues`.`author_id` AS t3_r11, `issues`.`lock_version` AS t3_r12, `issues`.`created_on` AS t3_r13, `issues`.`updated_on` AS t3_r14, `issues`.`start_date` AS t3_r15, `issues`.`done_ratio` AS t3_r16, `issues`.`estimated_hours` AS t3_r17, `trackers`.`id` AS t4_r0, `trackers`.`name` AS t4_r1, `trackers`.`is_in_chlog` AS t4_r2, `trackers`.`position` AS t4_r3, `trackers`.`is_in_roadmap` AS t4_r4, `issue_statuses`.`id` AS t5_r0, `issue_statuses`.`name` AS t5_r1, `issue_statuses`.`is_closed` AS t5_r2, `issue_statuses`.`is_default` AS t5_r3, `issue_statuses`.`position` AS t5_r4 FROM `time_entries` LEFT OUTER JOIN `enumerations` ON `enumerations`.id = `time_entries`.activity_id LEFT OUTER JOIN `projects` ON `projects`.id = `time_entries`.project_id LEFT OUTER JOIN `issues` ON `issues`.id = `time_entries`.issue_id LEFT OUTER JOIN `trackers` ON `trackers`.id = `issues`.tracker_id LEFT OUTER JOIN `issue_statuses` ON `issue_statuses`.id = `issues`.status_id WHERE (time_entries.user_id = 2 AND time_entries.spent_on BETWEEN '2008-06-23' AND '2008-06-29') ORDER BY time_entries.spent_on DESC, projects.name ASC, trackers.position ASC, issues.id ASC[0m
+Rendered my/blocks/_timelog (0.09202)
+  [4;35;1mIssue Load Including Associations (0.012493)[0m   [0mSELECT `issues`.`id` AS t0_r0, `issues`.`tracker_id` AS t0_r1, `issues`.`project_id` AS t0_r2, `issues`.`subject` AS t0_r3, `issues`.`description` AS t0_r4, `issues`.`due_date` AS t0_r5, `issues`.`category_id` AS t0_r6, `issues`.`status_id` AS t0_r7, `issues`.`assigned_to_id` AS t0_r8, `issues`.`priority_id` AS t0_r9, `issues`.`fixed_version_id` AS t0_r10, `issues`.`author_id` AS t0_r11, `issues`.`lock_version` AS t0_r12, `issues`.`created_on` AS t0_r13, `issues`.`updated_on` AS t0_r14, `issues`.`start_date` AS t0_r15, `issues`.`done_ratio` AS t0_r16, `issues`.`estimated_hours` AS t0_r17, `issue_statuses`.`id` AS t1_r0, `issue_statuses`.`name` AS t1_r1, `issue_statuses`.`is_closed` AS t1_r2, `issue_statuses`.`is_default` AS t1_r3, `issue_statuses`.`position` AS t1_r4, `projects`.`id` AS t2_r0, `projects`.`name` AS t2_r1, `projects`.`description` AS t2_r2, `projects`.`homepage` AS t2_r3, `projects`.`is_public` AS t2_r4, `projects`.`parent_id` AS t2_r5, `projects`.`projects_count` AS t2_r6, `projects`.`created_on` AS t2_r7, `projects`.`updated_on` AS t2_r8, `projects`.`identifier` AS t2_r9, `projects`.`status` AS t2_r10, `projects`.`ui_theme` AS t2_r11, `trackers`.`id` AS t3_r0, `trackers`.`name` AS t3_r1, `trackers`.`is_in_chlog` AS t3_r2, `trackers`.`position` AS t3_r3, `trackers`.`is_in_roadmap` AS t3_r4 FROM `issues` LEFT OUTER JOIN `issue_statuses` ON `issue_statuses`.id = `issues`.status_id LEFT OUTER JOIN `projects` ON `projects`.id = `issues`.project_id LEFT OUTER JOIN `trackers` ON `trackers`.id = `issues`.tracker_id WHERE (author_id=2 AND projects.status=1) ORDER BY issues.updated_on DESC LIMIT 10[0m
+  [4;36;1mEnumeration Load (0.009107)[0m   [0;1mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;36;1mEnumeration Load (0.022111)[0m   [0;1mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 5) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 5) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 4) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `enumerations` WHERE (`enumerations`.`id` = 5) [0m
+Rendered issues/_list_simple (0.15173)
+Rendered my/blocks/_issuesreportedbyme (0.24456)
+  [4;36;1mSetting Load (0.002100)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'ui_theme') LIMIT 1[0m
+  [4;35;1mSetting Load (0.012062)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'app_title') LIMIT 1[0m
+  [4;36;1mMember Columns (0.002065)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mSQL (0.002054)[0m   [0mSELECT count(DISTINCT `members`.id) AS count_all FROM `members` LEFT OUTER JOIN `projects` ON `projects`.id = `members`.project_id LEFT OUTER JOIN `roles` ON `roles`.id = `members`.role_id WHERE (members.user_id = 2 AND (projects.status=1)) [0m
+  [4;36;1mProject Load Including Associations (0.002243)[0m   [0;1mSELECT `projects`.`id` AS t0_r0, `projects`.`name` AS t0_r1, `projects`.`description` AS t0_r2, `projects`.`homepage` AS t0_r3, `projects`.`is_public` AS t0_r4, `projects`.`parent_id` AS t0_r5, `projects`.`projects_count` AS t0_r6, `projects`.`created_on` AS t0_r7, `projects`.`updated_on` AS t0_r8, `projects`.`identifier` AS t0_r9, `projects`.`status` AS t0_r10, `projects`.`ui_theme` AS t0_r11, `parents_projects`.`id` AS t1_r0, `parents_projects`.`name` AS t1_r1, `parents_projects`.`description` AS t1_r2, `parents_projects`.`homepage` AS t1_r3, `parents_projects`.`is_public` AS t1_r4, `parents_projects`.`parent_id` AS t1_r5, `parents_projects`.`projects_count` AS t1_r6, `parents_projects`.`created_on` AS t1_r7, `parents_projects`.`updated_on` AS t1_r8, `parents_projects`.`identifier` AS t1_r9, `parents_projects`.`status` AS t1_r10, `parents_projects`.`ui_theme` AS t1_r11 FROM projects LEFT OUTER JOIN `projects` parents_projects ON `parents_projects`.id = `projects`.parent_id INNER JOIN members ON projects.id = members.project_id WHERE ((members.user_id = 2) AND ((projects.status=1))) [0m
+Rendered layouts/_project_selector (0.06574)
+Completed in 3.60938 (0 reqs/sec) | Rendering: 2.18532 (60%) | DB: 0.17552 (4%) | 200 OK [http://localhost/my/page]
+  [4;35;1mSQL (0.001397)[0m   [0mSHOW TABLES[0m
+  [4;36;1mRepository Columns (0.005195)[0m   [0;1mSHOW FIELDS FROM `repositories`[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2008-06-29 23:04:03) [GET]
+  Session ID: 9684be110c1b2f0555185c57015cc09c
+  Parameters: {"action"=>"show", "id"=>"cbr", "controller"=>"projects"}
+  [4;35;1mSetting Columns (0.001238)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mSQL (0.013236)[0m   [0;1mSELECT max(updated_on) AS max_updated_on FROM `settings` [0m
+  [4;35;1mSQL (0.001066)[0m   [0mSHOW TABLES[0m
+  [4;36;1mUser Columns (0.001674)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.034164)[0m   [0mSHOW TABLES[0m
+  [4;36;1mProject Columns (0.002458)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mSQL (0.005738)[0m   [0mSHOW TABLES[0m
+  [4;36;1mIssue Columns (0.001862)[0m   [0;1mSHOW FIELDS FROM `issues`[0m
+  [4;35;1mSQL (0.000957)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.015572)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.006025)[0m   [0mSHOW TABLES[0m
+  [4;36;1mUser Load (0.003301)[0m   [0;1mSELECT * FROM `users` WHERE (status = 1) AND (`users`.`id` = 2) [0m
+  [4;35;1mProject Load (0.002461)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`identifier` = 'cbr') LIMIT 1[0m
+  [4;36;1mEnabledModule Load (0.002359)[0m   [0;1mSELECT * FROM `enabled_modules` WHERE (enabled_modules.project_id = 16) [0m
+  [4;35;1mEnabledModule Columns (0.005272)[0m   [0mSHOW FIELDS FROM `enabled_modules`[0m
+  [4;36;1mMember Columns (0.008235)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mRole Columns (0.006414)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mMember Load Including Associations (0.003639)[0m   [0;1mSELECT `members`.`id` AS t0_r0, `members`.`user_id` AS t0_r1, `members`.`project_id` AS t0_r2, `members`.`role_id` AS t0_r3, `members`.`created_on` AS t0_r4, `members`.`mail_notification` AS t0_r5, `users`.`id` AS t1_r0, `users`.`login` AS t1_r1, `users`.`hashed_password` AS t1_r2, `users`.`firstname` AS t1_r3, `users`.`lastname` AS t1_r4, `users`.`mail` AS t1_r5, `users`.`mail_notification` AS t1_r6, `users`.`admin` AS t1_r7, `users`.`status` AS t1_r8, `users`.`last_login_on` AS t1_r9, `users`.`language` AS t1_r10, `users`.`auth_source_id` AS t1_r11, `users`.`created_on` AS t1_r12, `users`.`updated_on` AS t1_r13, `users`.`type` AS t1_r14, `roles`.`id` AS t2_r0, `roles`.`name` AS t2_r1, `roles`.`position` AS t2_r2, `roles`.`assignable` AS t2_r3, `roles`.`builtin` AS t2_r4, `roles`.`permissions` AS t2_r5 FROM `members` LEFT OUTER JOIN `users` ON `users`.id = `members`.user_id LEFT OUTER JOIN `roles` ON `roles`.id = `members`.role_id WHERE (members.project_id = 16 AND (users.status=1)) ORDER BY position[0m
+  [4;35;1mProject Load (0.007222)[0m   [0mSELECT * FROM `projects` WHERE (projects.parent_id = 16 AND (projects.status=1)) ORDER BY name[0m
+  [4;36;1mNews Columns (0.001481)[0m   [0;1mSHOW FIELDS FROM `news`[0m
+  [4;35;1mNews Load Including Associations (0.009821)[0m   [0mSELECT `news`.`id` AS t0_r0, `news`.`project_id` AS t0_r1, `news`.`title` AS t0_r2, `news`.`summary` AS t0_r3, `news`.`description` AS t0_r4, `news`.`author_id` AS t0_r5, `news`.`created_on` AS t0_r6, `news`.`comments_count` AS t0_r7, `users`.`id` AS t1_r0, `users`.`login` AS t1_r1, `users`.`hashed_password` AS t1_r2, `users`.`firstname` AS t1_r3, `users`.`lastname` AS t1_r4, `users`.`mail` AS t1_r5, `users`.`mail_notification` AS t1_r6, `users`.`admin` AS t1_r7, `users`.`status` AS t1_r8, `users`.`last_login_on` AS t1_r9, `users`.`language` AS t1_r10, `users`.`auth_source_id` AS t1_r11, `users`.`created_on` AS t1_r12, `users`.`updated_on` AS t1_r13, `users`.`type` AS t1_r14, `projects`.`id` AS t2_r0, `projects`.`name` AS t2_r1, `projects`.`description` AS t2_r2, `projects`.`homepage` AS t2_r3, `projects`.`is_public` AS t2_r4, `projects`.`parent_id` AS t2_r5, `projects`.`projects_count` AS t2_r6, `projects`.`created_on` AS t2_r7, `projects`.`updated_on` AS t2_r8, `projects`.`identifier` AS t2_r9, `projects`.`status` AS t2_r10, `projects`.`ui_theme` AS t2_r11 FROM `news` LEFT OUTER JOIN `users` ON `users`.id = `news`.author_id LEFT OUTER JOIN `projects` ON `projects`.id = `news`.project_id WHERE (news.project_id = 16) ORDER BY news.created_on DESC LIMIT 5[0m
+  [4;36;1mTracker Columns (0.003219)[0m   [0;1mSHOW FIELDS FROM `trackers`[0m
+  [4;35;1mTracker Load Including Associations (0.005512)[0m   [0mSELECT `trackers`.`id` AS t0_r0, `trackers`.`name` AS t0_r1, `trackers`.`is_in_chlog` AS t0_r2, `trackers`.`position` AS t0_r3, `trackers`.`is_in_roadmap` AS t0_r4, `projects`.`id` AS t1_r0, `projects`.`name` AS t1_r1, `projects`.`description` AS t1_r2, `projects`.`homepage` AS t1_r3, `projects`.`is_public` AS t1_r4, `projects`.`parent_id` AS t1_r5, `projects`.`projects_count` AS t1_r6, `projects`.`created_on` AS t1_r7, `projects`.`updated_on` AS t1_r8, `projects`.`identifier` AS t1_r9, `projects`.`status` AS t1_r10, `projects`.`ui_theme` AS t1_r11 FROM `trackers` LEFT OUTER JOIN `projects_trackers` ON `projects_trackers`.tracker_id = `trackers`.id LEFT OUTER JOIN `projects` ON `projects`.id = `projects_trackers`.project_id WHERE (projects.id = 16 OR projects.parent_id = 16) ORDER BY trackers.position[0m
+  [4;36;1mSetting Load (0.011781)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'display_subprojects_issues') LIMIT 1[0m
+  [4;35;1mSQL (0.007941)[0m   [0mSELECT count(DISTINCT `issues`.id) AS count_all, tracker_id AS tracker_id FROM `issues` LEFT OUTER JOIN `projects` ON `projects`.id = `issues`.project_id LEFT OUTER JOIN `issue_statuses` ON `issue_statuses`.id = `issues`.status_id LEFT OUTER JOIN `trackers` ON `trackers`.id = `issues`.tracker_id WHERE (projects.status=1) AND (((projects.id = 16 OR projects.parent_id = 16)) AND issue_statuses.is_closed=0) GROUP BY tracker_id [0m
+  [4;36;1mTracker Load (0.000670)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` IN (1,2,3,4)) [0m
+  [4;35;1mSQL (0.002235)[0m   [0mSELECT count(DISTINCT `issues`.id) AS count_all, tracker_id AS tracker_id FROM `issues` LEFT OUTER JOIN `projects` ON `projects`.id = `issues`.project_id LEFT OUTER JOIN `issue_statuses` ON `issue_statuses`.id = `issues`.status_id LEFT OUTER JOIN `trackers` ON `trackers`.id = `issues`.tracker_id WHERE (projects.status=1) AND ((projects.id = 16 OR projects.parent_id = 16)) GROUP BY tracker_id [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` IN (1,2,3,4)) [0m
+  [4;35;1mTimeEntry Columns (0.005409)[0m   [0mSHOW FIELDS FROM `time_entries`[0m
+  [4;36;1mSQL (0.013389)[0m   [0;1mSELECT sum(hours) AS sum_hours FROM `time_entries` LEFT OUTER JOIN `projects` ON `projects`.id = `time_entries`.project_id WHERE (projects.status=1) AND ((projects.id = 16 OR projects.parent_id = 16)) [0m
+  [4;35;1mToken Load (0.011967)[0m   [0mSELECT * FROM `tokens` WHERE (tokens.user_id = 2 AND (action='feeds')) LIMIT 1[0m
+  [4;36;1mToken Columns (0.001448)[0m   [0;1mSHOW FIELDS FROM `tokens`[0m
+Rendering template within layouts/base
+Rendering projects/show
+  [4;35;1mSetting Load (0.013438)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'text_formatting') LIMIT 1[0m
+  [4;36;1mCustomValue Load (0.001558)[0m   [0;1mSELECT * FROM `custom_values` WHERE (custom_values.customized_id = 16 AND custom_values.customized_type = 'Project') [0m
+  [4;35;1mCustomValue Columns (0.002563)[0m   [0mSHOW FIELDS FROM `custom_values`[0m
+  [4;36;1mCustomField Columns (0.002736)[0m   [0;1mSHOW FIELDS FROM `custom_fields`[0m
+  [4;35;1mCustomField Load (0.008326)[0m   [0mSELECT * FROM `custom_fields` WHERE (`custom_fields`.`id` = 3) [0m
+  [4;36;1mCustomField Load (0.003640)[0m   [0;1mSELECT * FROM `custom_fields` WHERE (`custom_fields`.`id` = 4) [0m
+  [4;35;1mProjectCustomField Columns (0.001946)[0m   [0mSHOW FIELDS FROM `custom_fields`[0m
+  [4;36;1mSetting Load (0.000754)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'user_format') LIMIT 1[0m
+  [4;35;1mSetting Load (0.000208)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'app_title') LIMIT 1[0m
+  [4;36;1mSetting Load (0.000238)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'ui_theme') LIMIT 1[0m
+  [4;35;1mSQL (0.000231)[0m   [0mSELECT count(DISTINCT `members`.id) AS count_all FROM `members` LEFT OUTER JOIN `projects` ON `projects`.id = `members`.project_id LEFT OUTER JOIN `roles` ON `roles`.id = `members`.role_id WHERE (members.user_id = 2 AND (projects.status=1)) [0m
+  [4;36;1mProject Load Including Associations (0.006932)[0m   [0;1mSELECT `projects`.`id` AS t0_r0, `projects`.`name` AS t0_r1, `projects`.`description` AS t0_r2, `projects`.`homepage` AS t0_r3, `projects`.`is_public` AS t0_r4, `projects`.`parent_id` AS t0_r5, `projects`.`projects_count` AS t0_r6, `projects`.`created_on` AS t0_r7, `projects`.`updated_on` AS t0_r8, `projects`.`identifier` AS t0_r9, `projects`.`status` AS t0_r10, `projects`.`ui_theme` AS t0_r11, `parents_projects`.`id` AS t1_r0, `parents_projects`.`name` AS t1_r1, `parents_projects`.`description` AS t1_r2, `parents_projects`.`homepage` AS t1_r3, `parents_projects`.`is_public` AS t1_r4, `parents_projects`.`parent_id` AS t1_r5, `parents_projects`.`projects_count` AS t1_r6, `parents_projects`.`created_on` AS t1_r7, `parents_projects`.`updated_on` AS t1_r8, `parents_projects`.`identifier` AS t1_r9, `parents_projects`.`status` AS t1_r10, `parents_projects`.`ui_theme` AS t1_r11 FROM projects LEFT OUTER JOIN `projects` parents_projects ON `parents_projects`.id = `projects`.parent_id INNER JOIN members ON projects.id = members.project_id WHERE ((members.user_id = 2) AND ((projects.status=1))) [0m
+Rendered layouts/_project_selector (0.07093)
+  [4;35;1mVersion Columns (0.006843)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mSQL (0.003690)[0m   [0;1mSELECT count(*) AS count_all FROM `versions` WHERE (versions.project_id = 16) [0m
+  [4;35;1mWiki Load (0.001048)[0m   [0mSELECT * FROM `wikis` WHERE (wikis.project_id = 16) LIMIT 1[0m
+  [4;36;1mBoard Columns (0.001602)[0m   [0;1mSHOW FIELDS FROM `boards`[0m
+  [4;35;1mSQL (0.000773)[0m   [0mSELECT count(*) AS count_all FROM `boards` WHERE (boards.project_id = 16) [0m
+  [4;36;1mRepository Load (0.005871)[0m   [0;1mSELECT * FROM `repositories` WHERE (repositories.project_id = 16) LIMIT 1[0m
+Completed in 5.06200 (0 reqs/sec) | Rendering: 1.70001 (33%) | DB: 0.26675 (5%) | 200 OK [http://localhost/projects/show/cbr]
+  [4;35;1mSQL (0.001087)[0m   [0mSHOW TABLES[0m
+  [4;36;1mRepository Columns (0.001462)[0m   [0;1mSHOW FIELDS FROM `repositories`[0m
+
+
+Processing ProjectsController#activity (for 127.0.0.1 at 2008-06-29 23:04:14) [GET]
+  Session ID: 9684be110c1b2f0555185c57015cc09c
+  Parameters: {"action"=>"activity", "id"=>"cbr", "controller"=>"projects"}
+  [4;35;1mSetting Columns (0.001793)[0m   [0mSHOW FIELDS FROM `settings`[0m
+  [4;36;1mSQL (0.000292)[0m   [0;1mSELECT max(updated_on) AS max_updated_on FROM `settings` [0m
+  [4;35;1mSQL (0.006568)[0m   [0mSHOW TABLES[0m
+  [4;36;1mUser Columns (0.001696)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.001696)[0m   [0mSHOW TABLES[0m
+  [4;36;1mProject Columns (0.011698)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mSQL (0.000886)[0m   [0mSHOW TABLES[0m
+  [4;36;1mIssue Columns (0.008523)[0m   [0;1mSHOW FIELDS FROM `issues`[0m
+  [4;35;1mSQL (0.000933)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.001001)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.002293)[0m   [0mSHOW TABLES[0m
+  [4;36;1mUser Load (0.001617)[0m   [0;1mSELECT * FROM `users` WHERE (status = 1) AND (`users`.`id` = 2) [0m
+  [4;35;1mProject Load (0.000185)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`identifier` = 'cbr') LIMIT 1[0m
+  [4;36;1mEnabledModule Load (0.000128)[0m   [0;1mSELECT * FROM `enabled_modules` WHERE (enabled_modules.project_id = 16) [0m
+  [4;35;1mEnabledModule Columns (0.001194)[0m   [0mSHOW FIELDS FROM `enabled_modules`[0m
+  [4;36;1mSetting Load (0.001094)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'activity_days_default') LIMIT 1[0m
+  [4;35;1mWiki Load (0.000230)[0m   [0mSELECT * FROM `wikis` WHERE (wikis.project_id = 16) LIMIT 1[0m
+  [4;36;1mRepository Load (0.000223)[0m   [0;1mSELECT * FROM `repositories` WHERE (repositories.project_id = 16) LIMIT 1[0m
+  [4;35;1mBoard Columns (0.001425)[0m   [0mSHOW FIELDS FROM `boards`[0m
+  [4;36;1mSQL (0.000214)[0m   [0;1mSELECT count(*) AS count_all FROM `boards` WHERE (boards.project_id = 16) [0m
+  [4;35;1mSetting Load (0.000219)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'display_subprojects_issues') LIMIT 1[0m
+  [4;36;1mTracker Columns (0.001904)[0m   [0;1mSHOW FIELDS FROM `trackers`[0m
+  [4;35;1mIssue Load Including Associations (0.003964)[0m   [0mSELECT `issues`.`id` AS t0_r0, `issues`.`tracker_id` AS t0_r1, `issues`.`project_id` AS t0_r2, `issues`.`subject` AS t0_r3, `issues`.`description` AS t0_r4, `issues`.`due_date` AS t0_r5, `issues`.`category_id` AS t0_r6, `issues`.`status_id` AS t0_r7, `issues`.`assigned_to_id` AS t0_r8, `issues`.`priority_id` AS t0_r9, `issues`.`fixed_version_id` AS t0_r10, `issues`.`author_id` AS t0_r11, `issues`.`lock_version` AS t0_r12, `issues`.`created_on` AS t0_r13, `issues`.`updated_on` AS t0_r14, `issues`.`start_date` AS t0_r15, `issues`.`done_ratio` AS t0_r16, `issues`.`estimated_hours` AS t0_r17, `projects`.`id` AS t1_r0, `projects`.`name` AS t1_r1, `projects`.`description` AS t1_r2, `projects`.`homepage` AS t1_r3, `projects`.`is_public` AS t1_r4, `projects`.`parent_id` AS t1_r5, `projects`.`projects_count` AS t1_r6, `projects`.`created_on` AS t1_r7, `projects`.`updated_on` AS t1_r8, `projects`.`identifier` AS t1_r9, `projects`.`status` AS t1_r10, `projects`.`ui_theme` AS t1_r11, `users`.`id` AS t2_r0, `users`.`login` AS t2_r1, `users`.`hashed_password` AS t2_r2, `users`.`firstname` AS t2_r3, `users`.`lastname` AS t2_r4, `users`.`mail` AS t2_r5, `users`.`mail_notification` AS t2_r6, `users`.`admin` AS t2_r7, `users`.`status` AS t2_r8, `users`.`last_login_on` AS t2_r9, `users`.`language` AS t2_r10, `users`.`auth_source_id` AS t2_r11, `users`.`created_on` AS t2_r12, `users`.`updated_on` AS t2_r13, `users`.`type` AS t2_r14, `trackers`.`id` AS t3_r0, `trackers`.`name` AS t3_r1, `trackers`.`is_in_chlog` AS t3_r2, `trackers`.`position` AS t3_r3, `trackers`.`is_in_roadmap` AS t3_r4 FROM `issues` LEFT OUTER JOIN `projects` ON `projects`.id = `issues`.project_id LEFT OUTER JOIN `users` ON `users`.id = `issues`.author_id LEFT OUTER JOIN `trackers` ON `trackers`.id = `issues`.tracker_id WHERE (1=1 AND ((projects.id = 16 OR projects.parent_id = 16) AND (projects.status=1)) AND (issues.created_on BETWEEN '2008-05-31' AND '2008-06-30')) [0m
+  [4;36;1mJournal Columns (0.001495)[0m   [0;1mSHOW FIELDS FROM `journals`[0m
+  [4;35;1mJournalDetail Columns (0.001412)[0m   [0mSHOW FIELDS FROM `journal_details`[0m
+  [4;36;1mJournal Load Including Associations (0.035045)[0m   [0;1mSELECT `journals`.`id` AS t0_r0, `journals`.`journalized_id` AS t0_r1, `journals`.`journalized_type` AS t0_r2, `journals`.`user_id` AS t0_r3, `journals`.`notes` AS t0_r4, `journals`.`created_on` AS t0_r5, `issues`.`id` AS t1_r0, `issues`.`tracker_id` AS t1_r1, `issues`.`project_id` AS t1_r2, `issues`.`subject` AS t1_r3, `issues`.`description` AS t1_r4, `issues`.`due_date` AS t1_r5, `issues`.`category_id` AS t1_r6, `issues`.`status_id` AS t1_r7, `issues`.`assigned_to_id` AS t1_r8, `issues`.`priority_id` AS t1_r9, `issues`.`fixed_version_id` AS t1_r10, `issues`.`author_id` AS t1_r11, `issues`.`lock_version` AS t1_r12, `issues`.`created_on` AS t1_r13, `issues`.`updated_on` AS t1_r14, `issues`.`start_date` AS t1_r15, `issues`.`done_ratio` AS t1_r16, `issues`.`estimated_hours` AS t1_r17, `projects`.`id` AS t2_r0, `projects`.`name` AS t2_r1, `projects`.`description` AS t2_r2, `projects`.`homepage` AS t2_r3, `projects`.`is_public` AS t2_r4, `projects`.`parent_id` AS t2_r5, `projects`.`projects_count` AS t2_r6, `projects`.`created_on` AS t2_r7, `projects`.`updated_on` AS t2_r8, `projects`.`identifier` AS t2_r9, `projects`.`status` AS t2_r10, `projects`.`ui_theme` AS t2_r11, `journal_details`.`id` AS t3_r0, `journal_details`.`journal_id` AS t3_r1, `journal_details`.`property` AS t3_r2, `journal_details`.`prop_key` AS t3_r3, `journal_details`.`old_value` AS t3_r4, `journal_details`.`value` AS t3_r5, `users`.`id` AS t4_r0, `users`.`login` AS t4_r1, `users`.`hashed_password` AS t4_r2, `users`.`firstname` AS t4_r3, `users`.`lastname` AS t4_r4, `users`.`mail` AS t4_r5, `users`.`mail_notification` AS t4_r6, `users`.`admin` AS t4_r7, `users`.`status` AS t4_r8, `users`.`last_login_on` AS t4_r9, `users`.`language` AS t4_r10, `users`.`auth_source_id` AS t4_r11, `users`.`created_on` AS t4_r12, `users`.`updated_on` AS t4_r13, `users`.`type` AS t4_r14 FROM `journals` LEFT OUTER JOIN `issues` ON `issues`.id = `journals`.journalized_id LEFT OUTER JOIN `projects` ON `projects`.id = `issues`.project_id LEFT OUTER JOIN `journal_details` ON journal_details.journal_id = journals.id LEFT OUTER JOIN `users` ON `users`.id = `journals`.user_id WHERE (1=1 AND ((projects.id = 16 OR projects.parent_id = 16) AND (projects.status=1)) AND (journals.journalized_type = 'Issue' AND journals.created_on BETWEEN '2008-05-31' AND '2008-06-30') AND (journal_details.prop_key = 'status_id' OR journals.notes <> '')) [0m
+  [4;35;1mNews Columns (0.001436)[0m   [0mSHOW FIELDS FROM `news`[0m
+  [4;36;1mNews Load Including Associations (0.015004)[0m   [0;1mSELECT `news`.`id` AS t0_r0, `news`.`project_id` AS t0_r1, `news`.`title` AS t0_r2, `news`.`summary` AS t0_r3, `news`.`description` AS t0_r4, `news`.`author_id` AS t0_r5, `news`.`created_on` AS t0_r6, `news`.`comments_count` AS t0_r7, `projects`.`id` AS t1_r0, `projects`.`name` AS t1_r1, `projects`.`description` AS t1_r2, `projects`.`homepage` AS t1_r3, `projects`.`is_public` AS t1_r4, `projects`.`parent_id` AS t1_r5, `projects`.`projects_count` AS t1_r6, `projects`.`created_on` AS t1_r7, `projects`.`updated_on` AS t1_r8, `projects`.`identifier` AS t1_r9, `projects`.`status` AS t1_r10, `projects`.`ui_theme` AS t1_r11, `users`.`id` AS t2_r0, `users`.`login` AS t2_r1, `users`.`hashed_password` AS t2_r2, `users`.`firstname` AS t2_r3, `users`.`lastname` AS t2_r4, `users`.`mail` AS t2_r5, `users`.`mail_notification` AS t2_r6, `users`.`admin` AS t2_r7, `users`.`status` AS t2_r8, `users`.`last_login_on` AS t2_r9, `users`.`language` AS t2_r10, `users`.`auth_source_id` AS t2_r11, `users`.`created_on` AS t2_r12, `users`.`updated_on` AS t2_r13, `users`.`type` AS t2_r14 FROM `news` LEFT OUTER JOIN `projects` ON `projects`.id = `news`.project_id LEFT OUTER JOIN `users` ON `users`.id = `news`.author_id WHERE (1=1 AND ((projects.id = 16 OR projects.parent_id = 16) AND (projects.status=1)) AND (news.created_on BETWEEN '2008-05-31' AND '2008-06-30')) [0m
+  [4;35;1mAttachment Load (0.001574)[0m   [0mSELECT attachments.* FROM `attachments` LEFT JOIN versions ON attachments.container_type='Version' AND versions.id = attachments.container_id LEFT JOIN projects ON versions.project_id = projects.id WHERE (1=1 AND ((projects.id = 16 OR projects.parent_id = 16) AND (projects.status=1)) AND (attachments.created_on BETWEEN '2008-05-31' AND '2008-06-30')) [0m
+  [4;36;1mDocument Columns (0.001288)[0m   [0;1mSHOW FIELDS FROM `documents`[0m
+  [4;35;1mDocument Load Including Associations (0.001049)[0m   [0mSELECT `documents`.`id` AS t0_r0, `documents`.`project_id` AS t0_r1, `documents`.`category_id` AS t0_r2, `documents`.`title` AS t0_r3, `documents`.`description` AS t0_r4, `documents`.`created_on` AS t0_r5, `projects`.`id` AS t1_r0, `projects`.`name` AS t1_r1, `projects`.`description` AS t1_r2, `projects`.`homepage` AS t1_r3, `projects`.`is_public` AS t1_r4, `projects`.`parent_id` AS t1_r5, `projects`.`projects_count` AS t1_r6, `projects`.`created_on` AS t1_r7, `projects`.`updated_on` AS t1_r8, `projects`.`identifier` AS t1_r9, `projects`.`status` AS t1_r10, `projects`.`ui_theme` AS t1_r11 FROM `documents` LEFT OUTER JOIN `projects` ON `projects`.id = `documents`.project_id WHERE (1=1 AND ((projects.id = 16 OR projects.parent_id = 16) AND (projects.status=1)) AND (documents.created_on BETWEEN '2008-05-31' AND '2008-06-30')) [0m
+  [4;36;1mAttachment Load (0.004250)[0m   [0;1mSELECT attachments.* FROM `attachments` LEFT JOIN documents ON attachments.container_type='Document' AND documents.id = attachments.container_id LEFT JOIN projects ON documents.project_id = projects.id WHERE (1=1 AND ((projects.id = 16 OR projects.parent_id = 16) AND (projects.status=1)) AND (attachments.created_on BETWEEN '2008-05-31' AND '2008-06-30')) [0m
+  [4;35;1mChangeset Columns (0.002320)[0m   [0mSHOW FIELDS FROM `changesets`[0m
+  [4;36;1mChangeset Load Including Associations (0.014430)[0m   [0;1mSELECT `changesets`.`id` AS t0_r0, `changesets`.`repository_id` AS t0_r1, `changesets`.`revision` AS t0_r2, `changesets`.`committer` AS t0_r3, `changesets`.`committed_on` AS t0_r4, `changesets`.`comments` AS t0_r5, `changesets`.`commit_date` AS t0_r6, `changesets`.`scmid` AS t0_r7, `repositories`.`id` AS t1_r0, `repositories`.`project_id` AS t1_r1, `repositories`.`url` AS t1_r2, `repositories`.`login` AS t1_r3, `repositories`.`password` AS t1_r4, `repositories`.`root_url` AS t1_r5, `repositories`.`type` AS t1_r6, `projects`.`id` AS t2_r0, `projects`.`name` AS t2_r1, `projects`.`description` AS t2_r2, `projects`.`homepage` AS t2_r3, `projects`.`is_public` AS t2_r4, `projects`.`parent_id` AS t2_r5, `projects`.`projects_count` AS t2_r6, `projects`.`created_on` AS t2_r7, `projects`.`updated_on` AS t2_r8, `projects`.`identifier` AS t2_r9, `projects`.`status` AS t2_r10, `projects`.`ui_theme` AS t2_r11 FROM `changesets` LEFT OUTER JOIN `repositories` ON `repositories`.id = `changesets`.repository_id LEFT OUTER JOIN `projects` ON `projects`.id = `repositories`.project_id WHERE (1=1 AND ((projects.id = 16 OR projects.parent_id = 16) AND (projects.status=1)) AND (changesets.committed_on BETWEEN '2008-05-31' AND '2008-06-30')) [0m
+  [4;35;1mRepository::Git Columns (0.001310)[0m   [0mSHOW FIELDS FROM `repositories`[0m
+  [4;36;1mAttachment Columns (0.001547)[0m   [0;1mSHOW FIELDS FROM `attachments`[0m
+Rendering template within layouts/base
+Rendering projects/activity
+  [4;35;1mSetting Load (0.004146)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'date_format') LIMIT 1[0m
+  [4;36;1mUserPreference Load (0.007885)[0m   [0;1mSELECT * FROM `user_preferences` WHERE (user_preferences.user_id = 2) LIMIT 1[0m
+  [4;35;1mUserPreference Columns (0.008288)[0m   [0mSHOW FIELDS FROM `user_preferences`[0m
+  [4;36;1mSetting Load (0.008175)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'time_format') LIMIT 1[0m
+  [4;35;1mIssue Load (0.003529)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 988) [0m
+  [4;36;1mProject Load (0.000695)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mTracker Load (0.002095)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;36;1mSetting Load (0.003575)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'user_format') LIMIT 1[0m
+  [4;35;1mIssue Load (0.000625)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 963) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;36;1mSQL (0.002249)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mIssueStatus Columns (0.008733)[0m   [0mSHOW FIELDS FROM `issue_statuses`[0m
+  [4;36;1mIssueStatus Load (0.003228)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;35;1mIssue Load (0.003347)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 991) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;36;1mTracker Load (0.000614)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;35;1mIssue Load (0.001428)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 975) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;35;1mIssue Load (0.006699)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 987) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;35;1mIssueStatus Load (0.001337)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mIssue Load (0.017143)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 960) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mIssue Load (0.000680)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 961) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mIssue Load (0.000725)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 986) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mTracker Load (0.000633)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 4) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 991) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mIssueStatus Load (0.004151)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 987) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mIssue Load (0.002551)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 989) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;35;1mIssue Load (0.006625)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 990) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 991) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 988) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 988) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 989) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 991) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;35;1mIssue Load (0.004644)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 992) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 986) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;35;1mIssue Load (0.000704)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 951) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;36;1mIssueStatus Load (0.000846)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 987) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 2) LIMIT 1[0m
+  [4;35;1mIssue Load (0.008930)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 893) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 4) [0m
+  [4;35;1mIssueStatus Load (0.002075)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 10) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 988) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 10) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 961) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 989) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.001983)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 17) [0m
+  [4;36;1mDocument Load (0.002798)[0m   [0;1mSELECT * FROM `documents` WHERE (`documents`.`id` = 58) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mAttachment Load (0.001497)[0m   [0;1mSELECT * FROM `attachments` WHERE (attachments.container_id = 58 AND attachments.container_type = 'Document') ORDER BY attachments.created_on ASC LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 17) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `attachments` WHERE (attachments.container_id = 58 AND attachments.container_type = 'Document') ORDER BY attachments.created_on ASC LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 17) [0m
+  [4;36;1mAttachment Load (0.001358)[0m   [0;1mSELECT * FROM `attachments` WHERE (attachments.container_id = 57 AND attachments.container_type = 'Document') ORDER BY attachments.created_on ASC LIMIT 1[0m
+  [4;35;1mUser Load (0.000661)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 18) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `attachments` WHERE (attachments.container_id = 57 AND attachments.container_type = 'Document') ORDER BY attachments.created_on ASC LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 18) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 18) [0m
+  [4;35;1mDocument Load (0.003862)[0m   [0mSELECT * FROM `documents` WHERE (`documents`.`id` = 57) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mIssueStatus Load (0.000698)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mIssue Load (0.000661)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 983) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mIssue Load (0.005834)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 982) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mIssue Load (0.008295)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 738) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;36;1mIssueStatus Load (0.000627)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 738) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 982) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 983) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 983) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 982) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mIssue Load (0.000685)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 943) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 738) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mIssue Load (0.001105)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 981) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mIssue Load (0.022910)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 979) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mIssue Load (0.001424)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 978) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mIssue Load (0.001539)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 976) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mIssue Load (0.000701)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 977) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mIssue Load (0.000682)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 952) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mIssue Load (0.023971)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 950) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 981) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 981) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 950) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 952) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 976) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 979) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 977) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 982) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 983) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 979) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 976) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 979) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 976) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 10) LIMIT 1[0m
+  [4;35;1mIssue Load (0.001163)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 980) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 10) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 976) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 981) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 979) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 977) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 952) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 981) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 977) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 976) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 952) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;36;1mIssue Load (0.001909)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 945) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 943) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 738) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 978) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mIssue Load (0.007545)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 964) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 17) [0m
+  [4;36;1mDocument Load (0.017561)[0m   [0;1mSELECT * FROM `documents` WHERE (`documents`.`id` = 56) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mAttachment Load (0.002930)[0m   [0;1mSELECT * FROM `attachments` WHERE (attachments.container_id = 56 AND attachments.container_type = 'Document') ORDER BY attachments.created_on ASC LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 17) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `attachments` WHERE (attachments.container_id = 56 AND attachments.container_type = 'Document') ORDER BY attachments.created_on ASC LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 17) [0m
+  [4;36;1mAttachment Load (0.004602)[0m   [0;1mSELECT * FROM `attachments` WHERE (attachments.container_id = 54 AND attachments.container_type = 'Document') ORDER BY attachments.created_on ASC LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 17) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `attachments` WHERE (attachments.container_id = 54 AND attachments.container_type = 'Document') ORDER BY attachments.created_on ASC LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 17) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 17) [0m
+  [4;35;1mDocument Load (0.000629)[0m   [0mSELECT * FROM `documents` WHERE (`documents`.`id` = 54) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 978) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 978) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 950) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 950) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 977) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 976) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 950) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mIssue Load (0.008676)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 947) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mIssue Load (0.005115)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 946) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mIssue Load (0.002805)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 944) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mIssue Load (0.006409)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 937) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mIssue Load (0.006962)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 936) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mIssue Load (0.008653)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 933) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mIssue Load (0.000805)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 932) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mIssue Load (0.005087)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 931) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mIssue Load (0.016895)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 930) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mIssue Load (0.008304)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 908) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mIssue Load (0.004920)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 907) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mIssue Load (0.002998)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 892) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mIssue Load (0.005777)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 890) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mIssue Load (0.004260)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 888) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mIssue Load (0.022665)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 874) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mIssue Load (0.002793)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 872) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mIssue Load (0.004154)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 858) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mIssue Load (0.002237)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 846) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mIssue Load (0.004291)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 797) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mIssue Load (0.000755)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 774) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mIssue Load (0.004653)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 773) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 952) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 951) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mIssue Load (0.000678)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 948) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 945) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 943) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 893) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mIssue Load (0.000751)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 865) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;36;1mIssue Load (0.001736)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 813) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;35;1mIssue Load (0.007575)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 765) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mTracker Load (0.005023)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 3) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 738) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 950) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 950) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mIssue Load (0.003749)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 954) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mIssue Load (0.001141)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 953) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 953) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 953) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 954) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;36;1mAttachment Load (0.005212)[0m   [0;1mSELECT * FROM `attachments` WHERE (attachments.container_id = 53 AND attachments.container_type = 'Document') ORDER BY attachments.created_on ASC LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 17) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `attachments` WHERE (attachments.container_id = 53 AND attachments.container_type = 'Document') ORDER BY attachments.created_on ASC LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 17) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 17) [0m
+  [4;35;1mDocument Load (0.005400)[0m   [0mSELECT * FROM `documents` WHERE (`documents`.`id` = 53) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 17) [0m
+  [4;36;1mDocument Load (0.000643)[0m   [0;1mSELECT * FROM `documents` WHERE (`documents`.`id` = 50) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mAttachment Load (0.016776)[0m   [0;1mSELECT * FROM `attachments` WHERE (attachments.container_id = 50 AND attachments.container_type = 'Document') ORDER BY attachments.created_on ASC LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 17) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `attachments` WHERE (attachments.container_id = 50 AND attachments.container_type = 'Document') ORDER BY attachments.created_on ASC LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 17) [0m
+  [4;36;1mAttachment Load (0.002745)[0m   [0;1mSELECT * FROM `attachments` WHERE (attachments.container_id = 49 AND attachments.container_type = 'Document') ORDER BY attachments.created_on ASC LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 17) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `attachments` WHERE (attachments.container_id = 49 AND attachments.container_type = 'Document') ORDER BY attachments.created_on ASC LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 17) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 17) [0m
+  [4;35;1mDocument Load (0.003908)[0m   [0mSELECT * FROM `documents` WHERE (`documents`.`id` = 49) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 10) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 950) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 10) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 10) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 947) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 10) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 10) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 908) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 10) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 907) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 797) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 944) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 937) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 946) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 797) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 944) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 946) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 947) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 931) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 936) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 943) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 738) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 908) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 892) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 10) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 945) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 10) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 945) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 945) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mIssue Load (0.001411)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 891) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 891) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 944) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 933) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 2) LIMIT 1[0m
+  [4;35;1mIssue Load (0.000688)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 778) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 937) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 7) LIMIT 1[0m
+  [4;35;1mIssueStatus Load (0.000625)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 6) LIMIT 1[0m
+  [4;36;1mIssue Load (0.000781)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 868) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 6) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 936) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 933) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 932) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 931) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 936) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;35;1mIssue Load (0.001281)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 905) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 5) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 2) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 872) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 3) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 778) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 778) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;35;1mUser Load (0.005297)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+  [4;36;1mVersion Columns (0.001365)[0m   [0;1mSHOW FIELDS FROM `versions`[0m
+  [4;35;1mVersion Load (0.000670)[0m   [0mSELECT * FROM `versions` WHERE (`versions`.`id` = 52) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 932) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 868) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 936) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 930) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 10) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 933) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 10) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 10) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 931) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 10) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 933) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 931) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 9) LIMIT 1[0m
+  [4;35;1mIssueStatus Load (0.000529)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 933) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 932) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 931) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 893) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 868) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 933) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 932) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mIssue Load (0.002027)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 715) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `trackers` WHERE (`trackers`.`id` = 4) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issues` WHERE (`issues`.`id` = 931) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issues` WHERE (`issues`.`id` = 872) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `issue_statuses` WHERE (`issue_statuses`.`id` = 8) LIMIT 1[0m
+  [4;36;1mToken Load (0.017676)[0m   [0;1mSELECT * FROM `tokens` WHERE (tokens.user_id = 2 AND (action='feeds')) LIMIT 1[0m
+  [4;35;1mToken Columns (0.001238)[0m   [0mSHOW FIELDS FROM `tokens`[0m
+  [4;36;1mProject Load (0.009671)[0m   [0;1mSELECT * FROM `projects` WHERE (projects.parent_id = 16) ORDER BY name[0m
+  [4;35;1mSetting Load (0.003201)[0m   [0mSELECT * FROM `settings` WHERE (`settings`.`name` = 'app_title') LIMIT 1[0m
+  [4;36;1mSetting Load (0.000195)[0m   [0;1mSELECT * FROM `settings` WHERE (`settings`.`name` = 'ui_theme') LIMIT 1[0m
+  [4;35;1mMember Columns (0.002454)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (0.000264)[0m   [0;1mSELECT count(DISTINCT `members`.id) AS count_all FROM `members` LEFT OUTER JOIN `projects` ON `projects`.id = `members`.project_id LEFT OUTER JOIN `roles` ON `roles`.id = `members`.role_id WHERE (members.user_id = 2 AND (projects.status=1)) [0m
+  [4;35;1mProject Load Including Associations (0.000322)[0m   [0mSELECT `projects`.`id` AS t0_r0, `projects`.`name` AS t0_r1, `projects`.`description` AS t0_r2, `projects`.`homepage` AS t0_r3, `projects`.`is_public` AS t0_r4, `projects`.`parent_id` AS t0_r5, `projects`.`projects_count` AS t0_r6, `projects`.`created_on` AS t0_r7, `projects`.`updated_on` AS t0_r8, `projects`.`identifier` AS t0_r9, `projects`.`status` AS t0_r10, `projects`.`ui_theme` AS t0_r11, `parents_projects`.`id` AS t1_r0, `parents_projects`.`name` AS t1_r1, `parents_projects`.`description` AS t1_r2, `parents_projects`.`homepage` AS t1_r3, `parents_projects`.`is_public` AS t1_r4, `parents_projects`.`parent_id` AS t1_r5, `parents_projects`.`projects_count` AS t1_r6, `parents_projects`.`created_on` AS t1_r7, `parents_projects`.`updated_on` AS t1_r8, `parents_projects`.`identifier` AS t1_r9, `parents_projects`.`status` AS t1_r10, `parents_projects`.`ui_theme` AS t1_r11 FROM projects LEFT OUTER JOIN `projects` parents_projects ON `parents_projects`.id = `projects`.parent_id INNER JOIN members ON projects.id = members.project_id WHERE ((members.user_id = 2) AND ((projects.status=1))) [0m
+Rendered layouts/_project_selector (1.41372)
+  [4;36;1mSQL (0.010126)[0m   [0;1mSELECT count(*) AS count_all FROM `versions` WHERE (versions.project_id = 16) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `boards` WHERE (boards.project_id = 16) [0m
+Completed in 15.37843 (0 reqs/sec) | Rendering: 10.77326 (70%) | DB: 0.61284 (3%) | 200 OK [http://localhost/projects/activity/cbr]
