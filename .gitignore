@@ -7,3 +7,4 @@ nbproject
 db/dev.db
 public/.htaccess
 tmp/*
+config/s3.yml
