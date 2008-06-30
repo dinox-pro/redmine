@@ -1096,3 +1096,260 @@ Rendered layouts/_project_selector (1.41372)
   [4;36;1mSQL (0.010126)[0m   [0;1mSELECT count(*) AS count_all FROM `versions` WHERE (versions.project_id = 16) [0m
   [4;35;1mCACHE (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `boards` WHERE (boards.project_id = 16) [0m
 Completed in 15.37843 (0 reqs/sec) | Rendering: 10.77326 (70%) | DB: 0.61284 (3%) | 200 OK [http://localhost/projects/activity/cbr]
+  [4;36;1mSQL (0.000240)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE `schema_info` (version int(11))[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE `schema_info` (version int(11))[0m
+  [4;35;1mSQL (0.001131)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000148)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000077)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000160)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000074)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000160)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000071)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000072)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000072)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000070)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000153)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000083)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000073)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000112)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000071)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000071)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000074)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000069)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000071)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000069)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000066)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000066)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000071)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000064)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000072)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000069)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000062)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000064)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000065)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000063)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000067)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000063)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000065)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000062)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000064)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000733)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000144)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000062)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000135)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000089)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000072)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000167)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000064)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000068)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000062)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000064)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000063)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000064)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000064)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000064)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000064)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000065)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000385)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000090)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000067)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000065)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000839)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000139)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000069)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000065)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000062)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000061)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000055)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000055)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000054)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000063)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000065)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000068)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000063)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000062)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000062)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000061)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000062)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to ChangeChangesetsRevisionToString (91)
+  [4;36;1mSQL (0.001383)[0m   [0;1mSHOW FIELDS FROM `changesets`[0m
+  [4;35;1mSQL (0.415657)[0m   [0mALTER TABLE `changesets` CHANGE `revision` `revision` varchar(255) NOT NULL[0m
+  [4;36;1mSQL (0.000535)[0m   [0;1mUPDATE schema_info SET version = 91[0m
+  [4;35;1mSQL (0.000348)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to ChangeChangesFromRevisionToString (92)
+  [4;36;1mSQL (0.001473)[0m   [0;1mSHOW FIELDS FROM `changes`[0m
+  [4;35;1mSQL (0.954433)[0m   [0mALTER TABLE `changes` CHANGE `from_revision` `from_revision` varchar(255) DEFAULT NULL[0m
+  [4;36;1mSQL (0.000532)[0m   [0;1mUPDATE schema_info SET version = 92[0m
+  [4;35;1mSQL (0.000318)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to AddWikiPagesProtected (93)
+  [4;36;1mSQL (0.065413)[0m   [0;1mALTER TABLE `wiki_pages` ADD `protected` tinyint(1) DEFAULT 0 NOT NULL[0m
+  [4;35;1mSQL (0.000511)[0m   [0mUPDATE schema_info SET version = 93[0m
+  [4;36;1mSQL (0.000350)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to ChangeProjectsHomepageLimit (94)
+  [4;35;1mSQL (0.021965)[0m   [0mALTER TABLE `projects` CHANGE `homepage` `homepage` varchar(255) DEFAULT ''[0m
+  [4;36;1mSQL (0.002640)[0m   [0;1mUPDATE schema_info SET version = 94[0m
+  [4;35;1mSQL (0.002824)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000707)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.001305)[0m   [0mSHOW FIELDS FROM `attachments`[0m
+  [4;36;1mSQL (0.002786)[0m   [0;1mdescribe `attachments`[0m
+  [4;35;1mSQL (0.029286)[0m   [0mSHOW KEYS FROM `attachments`[0m
+  [4;36;1mSQL (0.004461)[0m   [0;1mSHOW FIELDS FROM `auth_sources`[0m
+  [4;35;1mSQL (0.016442)[0m   [0mdescribe `auth_sources`[0m
+  [4;36;1mSQL (0.002117)[0m   [0;1mSHOW KEYS FROM `auth_sources`[0m
+  [4;35;1mSQL (0.001136)[0m   [0mSHOW FIELDS FROM `boards`[0m
+  [4;36;1mSQL (0.002026)[0m   [0;1mdescribe `boards`[0m
+  [4;35;1mSQL (0.001032)[0m   [0mSHOW KEYS FROM `boards`[0m
+  [4;36;1mSQL (0.002506)[0m   [0;1mSHOW FIELDS FROM `changes`[0m
+  [4;35;1mSQL (0.001202)[0m   [0mdescribe `changes`[0m
+  [4;36;1mSQL (0.003505)[0m   [0;1mSHOW KEYS FROM `changes`[0m
+  [4;35;1mSQL (0.001348)[0m   [0mSHOW FIELDS FROM `changesets`[0m
+  [4;36;1mSQL (0.013756)[0m   [0;1mdescribe `changesets`[0m
+  [4;35;1mSQL (0.011306)[0m   [0mSHOW KEYS FROM `changesets`[0m
+  [4;36;1mSQL (0.010876)[0m   [0;1mSHOW FIELDS FROM `changesets_issues`[0m
+  [4;35;1mSQL (0.001043)[0m   [0mdescribe `changesets_issues`[0m
+  [4;36;1mSQL (0.355768)[0m   [0;1mSHOW KEYS FROM `changesets_issues`[0m
+  [4;35;1mSQL (0.020419)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (0.004832)[0m   [0;1mdescribe `comments`[0m
+  [4;35;1mSQL (0.000793)[0m   [0mSHOW KEYS FROM `comments`[0m
+  [4;36;1mSQL (0.001501)[0m   [0;1mSHOW FIELDS FROM `custom_fields`[0m
+  [4;35;1mSQL (0.002732)[0m   [0mdescribe `custom_fields`[0m
+  [4;36;1mSQL (0.000601)[0m   [0;1mSHOW KEYS FROM `custom_fields`[0m
+  [4;35;1mSQL (0.001168)[0m   [0mSHOW FIELDS FROM `custom_fields_projects`[0m
+  [4;36;1mSQL (0.000942)[0m   [0;1mdescribe `custom_fields_projects`[0m
+  [4;35;1mSQL (0.000727)[0m   [0mSHOW KEYS FROM `custom_fields_projects`[0m
+  [4;36;1mSQL (0.001124)[0m   [0;1mSHOW FIELDS FROM `custom_fields_trackers`[0m
+  [4;35;1mSQL (0.000997)[0m   [0mdescribe `custom_fields_trackers`[0m
+  [4;36;1mSQL (0.002070)[0m   [0;1mSHOW KEYS FROM `custom_fields_trackers`[0m
+  [4;35;1mSQL (0.001269)[0m   [0mSHOW FIELDS FROM `custom_values`[0m
+  [4;36;1mSQL (0.001160)[0m   [0;1mdescribe `custom_values`[0m
+  [4;35;1mSQL (0.020294)[0m   [0mSHOW KEYS FROM `custom_values`[0m
+  [4;36;1mSQL (0.163907)[0m   [0;1mSHOW FIELDS FROM `documents`[0m
+  [4;35;1mSQL (0.002976)[0m   [0mdescribe `documents`[0m
+  [4;36;1mSQL (0.001408)[0m   [0;1mSHOW KEYS FROM `documents`[0m
+  [4;35;1mSQL (0.001866)[0m   [0mSHOW FIELDS FROM `enabled_modules`[0m
+  [4;36;1mSQL (0.001050)[0m   [0;1mdescribe `enabled_modules`[0m
+  [4;35;1mSQL (0.001085)[0m   [0mSHOW KEYS FROM `enabled_modules`[0m
+  [4;36;1mSQL (0.001178)[0m   [0;1mSHOW FIELDS FROM `enumerations`[0m
+  [4;35;1mSQL (0.001136)[0m   [0mdescribe `enumerations`[0m
+  [4;36;1mSQL (0.000617)[0m   [0;1mSHOW KEYS FROM `enumerations`[0m
+  [4;35;1mSQL (0.001203)[0m   [0mSHOW FIELDS FROM `issue_categories`[0m
+  [4;36;1mSQL (0.001251)[0m   [0;1mdescribe `issue_categories`[0m
+  [4;35;1mSQL (0.000939)[0m   [0mSHOW KEYS FROM `issue_categories`[0m
+  [4;36;1mSQL (0.002138)[0m   [0;1mSHOW FIELDS FROM `issue_relations`[0m
+  [4;35;1mSQL (0.001140)[0m   [0mdescribe `issue_relations`[0m
+  [4;36;1mSQL (0.000838)[0m   [0;1mSHOW KEYS FROM `issue_relations`[0m
+  [4;35;1mSQL (0.002558)[0m   [0mSHOW FIELDS FROM `issue_statuses`[0m
+  [4;36;1mSQL (0.164054)[0m   [0;1mdescribe `issue_statuses`[0m
+  [4;35;1mSQL (0.001938)[0m   [0mSHOW KEYS FROM `issue_statuses`[0m
+  [4;36;1mSQL (0.001808)[0m   [0;1mSHOW FIELDS FROM `issues`[0m
+  [4;35;1mSQL (0.002314)[0m   [0mdescribe `issues`[0m
+  [4;36;1mSQL (0.004750)[0m   [0;1mSHOW KEYS FROM `issues`[0m
+  [4;35;1mSQL (0.001140)[0m   [0mSHOW FIELDS FROM `journal_details`[0m
+  [4;36;1mSQL (0.006500)[0m   [0;1mdescribe `journal_details`[0m
+  [4;35;1mSQL (0.022828)[0m   [0mSHOW KEYS FROM `journal_details`[0m
+  [4;36;1mSQL (0.001938)[0m   [0;1mSHOW FIELDS FROM `journals`[0m
+  [4;35;1mSQL (0.001200)[0m   [0mdescribe `journals`[0m
+  [4;36;1mSQL (0.040274)[0m   [0;1mSHOW KEYS FROM `journals`[0m
+  [4;35;1mSQL (0.001226)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (0.001877)[0m   [0;1mdescribe `members`[0m
+  [4;35;1mSQL (0.001130)[0m   [0mSHOW KEYS FROM `members`[0m
+  [4;36;1mSQL (0.001545)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mSQL (0.001411)[0m   [0mdescribe `messages`[0m
+  [4;36;1mSQL (0.001423)[0m   [0;1mSHOW KEYS FROM `messages`[0m
+  [4;35;1mSQL (0.188818)[0m   [0mSHOW FIELDS FROM `mindbites`[0m
+  [4;36;1mSQL (0.003530)[0m   [0;1mdescribe `mindbites`[0m
+  [4;35;1mSQL (0.000532)[0m   [0mSHOW KEYS FROM `mindbites`[0m
+  [4;36;1mSQL (0.001178)[0m   [0;1mSHOW FIELDS FROM `news`[0m
+  [4;35;1mSQL (0.001274)[0m   [0mdescribe `news`[0m
+  [4;36;1mSQL (0.004043)[0m   [0;1mSHOW KEYS FROM `news`[0m
+  [4;35;1mSQL (0.002401)[0m   [0mSHOW FIELDS FROM `nss_grouplist`[0m
+  [4;36;1mSQL (0.003054)[0m   [0;1mdescribe `nss_grouplist`[0m
+  [4;35;1mSQL (0.000771)[0m   [0mSHOW KEYS FROM `nss_grouplist`[0m
+  [4;36;1mSQL (0.001562)[0m   [0;1mSHOW FIELDS FROM `nss_groups`[0m
+  [4;35;1mSQL (0.001296)[0m   [0mdescribe `nss_groups`[0m
+  [4;36;1mSQL (0.000704)[0m   [0;1mSHOW KEYS FROM `nss_groups`[0m
+  [4;35;1mSQL (0.001365)[0m   [0mSHOW FIELDS FROM `nss_users`[0m
+  [4;36;1mSQL (0.001374)[0m   [0;1mdescribe `nss_users`[0m
+  [4;35;1mSQL (0.001026)[0m   [0mSHOW KEYS FROM `nss_users`[0m
+  [4;36;1mSQL (0.001803)[0m   [0;1mSHOW FIELDS FROM `plugin_schema_info`[0m
+  [4;35;1mSQL (0.167923)[0m   [0mdescribe `plugin_schema_info`[0m
+  [4;36;1mSQL (0.001590)[0m   [0;1mSHOW KEYS FROM `plugin_schema_info`[0m
+  [4;35;1mSQL (0.002496)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mSQL (0.001507)[0m   [0;1mdescribe `projects`[0m
+  [4;35;1mSQL (0.000617)[0m   [0mSHOW KEYS FROM `projects`[0m
+  [4;36;1mSQL (0.000936)[0m   [0;1mSHOW FIELDS FROM `projects_trackers`[0m
+  [4;35;1mSQL (0.000920)[0m   [0mdescribe `projects_trackers`[0m
+  [4;36;1mSQL (0.003833)[0m   [0;1mSHOW KEYS FROM `projects_trackers`[0m
+  [4;35;1mSQL (0.001255)[0m   [0mSHOW FIELDS FROM `queries`[0m
+  [4;36;1mSQL (0.001274)[0m   [0;1mdescribe `queries`[0m
+  [4;35;1mSQL (0.000624)[0m   [0mSHOW KEYS FROM `queries`[0m
+  [4;36;1mSQL (0.001220)[0m   [0;1mSHOW FIELDS FROM `repositories`[0m
+  [4;35;1mSQL (0.001212)[0m   [0mdescribe `repositories`[0m
+  [4;36;1mSQL (0.000643)[0m   [0;1mSHOW KEYS FROM `repositories`[0m
+  [4;35;1mSQL (0.001786)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mSQL (0.001478)[0m   [0;1mdescribe `roles`[0m
+  [4;35;1mSQL (0.000614)[0m   [0mSHOW KEYS FROM `roles`[0m
+  [4;36;1mSQL (0.181258)[0m   [0;1mSHOW FIELDS FROM `settings`[0m
+  [4;35;1mSQL (0.004557)[0m   [0mdescribe `settings`[0m
+  [4;36;1mSQL (0.000639)[0m   [0;1mSHOW KEYS FROM `settings`[0m
+  [4;35;1mSQL (0.001153)[0m   [0mSHOW FIELDS FROM `ssh_users`[0m
+  [4;36;1mSQL (0.001178)[0m   [0;1mdescribe `ssh_users`[0m
+  [4;35;1mSQL (0.000743)[0m   [0mSHOW KEYS FROM `ssh_users`[0m
+  [4;36;1mSQL (0.001543)[0m   [0;1mSHOW FIELDS FROM `time_entries`[0m
+  [4;35;1mSQL (0.001513)[0m   [0mdescribe `time_entries`[0m
+  [4;36;1mSQL (0.000984)[0m   [0;1mSHOW KEYS FROM `time_entries`[0m
+  [4;35;1mSQL (0.001097)[0m   [0mSHOW FIELDS FROM `tokens`[0m
+  [4;36;1mSQL (0.001161)[0m   [0;1mdescribe `tokens`[0m
+  [4;35;1mSQL (0.174719)[0m   [0mSHOW KEYS FROM `tokens`[0m
+  [4;36;1mSQL (0.001029)[0m   [0;1mSHOW FIELDS FROM `trackers`[0m
+  [4;35;1mSQL (0.001169)[0m   [0mdescribe `trackers`[0m
+  [4;36;1mSQL (0.000804)[0m   [0;1mSHOW KEYS FROM `trackers`[0m
+  [4;35;1mSQL (0.001147)[0m   [0mSHOW FIELDS FROM `user_preferences`[0m
+  [4;36;1mSQL (0.164063)[0m   [0;1mdescribe `user_preferences`[0m
+  [4;35;1mSQL (0.002198)[0m   [0mSHOW KEYS FROM `user_preferences`[0m
+  [4;36;1mSQL (0.001680)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.001617)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.002851)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (0.001291)[0m   [0mSHOW FIELDS FROM `versions`[0m
+  [4;36;1mSQL (0.001560)[0m   [0;1mdescribe `versions`[0m
+  [4;35;1mSQL (0.001056)[0m   [0mSHOW KEYS FROM `versions`[0m
+  [4;36;1mSQL (0.001288)[0m   [0;1mSHOW FIELDS FROM `watchers`[0m
+  [4;35;1mSQL (0.001100)[0m   [0mdescribe `watchers`[0m
+  [4;36;1mSQL (0.004263)[0m   [0;1mSHOW KEYS FROM `watchers`[0m
+  [4;35;1mSQL (0.002161)[0m   [0mSHOW FIELDS FROM `wiki_content_versions`[0m
+  [4;36;1mSQL (0.001454)[0m   [0;1mdescribe `wiki_content_versions`[0m
+  [4;35;1mSQL (0.020426)[0m   [0mSHOW KEYS FROM `wiki_content_versions`[0m
+  [4;36;1mSQL (0.001333)[0m   [0;1mSHOW FIELDS FROM `wiki_contents`[0m
+  [4;35;1mSQL (0.001986)[0m   [0mdescribe `wiki_contents`[0m
+  [4;36;1mSQL (0.000629)[0m   [0;1mSHOW KEYS FROM `wiki_contents`[0m
+  [4;35;1mSQL (0.208054)[0m   [0mSHOW FIELDS FROM `wiki_pages`[0m
+  [4;36;1mSQL (0.003006)[0m   [0;1mdescribe `wiki_pages`[0m
+  [4;35;1mSQL (0.000707)[0m   [0mSHOW KEYS FROM `wiki_pages`[0m
+  [4;36;1mSQL (0.001268)[0m   [0;1mSHOW FIELDS FROM `wiki_redirects`[0m
+  [4;35;1mSQL (0.001099)[0m   [0mdescribe `wiki_redirects`[0m
+  [4;36;1mSQL (0.000635)[0m   [0;1mSHOW KEYS FROM `wiki_redirects`[0m
+  [4;35;1mSQL (0.001882)[0m   [0mSHOW FIELDS FROM `wikis`[0m
+  [4;36;1mSQL (0.001110)[0m   [0;1mdescribe `wikis`[0m
+  [4;35;1mSQL (0.000621)[0m   [0mSHOW KEYS FROM `wikis`[0m
+  [4;36;1mSQL (0.001472)[0m   [0;1mSHOW FIELDS FROM `workflows`[0m
+  [4;35;1mSQL (0.003112)[0m   [0mdescribe `workflows`[0m
+  [4;36;1mSQL (0.003978)[0m   [0;1mSHOW KEYS FROM `workflows`[0m
