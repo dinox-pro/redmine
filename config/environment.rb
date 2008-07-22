@@ -50,6 +50,9 @@ Rails::Initializer.run do |config|
   # (enables use of different database adapters for development and test environments)
   # config.active_record.schema_format = :ruby
   
+	# SMTP server configuration
+	require "smtp_tls"
+  
   # Deliveries are disabled by default. Do NOT modify this section.
   # Define your email configuration in email.yml instead.
   # It will automatically turn deliveries on
