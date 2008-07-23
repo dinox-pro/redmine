@@ -34,9 +34,11 @@ set :branch, "master"
 #	Passenger
 #############################################################
 
-desc "Restart Application"
-task :restart do
-  run "touch #{current_path}/tmp/restart.txt"
+namespace :deploy do
+  desc "Restart Application"
+  task :restart do
+    run "touch #{current_path}/tmp/restart.txt"
+  end
 end
 
 desc "Reset symlink to public/files directory to not overwrite uploaded store images."
@@ -65,5 +67,4 @@ task :after_symlink, :roles => [ :app, :db, :web ] do
   run "ln -nfs #{deploy_to}/shared/system/files #{release_path}"
 end
 
-after :deploy, "passenger:restart"
 
