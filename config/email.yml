@@ -3,9 +3,10 @@
 production:    
   delivery_method: :smtp
   smtp_settings:
-    address: smtp.gmail.com
-    port: 587
-    domain: praexis.com
+    tls: true
+    address: "smtp.gmail.com"
+    port: "587"
+    domain: "praexis.com"
     authentication: :login
     user_name: "mailer@praexis.com"
     password: "!SvnTrac"
@@ -13,8 +14,9 @@ production:
 development:
   delivery_method: :smtp
   smtp_settings:
+    tls: true
     address: "smtp.gmail.com"
-    port: 587
+    port: "587"
     domain: "praexis.com"
     authentication: :login
     user_name: "mailer@praexis.com"
