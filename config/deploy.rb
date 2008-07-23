@@ -34,17 +34,14 @@ set :branch, "master"
 #	Passenger
 #############################################################
 
-namespace :passenger do
-  desc "Restart Application"
-  task :restart do
-    run "touch #{current_path}/tmp/restart.txt"
-  end
+desc "Restart Application"
+task :restart do
+  run "touch #{current_path}/tmp/restart.txt"
 end
 
 desc "Reset symlink to public/files directory to not overwrite uploaded store images."
 task :after_update_code, :roles => [ :app, :db, :web ] do
 	copy_config_files
-	update_submodules
 end
 
 desc "Create Shared directory and subdirectories;"
