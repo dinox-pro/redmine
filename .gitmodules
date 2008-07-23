@@ -1,6 +1,1 @@
-[submodule "vendor/plugins/redmine_google_calendar"]
-	path = vendor/plugins/redmine_google_calendar
-	url = git://github.com/mully/redmine_google_calendar.git
-[submodule "vendor/plugins/redmine_status_updates"]
-	path = vendor/plugins/redmine_status
-	url = git://github.com/bterlson/redmine-status-updates.git
+
