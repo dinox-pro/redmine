@@ -64,7 +64,7 @@ end
 
 desc "Reset symlink to public/files directory to not overwrite uploaded store images."
 task :after_symlink, :roles => [ :app, :db, :web ] do
-  run "ln -nfs #{deploy_to}/shared/system/files #{release_path}"
+  run "ln -nfs #{deploy_to}/shared/system/files #{release_path}/files"
 end
 
 
