@@ -16,7 +16,6 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class TimelogController < ApplicationController
-  layout 'base'
   menu_item :issues
   before_filter :find_project, :authorize
 
@@ -55,7 +54,14 @@ class TimelogController < ApplicationController
     
     # Add list and boolean custom fields as available criterias
     @project.all_issue_custom_fields.select {|cf| %w(list bool).include? cf.field_format }.each do |cf|
-      @available_criterias["cf_#{cf.id}"] = {:sql => "(SELECT c.value FROM custom_values c WHERE c.custom_field_id = #{cf.id} AND c.customized_type = 'Issue' AND c.customized_id = issues.id)",
+      @available_criterias["cf_#{cf.id}"] = {:sql => "(SELECT c.value FROM #{CustomValue.table_name} c WHERE c.custom_field_id = #{cf.id} AND c.customized_type = 'Issue' AND c.customized_id = #{Issue.table_name}.id)",
+                                             :format => cf.field_format,
+                                             :label => cf.name}
+    end
+    
+    # Add list and boolean time entry custom fields
+    TimeEntryCustomField.find(:all).select {|cf| %w(list bool).include? cf.field_format }.each do |cf|
+      @available_criterias["cf_#{cf.id}"] = {:sql => "(SELECT c.value FROM #{CustomValue.table_name} c WHERE c.custom_field_id = #{cf.id} AND c.customized_type = 'TimeEntry' AND c.customized_id = #{TimeEntry.table_name}.id)",
                                              :format => cf.field_format,
                                              :label => cf.name}
     end

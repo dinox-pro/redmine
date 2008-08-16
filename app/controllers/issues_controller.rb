@@ -16,7 +16,6 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 class IssuesController < ApplicationController
-  layout 'base'
   menu_item :new_issue, :only => :new
   
   before_filter :find_issue, :only => [:show, :edit, :reply, :destroy_attachment]
@@ -160,6 +159,7 @@ class IssuesController < ApplicationController
     @allowed_statuses = @issue.new_statuses_allowed_to(User.current)
     @priorities = Enumeration::get_values('IPRI')
     @edit_allowed = User.current.allowed_to?(:edit_issues, @project)
+    @time_entry = TimeEntry.new
     
     @notes = params[:notes]
     journal = @issue.init_journal(User.current, @notes)
