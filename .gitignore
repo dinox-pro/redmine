@@ -9,4 +9,5 @@ public/.htaccess
 tmp/*
 config/s3.yml
 config/backup_fu.yml
+config/email.yml
 files/
