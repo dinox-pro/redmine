@@ -138,7 +138,7 @@ module Redmine
          end
         
         def shell_quote(str)
-          if RUBY_PLATFORM =~ /mswin/
+          if Redmine::Platform.mswin?
             '"' + str.gsub(/"/, '\\"') + '"'
           else
             "'" + str.gsub(/'/, "'\"'\"'") + "'"
@@ -179,19 +179,19 @@ module Redmine
           rescue Errno::ENOENT => e
             msg = strip_credential(e.message)
             # The command failed, log it and re-raise
-            logger.error("SCM command failed: #{strip_credential(cmd)}\n  with: #{msg}")
+            logger.error("SCM command failed, make sure that your SCM binary (eg. svn) is in PATH (#{ENV['PATH']}): #{strip_credential(cmd)}\n  with: #{msg}")
             raise CommandFailed.new(msg)
           end
         end  
         
         # Hides username/password in a given command
-        def self.hide_credential(cmd)
-          q = (RUBY_PLATFORM =~ /mswin/ ? '"' : "'")
+        def self.strip_credential(cmd)
+          q = (Redmine::Platform.mswin? ? '"' : "'")
           cmd.to_s.gsub(/(\-\-(password|username))\s+(#{q}[^#{q}]+#{q}|[^#{q}]\S+)/, '\\1 xxxx')
         end
         
         def strip_credential(cmd)
-          self.class.hide_credential(cmd)
+          self.class.strip_credential(cmd)
         end
       end
       
