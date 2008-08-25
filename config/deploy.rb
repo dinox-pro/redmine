@@ -3,7 +3,7 @@
 #############################################################
 
 set :application, "redmine"
-set :deploy_to, "/var/www/#{application}"
+set :deploy_to, "/mnt/app/#{application}"
 
 #############################################################
 #	Settings
