@@ -16,6 +16,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 require 'uri'
+require 'cgi'
 
 class ApplicationController < ActionController::Base
   layout 'base'
@@ -81,7 +82,7 @@ class ApplicationController < ActionController::Base
   
   def require_login
     if !User.current.logged?
-      redirect_to :controller => "account", :action => "login", :back_url => request.request_uri
+      redirect_to :controller => "account", :action => "login", :back_url => url_for(params)
       return false
     end
     true
@@ -95,11 +96,15 @@ class ApplicationController < ActionController::Base
     end
     true
   end
+  
+  def deny_access
+    User.current.logged? ? render_403 : require_login
+  end
 
   # Authorize the user for the requested action
   def authorize(ctrl = params[:controller], action = params[:action])
     allowed = User.current.allowed_to?({:controller => ctrl, :action => action}, @project)
-    allowed ? true : (User.current.logged? ? render_403 : require_login)
+    allowed ? true : deny_access
   end
   
   # make sure that the user is a member of the project (or admin) if project is private
@@ -119,7 +124,7 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_back_or_default(default)
-    back_url = params[:back_url]
+    back_url = CGI.unescape(params[:back_url].to_s)
     if !back_url.blank?
       uri = URI.parse(back_url)
       # do not redirect user to another host

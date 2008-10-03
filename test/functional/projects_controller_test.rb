@@ -1,5 +1,5 @@
-# redMine - project management software
-# Copyright (C) 2006-2007  Jean-Philippe Lang
+# Redmine - project management software
+# Copyright (C) 2006-2008  Jean-Philippe Lang
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -208,71 +208,6 @@ class ProjectsControllerTest < Test::Unit::TestCase
     assert_template 'common/feed.atom.rxml'
   end
   
-  def test_calendar
-    get :calendar, :id => 1
-    assert_response :success
-    assert_template 'calendar'
-    assert_not_nil assigns(:calendar)
-  end
-
-  def test_calendar_with_subprojects_should_not_show_private_subprojects
-    get :calendar, :id => 1, :with_subprojects => 1, :tracker_ids => [1, 2]
-    assert_response :success
-    assert_template 'calendar'
-    assert_not_nil assigns(:calendar)
-    assert_no_tag :tag => 'a', :content => /#6/
-  end
-  
-  def test_calendar_with_subprojects_should_show_private_subprojects
-    @request.session[:user_id] = 2
-    get :calendar, :id => 1, :with_subprojects => 1, :tracker_ids => [1, 2]
-    assert_response :success
-    assert_template 'calendar'
-    assert_not_nil assigns(:calendar)
-    assert_tag :tag => 'a', :content => /#6/
-  end
-
-  def test_gantt
-    get :gantt, :id => 1
-    assert_response :success
-    assert_template 'gantt.rhtml'
-    events = assigns(:events)
-    assert_not_nil events
-    # Issue with start and due dates
-    i = Issue.find(1)
-    assert_not_nil i.due_date
-    assert events.include?(Issue.find(1))
-    # Issue with without due date but targeted to a version with date
-    i = Issue.find(2)
-    assert_nil i.due_date
-    assert events.include?(i)
-  end
-
-  def test_gantt_with_subprojects_should_not_show_private_subprojects
-    get :gantt, :id => 1, :with_subprojects => 1, :tracker_ids => [1, 2]
-    assert_response :success
-    assert_template 'gantt.rhtml'
-    assert_not_nil assigns(:events)
-    assert_no_tag :tag => 'a', :content => /#6/
-  end
-  
-  def test_gantt_with_subprojects_should_show_private_subprojects
-    @request.session[:user_id] = 2
-    get :gantt, :id => 1, :with_subprojects => 1, :tracker_ids => [1, 2]
-    assert_response :success
-    assert_template 'gantt.rhtml'
-    assert_not_nil assigns(:events)
-    assert_tag :tag => 'a', :content => /#6/
-  end
-
-  def test_gantt_export_to_pdf
-    get :gantt, :id => 1, :format => 'pdf'
-    assert_response :success
-    assert_template 'gantt.rfpdf'
-    assert_equal 'application/pdf', @response.content_type
-    assert_not_nil assigns(:events)
-  end
-  
   def test_archive    
     @request.session[:user_id] = 1 # admin
     post :archive, :id => 1
@@ -315,5 +250,24 @@ class ProjectsControllerTest < Test::Unit::TestCase
         menu.delete :hello
       end
     end
+  end
+  
+  # A hook that is manually registered later
+  class ProjectBasedTemplate < Redmine::Hook::ViewListener
+    def view_layouts_base_html_head(context)
+      # Adds a project stylesheet
+      stylesheet_link_tag(context[:project].identifier) if context[:project]
+    end
+  end
+  # Don't use this hook now
+  Redmine::Hook.clear_listeners
+  
+  def test_hook_response
+    Redmine::Hook.add_listener(ProjectBasedTemplate)
+    get :show, :id => 1
+    assert_tag :tag => 'link', :attributes => {:href => '/stylesheets/ecookbook.css'},
+                               :parent => {:tag => 'head'}
+    
+    Redmine::Hook.clear_listeners
   end
 end

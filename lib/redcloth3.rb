@@ -164,7 +164,7 @@
 #
 #  class RedCloth::Textile.new( str )
 
-class RedCloth < String
+class RedCloth3 < String
 
     VERSION = '3.0.4'
     DEFAULT_RULES = [:textile, :markdown]
@@ -788,10 +788,10 @@ class RedCloth < String
             ":
             ([\w\/]\S+?)               # $url
             (\/)?                      # $slash
-            ([^\w\/;]*?)               # $post
+            ([^\w\=\/;\(\)]*?)         # $post
             (?=<|\s|$)
         /x 
-
+#"
     def inline_textile_link( text ) 
         text.gsub!( LINK_RE ) do |m|
             pre,atts,text,title,url,slash,post = $~[1..7]
@@ -799,6 +799,12 @@ class RedCloth < String
             url, url_title = check_refs( url )
             title ||= url_title
             
+            # Idea below : an URL with unbalanced parethesis and
+            # ending by ')' is put into external parenthesis
+            if ( url[-1]==?) and ((url.count("(") - url.count(")")) < 0 ) )
+              url=url[0..-2] # discard closing parenth from url
+              post = ")"+post # add closing parenth to post
+            end
             atts = pba( atts )
             atts = " href=\"#{ url }#{ slash }\"#{ atts }"
             atts << " title=\"#{ title }\"" if title
@@ -1039,17 +1045,17 @@ class RedCloth < String
                     codepre += 1
                     used_offtags[offtag] = true
                     if codepre - used_offtags.length > 0
-                        htmlesc( line, :NoQuotes ) unless used_offtags['notextile']
+                        htmlesc( line, :NoQuotes )
                         @pre_list.last << line
                         line = ""
                     else
-                        htmlesc( aftertag, :NoQuotes ) if aftertag and not used_offtags['notextile']
+                        htmlesc( aftertag, :NoQuotes ) if aftertag
                         line = "<redpre##{ @pre_list.length }>"
                         @pre_list << "#{ $3 }#{ aftertag }"
                     end
                 elsif $1 and codepre > 0
                     if codepre - used_offtags.length > 0
-                        htmlesc( line, :NoQuotes ) unless used_offtags['notextile']
+                        htmlesc( line, :NoQuotes )
                         @pre_list.last << line
                         line = ""
                     end

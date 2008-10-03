@@ -62,6 +62,8 @@ class Project < ActiveRecord::Base
   validates_format_of :identifier, :with => /^[a-z0-9\-]*$/
   
   before_destroy :delete_all_members
+
+  named_scope :has_module, lambda { |mod| { :conditions => ["#{Project.table_name}.id IN (SELECT em.project_id FROM #{EnabledModule.table_name} em WHERE em.name=?)", mod.to_s] } }
   
   def identifier=(identifier)
     super unless identifier_frozen?
@@ -106,6 +108,12 @@ class Project < ActiveRecord::Base
   def self.allowed_to_condition(user, permission, options={})
     statements = []
     base_statement = "#{Project.table_name}.status=#{Project::STATUS_ACTIVE}"
+    if perm = Redmine::AccessControl.permission(permission)
+      unless perm.project_module.nil?
+        # If the permission belongs to a project module, make sure the module is enabled
+        base_statement << " AND EXISTS (SELECT em.id FROM #{EnabledModule.table_name} em WHERE em.name='#{perm.project_module}' AND em.project_id=#{Project.table_name}.id)"
+      end
+    end
     if options[:project]
       project_statement = "#{Project.table_name}.id = #{options[:project].id}"
       project_statement << " OR #{Project.table_name}.parent_id = #{options[:project].id}" if options[:with_subprojects]
@@ -237,6 +245,12 @@ class Project < ActiveRecord::Base
     module_names.each do |name|
       enabled_modules << EnabledModule.new(:name => name.to_s)
     end
+  end
+  
+  # Returns an auto-generated project identifier based on the last identifier used
+  def self.next_identifier
+    p = Project.find(:first, :order => 'created_on DESC')
+    p.nil? ? nil : p.identifier.to_s.succ
   end
 
 protected

@@ -144,7 +144,7 @@ class User < ActiveRecord::Base
   end
   
   def time_zone
-    self.pref.time_zone.nil? ? nil : TimeZone[self.pref.time_zone]
+    @time_zone ||= (self.pref.time_zone.blank? ? nil : TimeZone[self.pref.time_zone])
   end
   
   def wants_comments_in_reverse_order?
@@ -243,7 +243,7 @@ class User < ActiveRecord::Base
     elsif options[:global]
       # authorize if user has at least one role that has this permission
       roles = memberships.collect {|m| m.role}.uniq
-      roles.detect {|r| r.allowed_to?(action)}
+      roles.detect {|r| r.allowed_to?(action)} || (self.logged? ? Role.non_member.allowed_to?(action) : Role.anonymous.allowed_to?(action))
     else
       false
     end

@@ -15,7 +15,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-require 'redcloth'
+require 'redcloth3'
 require 'coderay'
 
 module Redmine
@@ -23,7 +23,7 @@ module Redmine
   
   private
   
-    class TextileFormatter < RedCloth
+    class TextileFormatter < RedCloth3
       
       # auto_link rule after textile rules so that it doesn't break !image_url! tags
       RULES = [:textile, :block_markdown_rule, :inline_auto_link, :inline_auto_mailto, :inline_toc, :inline_macros]
@@ -144,7 +144,7 @@ module Redmine
                           (\S+?)                   # url
                           (\/)?                    # slash
                         )
-                        ([^\w\=\/;]*?)               # post
+                        ([^\w\=\/;\(\)]*?)               # post
                         (?=<|\s|$)
                        }x unless const_defined?(:AUTO_LINK_RE)
 
@@ -156,7 +156,13 @@ module Redmine
             # don't replace URL's that are already linked
             # and URL's prefixed with ! !> !< != (textile images)
             all
-          else            
+          else
+            # Idea below : an URL with unbalanced parethesis and
+            # ending by ')' is put into external parenthesis
+            if ( url[-1]==?) and ((url.count("(") - url.count(")")) < 0 ) )
+              url=url[0..-2] # discard closing parenth from url
+              post = ")"+post # add closing parenth to post
+            end
             %(#{leading}<a class="external" href="#{proto=="www."?"http://www.":proto}#{url}">#{proto + url}</a>#{post})
           end
         end

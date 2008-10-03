@@ -1,5 +1,5 @@
-# redMine - project management software
-# Copyright (C) 2006-2007  Jean-Philippe Lang
+# Redmine - project management software
+# Copyright (C) 2006-2008  Jean-Philippe Lang
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -28,6 +28,7 @@ class IssuesControllerTest < Test::Unit::TestCase
            :members,
            :issues,
            :issue_statuses,
+           :versions,
            :trackers,
            :projects_trackers,
            :issue_categories,
@@ -60,6 +61,17 @@ class IssuesControllerTest < Test::Unit::TestCase
     # private projects hidden
     assert_no_tag :tag => 'a', :content => /Issue of a private subproject/
     assert_no_tag :tag => 'a', :content => /Issue on project 2/
+  end
+  
+  def test_index_should_not_list_issues_when_module_disabled
+    EnabledModule.delete_all("name = 'issue_tracking' AND project_id = 1")
+    get :index
+    assert_response :success
+    assert_template 'index.rhtml'
+    assert_not_nil assigns(:issues)
+    assert_nil assigns(:project)
+    assert_no_tag :tag => 'a', :content => /Can't print recipes/
+    assert_tag :tag => 'a', :content => /Subproject issue/
   end
 
   def test_index_with_project
@@ -124,6 +136,48 @@ class IssuesControllerTest < Test::Unit::TestCase
     assert_response :success
     assert_not_nil assigns(:issues)
     assert_equal 'application/pdf', @response.content_type
+  end
+
+  def test_gantt
+    get :gantt, :project_id => 1
+    assert_response :success
+    assert_template 'gantt.rhtml'
+    assert_not_nil assigns(:gantt)
+    events = assigns(:gantt).events
+    assert_not_nil events
+    # Issue with start and due dates
+    i = Issue.find(1)
+    assert_not_nil i.due_date
+    assert events.include?(Issue.find(1))
+    # Issue with without due date but targeted to a version with date
+    i = Issue.find(2)
+    assert_nil i.due_date
+    assert events.include?(i)
+  end
+
+  def test_gantt_export_to_pdf
+    get :gantt, :project_id => 1, :format => 'pdf'
+    assert_response :success
+    assert_template 'gantt.rfpdf'
+    assert_equal 'application/pdf', @response.content_type
+    assert_not_nil assigns(:gantt)
+  end
+  
+  if Object.const_defined?(:Magick)
+    def test_gantt_image
+      get :gantt, :project_id => 1, :format => 'png'
+      assert_response :success
+      assert_equal 'image/png', @response.content_type
+    end
+  else
+    puts "RMagick not installed. Skipping tests !!!"
+  end
+  
+  def test_calendar
+    get :calendar, :project_id => 1
+    assert_response :success
+    assert_template 'calendar'
+    assert_not_nil assigns(:calendar)
   end
   
   def test_changes
@@ -441,6 +495,10 @@ class IssuesControllerTest < Test::Unit::TestCase
   def test_post_edit_with_attachment_only
     set_tmp_attachments_directory
     
+    # Delete all fixtured journals, a race condition can occur causing the wrong
+    # journal to get fetched in the next find.
+    Journal.delete_all
+
     # anonymous user
     post :edit,
          :id => 1,

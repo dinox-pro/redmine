@@ -34,6 +34,12 @@ module ApplicationHelper
   def link_to_if_authorized(name, options = {}, html_options = nil, *parameters_for_method_reference)
     link_to(name, options, html_options, *parameters_for_method_reference) if authorize_for(options[:controller] || params[:controller], options[:action])
   end
+  
+  # Display a link to remote if user is authorized
+  def link_to_remote_if_authorized(name, options = {}, html_options = nil)
+    url = options[:url] || {}
+    link_to_remote(name, options, html_options) if authorize_for(url[:controller] || params[:controller], url[:action])
+  end
 
   # Display a link to user's account page
   def link_to_user(user)
@@ -89,10 +95,23 @@ module ApplicationHelper
     return nil unless time
     time = time.to_time if time.is_a?(String)
     zone = User.current.time_zone
-    local = zone ? time.in_time_zone(zone) : (time.utc? ? time.utc_to_local : time)
+    local = zone ? time.in_time_zone(zone) : (time.utc? ? time.localtime : time)
     @date_format ||= (Setting.date_format.blank? || Setting.date_format.size < 2 ? l(:general_fmt_date) : Setting.date_format)
     @time_format ||= (Setting.time_format.blank? ? l(:general_fmt_time) : Setting.time_format)
     include_date ? local.strftime("#{@date_format} #{@time_format}") : local.strftime(@time_format)
+  end
+      
+  def distance_of_date_in_words(from_date, to_date = 0)
+    from_date = from_date.to_date if from_date.respond_to?(:to_date)
+    to_date = to_date.to_date if to_date.respond_to?(:to_date)
+    distance_in_days = (to_date - from_date).abs
+    lwr(:actionview_datehelper_time_in_words_day, distance_in_days)
+  end
+  
+  def due_date_distance_in_words(date)
+    if date
+      l((date < Date.today ? :label_roadmap_overdue : :label_roadmap_due_in), distance_of_date_in_words(Date.today, date))
+    end
   end
   
   # Truncates and returns the string as a single line

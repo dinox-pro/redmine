@@ -4,6 +4,7 @@ require 'redmine/activity'
 require 'redmine/mime_type'
 require 'redmine/core_ext'
 require 'redmine/themes'
+require 'redmine/hook'
 require 'redmine/plugin'
 
 begin
@@ -44,8 +45,8 @@ Redmine::AccessControl.map do |map|
     map.permission :manage_public_queries, {:queries => [:new, :edit, :destroy]}, :require => :member
     map.permission :save_queries, {:queries => [:new, :edit, :destroy]}, :require => :loggedin
     # Gantt & calendar
-    map.permission :view_gantt, :projects => :gantt
-    map.permission :view_calendar, :projects => :calendar
+    map.permission :view_gantt, :issues => :gantt
+    map.permission :view_calendar, :issues => :calendar
     # Watchers
     map.permission :view_issue_watchers, {}
     map.permission :add_issue_watchers, {:watchers => :new}
@@ -78,7 +79,8 @@ Redmine::AccessControl.map do |map|
     map.permission :manage_wiki, {:wikis => [:edit, :destroy]}, :require => :member
     map.permission :rename_wiki_pages, {:wiki => :rename}, :require => :member
     map.permission :delete_wiki_pages, {:wiki => :destroy}, :require => :member
-    map.permission :view_wiki_pages, :wiki => [:index, :history, :diff, :annotate, :special]
+    map.permission :view_wiki_pages, :wiki => [:index, :special]
+    map.permission :view_wiki_edits, :wiki => [:history, :diff, :annotate]
     map.permission :edit_wiki_pages, :wiki => [:edit, :preview, :add_attachment, :destroy_attachment]
     map.permission :protect_wiki_pages, {:wiki => :protect}, :require => :member
   end
@@ -87,12 +89,13 @@ Redmine::AccessControl.map do |map|
     map.permission :manage_repository, {:repositories => [:edit, :destroy]}, :require => :member
     map.permission :browse_repository, :repositories => [:show, :browse, :entry, :annotate, :changes, :diff, :stats, :graph]
     map.permission :view_changesets, :repositories => [:show, :revisions, :revision]
+    map.permission :commit_access, {}
   end
 
   map.project_module :boards do |map|
     map.permission :manage_boards, {:boards => [:new, :edit, :destroy]}, :require => :member
     map.permission :view_messages, {:boards => [:index, :show], :messages => [:show]}, :public => true
-    map.permission :add_messages, {:messages => [:new, :reply]}
+    map.permission :add_messages, {:messages => [:new, :reply, :quote]}
     map.permission :edit_messages, {:messages => :edit}, :require => :member
     map.permission :delete_messages, {:messages => :destroy}, :require => :member
   end
@@ -143,6 +146,6 @@ Redmine::Activity.map do |activity|
   activity.register :news
   activity.register :documents, :class_name => %w(Document Attachment)
   activity.register :files, :class_name => 'Attachment'
-  activity.register :wiki_pages, :class_name => 'WikiContent::Version', :default => false
+  activity.register :wiki_edits, :class_name => 'WikiContent::Version', :default => false
   activity.register :messages, :default => false
 end

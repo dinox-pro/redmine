@@ -1,5 +1,5 @@
-# redMine - project management software
-# Copyright (C) 2006-2007  Jean-Philippe Lang
+# Redmine - project management software
+# Copyright (C) 2006-2008  Jean-Philippe Lang
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -20,7 +20,7 @@ class IssuesController < ApplicationController
   
   before_filter :find_issue, :only => [:show, :edit, :reply, :destroy_attachment]
   before_filter :find_issues, :only => [:bulk_edit, :move, :destroy]
-  before_filter :find_project, :only => [:new, :update_form, :preview]
+  before_filter :find_project, :only => [:new, :update_form, :preview, :gantt, :calendar]
   before_filter :authorize, :except => [:index, :changes, :preview, :update_form, :context_menu]
   before_filter :find_optional_project, :only => [:index, :changes]
   accept_key_auth :index, :changes
@@ -233,6 +233,7 @@ class IssuesController < ApplicationController
         issue.start_date = params[:start_date] unless params[:start_date].blank?
         issue.due_date = params[:due_date] unless params[:due_date].blank?
         issue.done_ratio = params[:done_ratio] unless params[:done_ratio].blank?
+        call_hook(:controller_issues_bulk_edit_before_save, { :params => params, :issue => issue })
         # Don't save any change to the issue if the user is not authorized to apply the requested status
         if (status.nil? || (issue.status.new_status_allowed_to?(status, current_role, issue.tracker) && issue.status = status)) && issue.save
           # Send notification for each issue (if changed)
@@ -252,7 +253,7 @@ class IssuesController < ApplicationController
     end
     # Find potential statuses the user could be allowed to switch issues to
     @available_statuses = Workflow.find(:all, :include => :new_status,
-                                              :conditions => {:role_id => current_role.id}).collect(&:new_status).compact.uniq
+                                              :conditions => {:role_id => current_role.id}).collect(&:new_status).compact.uniq.sort
   end
 
   def move
@@ -319,6 +320,64 @@ class IssuesController < ApplicationController
                                          :old_value => a.filename)
     journal.save
     redirect_to :action => 'show', :id => @issue
+  end
+  
+  def gantt
+    @gantt = Redmine::Helpers::Gantt.new(params)
+    retrieve_query
+    if @query.valid?
+      events = []
+      # Issues that have start and due dates
+      events += Issue.find(:all, 
+                           :order => "start_date, due_date",
+                           :include => [:tracker, :status, :assigned_to, :priority, :project], 
+                           :conditions => ["(#{@query.statement}) AND (((start_date>=? and start_date<=?) or (due_date>=? and due_date<=?) or (start_date<? and due_date>?)) and start_date is not null and due_date is not null)", @gantt.date_from, @gantt.date_to, @gantt.date_from, @gantt.date_to, @gantt.date_from, @gantt.date_to]
+                           )
+      # Issues that don't have a due date but that are assigned to a version with a date
+      events += Issue.find(:all, 
+                           :order => "start_date, effective_date",
+                           :include => [:tracker, :status, :assigned_to, :priority, :project, :fixed_version], 
+                           :conditions => ["(#{@query.statement}) AND (((start_date>=? and start_date<=?) or (effective_date>=? and effective_date<=?) or (start_date<? and effective_date>?)) and start_date is not null and due_date is null and effective_date is not null)", @gantt.date_from, @gantt.date_to, @gantt.date_from, @gantt.date_to, @gantt.date_from, @gantt.date_to]
+                           )
+      # Versions
+      events += Version.find(:all, :include => :project,
+                                   :conditions => ["(#{@query.project_statement}) AND effective_date BETWEEN ? AND ?", @gantt.date_from, @gantt.date_to])
+                                   
+      @gantt.events = events
+    end
+    
+    respond_to do |format|
+      format.html { render :template => "issues/gantt.rhtml", :layout => !request.xhr? }
+      format.png  { send_data(@gantt.to_image, :disposition => 'inline', :type => 'image/png', :filename => "#{@project.identifier}-gantt.png") } if @gantt.respond_to?('to_image')
+      format.pdf  { send_data(render(:template => "issues/gantt.rfpdf", :layout => false), :type => 'application/pdf', :filename => "#{@project.identifier}-gantt.pdf") }
+    end
+  end
+  
+  def calendar
+    if params[:year] and params[:year].to_i > 1900
+      @year = params[:year].to_i
+      if params[:month] and params[:month].to_i > 0 and params[:month].to_i < 13
+        @month = params[:month].to_i
+      end    
+    end
+    @year ||= Date.today.year
+    @month ||= Date.today.month
+    
+    @calendar = Redmine::Helpers::Calendar.new(Date.civil(@year, @month, 1), current_language, :month)
+    retrieve_query
+    if @query.valid?
+      events = []
+      events += Issue.find(:all, 
+                           :include => [:tracker, :status, :assigned_to, :priority, :project], 
+                           :conditions => ["(#{@query.statement}) AND ((start_date BETWEEN ? AND ?) OR (due_date BETWEEN ? AND ?))", @calendar.startdt, @calendar.enddt, @calendar.startdt, @calendar.enddt]
+                           )
+      events += Version.find(:all, :include => :project,
+                                   :conditions => ["(#{@query.project_statement}) AND effective_date BETWEEN ? AND ?", @calendar.startdt, @calendar.enddt])
+                                     
+      @calendar.events = events
+    end
+    
+    render :layout => false if request.xhr?
   end
   
   def context_menu
