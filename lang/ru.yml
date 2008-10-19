@@ -613,6 +613,7 @@ setting_mail_from: email адрес для передачи информации
 setting_mail_handler_api_enabled: Включить веб-сервис для входящих сообщений
 setting_mail_handler_api_key: API ключ
 setting_per_page_options: Количество строк на страницу
+setting_plain_text_mail: Только простой текст (без HTML)
 setting_protocol: Протокол
 setting_repositories_encodings: Кодировки хранилища
 setting_self_registration: Возможна саморегистрация
