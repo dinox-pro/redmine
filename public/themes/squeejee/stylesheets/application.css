@@ -162,9 +162,9 @@ table.list thead th a:hover {
 }
 
 table.list td {
-	background-image: url(/themes/squeejee/images/bottom_shine.png);
+	background-image: url(/themes/squeejee/images/shadow_top.png);
 	background-repeat: repeat-x;
-	background-position:  0px -25px;
+	background-position:  0px -35px;
 	vertical-align: middle;
 	font-size: .9em;
 }
