@@ -88,7 +88,7 @@ body.no-project #header h1 {
   color: #999;
   border: solid 1px #333;
   border-width: 1px 1px 0px 0px;
-  padding: 5px 12px;
+  padding: 5px 12px 5px 12px;
 }
 
 #main-menu li a.selected,
@@ -153,7 +153,7 @@ table.list thead th {
   background: #ccc url(/themes/squeejee/images/top-shadow.png) left center  repeat-x;
 	font-size: .9em;
 	border-color: #999;
-	border-color:#d5d5d5 #d5d5d5 #999;
+	border-color:#d5d5d5 #d5d5d5 #aaa;
 	border-style:solid;
 	border-width:1px;
 }
@@ -173,6 +173,12 @@ table.list td {
 	vertical-align: middle;
 	font-size: .9em;
 }
+
+table.list tr.priority-5  a,
+table.list tr.priority-4  a,
+table.list tr.priority-3  a  { color: #900; }
+
+table.list tr.priority-1 a  { color: #559; }
 
 
 table.progress td.todo,
@@ -268,6 +274,16 @@ vertical-align: middle;
 .icon22-settings { background-image: url(/images/22x22/settings.png); }
 .icon22-plugin { background-image: url(/images/22x22/plugin.png); }
 
+
+form#issue-form div.box {
+	border: none;
+	background: none;
+}
+
+div#quick-search a {
+  padding-left: 20px;
+	background: url(/themes/squeejee/images/fugue/magnifier_left.png) left center no-repeat;
+}
 
 /* Goalisitcs styles */
 
