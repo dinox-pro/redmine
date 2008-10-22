@@ -78,32 +78,46 @@ body.no-project #header h1 {
 }
 
 #main-menu li a,
-#main-menu li a.selected,
+#main-menu li.selected a,
 #main-menu li a:hover {
  text-decoration: none;
+ line-height: 20px;
 }
 
-#main-menu li a {
-  background: #111 url(/themes/squeejee/images/bottom_shine.png) 0px -40px repeat-x;
-  color: #999;
-  border: solid 1px #333;
+#main-menu li {
+	background: #111 url(/themes/squeejee/images/bottom_shine.png) 0px -40px repeat-x;
+	border: solid 1px #333;
   border-width: 1px 1px 0px 0px;
+}
+
+#main-menu li a,
+#main-menu li a:hover {
+  background: none;
+  color: #999;
   padding: 5px 12px 5px 12px;
   font-weight: normal;
 }
 
-#main-menu li a.selected,
-#main-menu li a.selected:hover {
+#main-menu li.selected ,
+#main-menu li.selected:hover {
   background: #222 url(/themes/squeejee/images/bottom_shine.png) 0px -38px repeat-x;
-  color: #d5d5d5;
   border-color: #444;
+}
+
+#main-menu li.selected a,
+#main-menu li.selected:hover a {
+  background: none;
+  color: #d5d5d5;
   font-weight: bold;
 }
 
-#main-menu li a:hover {
-  background: #333 url(/themes/squeejee/images/bottom_shine.png) 0px -40px repeat-x;
-  color: #fff;
+#main-menu li:hover {
+  background: #333 url(/themes/squeejee/images/bottom_shine.png) 0px -40px repeat-x;  
   border-color: #555;
+}
+
+#main-menu li:hover a { 
+  color: #fff;
 }
 
 #main-menu li:last-child a {
@@ -114,6 +128,84 @@ body.no-project #header h1 {
 #main-menu li:first-child a {
 	-moz-border-radius-topleft:5px;
 	-webkit-border-top-left-radius: 5px;
+}
+
+#main-menu li.overview a,
+#main-menu li.overview a:hover {
+	background: url(/themes/squeejee/images/fugue/document_text_image.png) 6px 5px no-repeat;
+  padding-left: 24px;
+}
+
+#main-menu li.activity a,
+#main-menu li.activity a:hover {
+	background: url(/themes/squeejee/images/fugue/lightning.png) 6px 5px no-repeat;
+  padding-left: 24px;
+}
+
+#main-menu li.roadmap a,
+#main-menu li.roadmap a:hover {
+	background: url(/themes/squeejee/images/fugue/map.png) 4px 5px no-repeat;
+  padding-left: 26px;
+}
+
+#main-menu li.tickets a,
+#main-menu li.tickets a:hover {
+	background: url(/themes/squeejee/images/fugue/ticket.png) 4px 5px no-repeat;
+  padding-left: 26px;
+}
+
+#main-menu li.new-ticket a,
+#main-menu li.new-ticket a:hover {
+	background: url(/themes/squeejee/images/fugue/ticket_plus.png) 6px 5px no-repeat;
+  padding-left: 26px;
+}
+
+#main-menu li.news a,
+#main-menu li.news a:hover {
+	background: url(/themes/squeejee/images/fugue/newspaper.png) 6px 5px no-repeat;
+  padding-left: 26px;
+}
+
+#main-menu li.documents a,
+#main-menu li.documents a:hover {
+	background: url(/themes/squeejee/images/fugue/documents_text.png) 6px 5px no-repeat;
+  padding-left: 26px;
+}
+
+#main-menu li.wiki a,
+#main-menu li.wiki a:hover {
+	background: url(/themes/squeejee/images/fugue/document_horizontal_text.png) 6px 5px no-repeat;
+  padding-left: 26px;
+}
+
+#main-menu li.forums a,
+#main-menu li.forums a:hover {
+	background: url(/themes/squeejee/images/fugue/balloons.png) 6px 5px no-repeat;
+  padding-left: 26px;
+}
+
+#main-menu li.files a,
+#main-menu li.files a:hover {
+	background: url(/themes/squeejee/images/fugue/document_zipper.png) 6px 5px no-repeat;
+  padding-left: 26px;
+}
+
+#main-menu li.repository a,
+#main-menu li.repository a:hover {
+	background: url(/themes/squeejee/images/fugue/safe.png) 6px 5px no-repeat;
+  padding-left: 26px;
+}
+
+#main-menu li.google-calendar a,
+#main-menu li.google-calendar a:hover {
+	background: url(/themes/squeejee/images/fugue/calendar_month.png) 6px 5px no-repeat;
+  padding-left: 26px;
+}
+
+#main-menu li.settings a,
+#main-menu li.settings a:hover {
+	background: url(/themes/squeejee/images/fugue/equalizer.png) 6px 5px no-repeat;
+  padding-left: 26px;
 }
 
 h1, h2, h3, h4, h5{
@@ -232,9 +324,9 @@ vertical-align: middle;
 .icon-add { background-image: url(/themes/squeejee/images/fugue/plus_small.png); }
 .icon-edit { background-image: url(/themes/squeejee/images/fugue/pencil_small.png); }
 .icon-copy { background-image: url(/themes/squeejee/images/fugue/documents.png); }
-.icon-del { background-image: url(/themes/squeejee/images/fugue/document__minus.png); }
-.icon-move { background-image: url(/themes/squeejee/images/fugue/documents_arrow.png); }
-.icon-save { background-image: url(/themes/squeejee/images/fugue/disk.png); }
+.icon-del { background-image: url(/themes/squeejee/images/fugue/ticket_minus.png); }
+.icon-move { background-image: url(/themes/squeejee/images/fugue/ticket_arrow.png); }
+.icon-save { background-image: url(/themes/squeejee/images/fugue/disk_black.png); }
 .icon-cancel { background-image: url(/themes/squeejee/images/fugue/arrow.png); }
 .icon-file { background-image: url(/images/file.png); }
 .icon-folder { background-image: url(/images/folder.png); }

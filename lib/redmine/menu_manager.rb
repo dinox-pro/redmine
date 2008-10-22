@@ -83,7 +83,7 @@ module Redmine
             caption = item.caption(project)
             caption = l(caption) if caption.is_a?(Symbol)
             links << content_tag('li', 
-              link_to(h(caption), url, (current_menu_item == item.name ? item.html_options.merge(:class => 'selected') : item.html_options)))
+              link_to(h(caption), url, item.html_options), :class => "#{caption.downcase.gsub(" ", "-")} #{ 'selected' if current_menu_item == item.name }")
           end
         end
         links.empty? ? nil : content_tag('ul', links.join("\n"))
