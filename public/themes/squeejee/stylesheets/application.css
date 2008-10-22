@@ -1,0 +1,287 @@
+/* load the default Redmine stylesheet */
+@import url(../../../stylesheets/application.css);
+@import url(../../../themes/alternate/stylesheets/application.css);
+
+body {
+	font-size: 85%;
+  font-family: "Myriad Pro", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+  background: #333 url(/themes/squeejee/images/bottom_shine.png) bottom left repeat-x;
+}
+
+/* global styles */
+a, a:link, a:visited {
+	color: #666;
+	text-decoration:none;
+}
+
+a:hover {
+	color: #999;
+	text-decoration:none;
+}
+
+#wrapper, 
+#main,
+#footer {
+  background: none;
+}
+
+#main {
+	margin: 0;
+}
+
+#content {
+	margin: 1em;
+	width: 77%;
+	background: #fff url(/themes/squeejee/images/shadow_top.png) top left repeat-x;
+	border-top: solid 1px #fff;
+	border-right: solid 1px #fff;
+}
+
+#top-menu,
+#header {
+  background: #000 url(/themes/squeejee/images/bottom_shine.png) bottom left repeat-x;
+	margin: 0;
+	padding: 1em;
+}
+
+#top-menu {
+	padding: .5em;
+	color: #999;
+}
+
+#top-menu #loggedas {
+	color: #ccc;
+}
+
+#top-menu a {
+	font-weight: normal;
+	color: #999;
+}
+
+#top-menu a:hover {
+	text-decoration: none;
+	color: #fff;
+}
+
+#header h1 {
+	height: 60px;
+	line-height: 50px;
+}
+
+body.no-project #header h1 {
+	padding-left: 60px;
+	background: url(/themes/squeejee/images/squeejee_logo.png) top left no-repeat;
+}
+
+#main-menu li {
+	margin: 0;
+}
+
+#main-menu li a,
+#main-menu li a.selected,
+#main-menu li a:hover {
+ text-decoration: none;
+}
+
+#main-menu li a {
+  background: #111 url(/themes/squeejee/images/bottom_shine.png) 0px -40px repeat-x;
+  color: #999;
+  border: solid 1px #333;
+  border-width: 1px 1px 0px 0px;
+  padding: 5px 12px;
+}
+
+#main-menu li a.selected,
+#main-menu li a.selected:hover {
+  background: #222 url(/themes/squeejee/images/bottom_shine.png) 0px -40px repeat-x;
+  color: #d5d5d5;
+  border-color: #444;
+}
+
+#main-menu li a:hover {
+  background: #333 url(/themes/squeejee/images/bottom_shine.png) 0px -40px repeat-x;
+  color: #fff;
+  border-color: #555;
+}
+
+#main-menu li:last-child a {
+	-moz-border-radius-topright:5px;
+	-webkit-border-top-right-radius: 5px;
+}
+
+#main-menu li:first-child a {
+	-moz-border-radius-topleft:5px;
+	-webkit-border-top-left-radius: 5px;
+}
+
+h1, h2, h3, h4, h5{
+  font-family: "Myriad Pro", "Lucida Grande", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+}
+
+#footer a {
+	color: #ccc;
+}
+
+#footer a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+#sidebar,
+#sidebar h1, #sidebar h2, #sidebar h3, #sidebar h4, #sidebar h5 {
+	color: #efefef;
+}
+
+#sidebar {
+	color: #ccc;
+	width: 18%;
+}
+
+#sidebar a {
+	color: #d5d5d5;
+}
+
+table.list {
+	border: none;
+}
+
+table.list a:hover {
+	border-bottom: dotted 1px #999;
+}
+
+table.list th {
+  background: #efefef url(/themes/squeejee/images/middle-shime.png) left center  repeat-x;
+	font-size: .9em;
+}
+
+table.list thead th a,
+table.list thead th a:hover {
+	color: #555;
+	padding: 10px;
+	border: none;
+}
+
+table.list td {
+	background-image: url(/themes/squeejee/images/bottom_shine.png);
+	background-repeat: repeat-x;
+	background-position:  0px -25px;
+	vertical-align: middle;
+	font-size: .9em;
+}
+
+
+table.progress td.todo,
+table.progress td.done,
+table.progress td.closed {
+	background: #666 url(/themes/squeejee/images/middle_shine.png) left center repeat-x;
+	height: 25px;
+	border: none;
+}
+
+table.progress td.todo {
+	background: #fff;
+}
+
+table.progress td.done {
+	background-color: #37b3ff;
+}
+
+table.progress td.closed {
+	background-color: #2187C6;
+}
+
+table.list table.progress td {
+	height: 15px;
+}
+
+p.pourcent {
+	font-size: 1.2em;
+}
+
+.icon {
+background-position: left top;
+background-repeat: no-repeat;
+padding-left: 20px;
+padding-top: 2px;
+padding-bottom: 3px;
+line-height: 16px;
+margin-left: 5px;
+}
+
+.icon22 {
+background-position: 0% 40%;
+background-repeat: no-repeat;
+padding-left: 26px;
+line-height: 22px;
+vertical-align: middle;
+}
+
+.icon-add { background-image: url(/themes/squeejee/images/fugue/plus_small.png); }
+.icon-edit { background-image: url(/themes/squeejee/images/fugue/pencil_small.png); }
+.icon-copy { background-image: url(/themes/squeejee/images/fugue/documents.png); }
+.icon-del { background-image: url(/themes/squeejee/images/fugue/document__minus.png); }
+.icon-move { background-image: url(/themes/squeejee/images/fugue/documents_arrow.png); }
+.icon-save { background-image: url(/themes/squeejee/images/fugue/disk.png); }
+.icon-cancel { background-image: url(/themes/squeejee/images/fugue/arrow.png); }
+.icon-file { background-image: url(/images/file.png); }
+.icon-folder { background-image: url(/images/folder.png); }
+.open .icon-folder { background-image: url(/images/folder_open.png); }
+.icon-package { background-image: url(/images/package.png); }
+.icon-home { background-image: url(/images/home.png); }
+.icon-user { background-image: url(/images/user.png); }
+.icon-mypage { background-image: url(/images/user_page.png); }
+.icon-admin { background-image: url(/images/admin.png); }
+.icon-projects { background-image: url(/images/projects.png); }
+.icon-help { background-image: url(/images/help.png); }
+.icon-attachment  { background-image: url(/images/attachment.png); }
+.icon-index  { background-image: url(/images/index.png); }
+.icon-history  { background-image: url(/images/history.png); }
+.icon-time  { background-image: url(/themes/squeejee/images/fugue/clock.png); }
+.icon-stats  { background-image: url(/images/stats.png); }
+.icon-warning  { background-image: url(/images/warning.png); }
+.icon-fav  { background-image: url(/themes/squeejee/images/fugue/star.png); }
+.icon-fav-off  { background-image: url(/themes/squeejee/images/fugue/star_empty.png); }
+.icon-reload  { background-image: url(/images/reload.png); }
+.icon-lock  { background-image: url(/images/locked.png); }
+.icon-unlock  { background-image: url(/images/unlock.png); }
+.icon-checked  { background-image: url(/images/true.png); }
+.icon-details  { background-image: url(/images/zoom_in.png); }
+.icon-report  { background-image: url(/images/report.png); }
+.icon-comment  { background-image: url(/images/comment.png); }
+
+.icon22-projects { background-image: url(/images/22x22/projects.png); }
+.icon22-users { background-image: url(/images/22x22/users.png); }
+.icon22-tracker { background-image: url(/images/22x22/tracker.png); }
+.icon22-role { background-image: url(/images/22x22/role.png); }
+.icon22-workflow { background-image: url(/images/22x22/workflow.png); }
+.icon22-options { background-image: url(/images/22x22/options.png); }
+.icon22-notifications { background-image: url(/images/22x22/notifications.png); }
+.icon22-authent { background-image: url(/images/22x22/authent.png); }
+.icon22-info { background-image: url(/images/22x22/info.png); }
+.icon22-comment { background-image: url(/images/22x22/comment.png); }
+.icon22-package { background-image: url(/images/22x22/package.png); }
+.icon22-settings { background-image: url(/images/22x22/settings.png); }
+.icon22-plugin { background-image: url(/images/22x22/plugin.png); }
+
+
+/* Goalisitcs styles */
+
+body.cbr #header h1 {
+	padding-left: 60px;
+	background: url(/themes/squeejee/images/goalistics_logo.png) top left no-repeat;
+}
+
+
+/* Squeejee styles */
+
+body.praexis #header h1 {
+	padding-left: 60px;
+	background: url(/themes/squeejee/images/squeejee_logo.png) top left no-repeat;
+}
+
+/* Official Team Gear styles */
+
+body.otg #header h1 {
+	padding-left: 170px;
+	background: url(/themes/squeejee/images/otg_logo.png) top left no-repeat;
+}
