@@ -3,8 +3,8 @@
 @import url(../../../themes/alternate/stylesheets/application.css);
 
 body {
-	font-size: 85%;
-  font-family: "Myriad Pro", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+	font-size: 80%;
+  font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
   background: #333 url(/themes/squeejee/images/bottom_shine.png) bottom left repeat-x;
 }
 
@@ -41,11 +41,12 @@ a:hover {
 #header {
   background: #000 url(/themes/squeejee/images/bottom_shine.png) bottom left repeat-x;
 	margin: 0;
-	padding: 1em;
+	padding: 1em 1em 2em 1em;
+	font-family: "Myriad Pro", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
 }
 
 #top-menu {
-	padding: .5em;
+	padding: 1em 1em 0 1em;
 	color: #999;
 }
 
@@ -64,7 +65,6 @@ a:hover {
 }
 
 #header h1 {
-	height: 60px;
 	line-height: 50px;
 }
 
@@ -75,6 +75,8 @@ body.no-project #header h1 {
 
 #main-menu li {
 	margin: 0;
+	font-size: .8em;
+	font-family: "Myriad Pro", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
 }
 
 #main-menu li a,
@@ -132,84 +134,84 @@ body.no-project #header h1 {
 
 #main-menu li.overview a,
 #main-menu li.overview a:hover {
-	background: url(/themes/squeejee/images/fugue/document_text_image.png) 6px 5px no-repeat;
+	background: url(/themes/squeejee/images/fugue/document_text_image.png) 6px center no-repeat;
   padding-left: 24px;
 }
 
 #main-menu li.activity a,
 #main-menu li.activity a:hover {
-	background: url(/themes/squeejee/images/fugue/lightning.png) 6px 5px no-repeat;
+	background: url(/themes/squeejee/images/fugue/lightning.png) 6px center no-repeat;
   padding-left: 24px;
 }
 
 #main-menu li.roadmap a,
 #main-menu li.roadmap a:hover {
-	background: url(/themes/squeejee/images/fugue/map.png) 4px 5px no-repeat;
+	background: url(/themes/squeejee/images/fugue/map.png) 4px center no-repeat;
   padding-left: 26px;
 }
 
 #main-menu li.tickets a,
 #main-menu li.tickets a:hover {
-	background: url(/themes/squeejee/images/fugue/ticket.png) 4px 5px no-repeat;
+	background: url(/themes/squeejee/images/fugue/ticket.png) 4px center no-repeat;
   padding-left: 26px;
 }
 
 #main-menu li.new-ticket a,
 #main-menu li.new-ticket a:hover {
-	background: url(/themes/squeejee/images/fugue/ticket_plus.png) 6px 5px no-repeat;
+	background: url(/themes/squeejee/images/fugue/ticket_plus.png) 6px center no-repeat;
   padding-left: 26px;
 }
 
 #main-menu li.news a,
 #main-menu li.news a:hover {
-	background: url(/themes/squeejee/images/fugue/newspaper.png) 6px 5px no-repeat;
+	background: url(/themes/squeejee/images/fugue/newspaper.png) 6px center no-repeat;
   padding-left: 26px;
 }
 
 #main-menu li.documents a,
 #main-menu li.documents a:hover {
-	background: url(/themes/squeejee/images/fugue/documents_text.png) 6px 5px no-repeat;
+	background: url(/themes/squeejee/images/fugue/documents_text.png) 6px center no-repeat;
   padding-left: 26px;
 }
 
 #main-menu li.wiki a,
 #main-menu li.wiki a:hover {
-	background: url(/themes/squeejee/images/fugue/document_horizontal_text.png) 6px 5px no-repeat;
+	background: url(/themes/squeejee/images/fugue/document_horizontal_text.png) 6px center no-repeat;
   padding-left: 26px;
 }
 
 #main-menu li.forums a,
 #main-menu li.forums a:hover {
-	background: url(/themes/squeejee/images/fugue/balloons.png) 6px 5px no-repeat;
+	background: url(/themes/squeejee/images/fugue/balloons.png) 6px center no-repeat;
   padding-left: 26px;
 }
 
 #main-menu li.files a,
 #main-menu li.files a:hover {
-	background: url(/themes/squeejee/images/fugue/document_zipper.png) 6px 5px no-repeat;
+	background: url(/themes/squeejee/images/fugue/document_zipper.png) 6px center no-repeat;
   padding-left: 26px;
 }
 
 #main-menu li.repository a,
 #main-menu li.repository a:hover {
-	background: url(/themes/squeejee/images/fugue/safe.png) 6px 5px no-repeat;
+	background: url(/themes/squeejee/images/fugue/safe.png) 6px center no-repeat;
   padding-left: 26px;
 }
 
 #main-menu li.google-calendar a,
 #main-menu li.google-calendar a:hover {
-	background: url(/themes/squeejee/images/fugue/calendar_month.png) 6px 5px no-repeat;
+	background: url(/themes/squeejee/images/fugue/calendar_month.png) 6px center no-repeat;
   padding-left: 26px;
 }
 
 #main-menu li.settings a,
 #main-menu li.settings a:hover {
-	background: url(/themes/squeejee/images/fugue/equalizer.png) 6px 5px no-repeat;
+	background: url(/themes/squeejee/images/fugue/equalizer.png) 6px center no-repeat;
   padding-left: 26px;
 }
 
 h1, h2, h3, h4, h5{
-  font-family: "Myriad Pro", "Lucida Grande", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+  font-family:  "Myriad Pro", "Lucida Grande", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
 }
 
 #footer a {
@@ -386,6 +388,11 @@ body.cbr #header h1 {
 	background: url(/themes/squeejee/images/goalistics_logo.png) top left no-repeat;
 }
 
+/*body.cbr #main-menu li:hover {
+  background-color: #ABD584;
+  border-color: #ddfebe;
+}
+*/
 
 /* Squeejee styles */
 
