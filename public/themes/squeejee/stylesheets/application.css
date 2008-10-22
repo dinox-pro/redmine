@@ -102,7 +102,7 @@ body.no-project #header h1 {
 
 #main-menu li.selected ,
 #main-menu li.selected:hover {
-  background: #222 url(/themes/squeejee/images/bottom_shine.png) 0px -38px repeat-x;
+  background: #222 url(/themes/squeejee/images/bottom_shine.png) 0px -36px repeat-x;
   border-color: #444;
 }
 
@@ -122,12 +122,12 @@ body.no-project #header h1 {
   color: #fff;
 }
 
-#main-menu li:last-child a {
+#main-menu li:last-child  {
 	-moz-border-radius-topright:5px;
 	-webkit-border-top-right-radius: 5px;
 }
 
-#main-menu li:first-child a {
+#main-menu li:first-child  {
 	-moz-border-radius-topleft:5px;
 	-webkit-border-top-left-radius: 5px;
 }
@@ -379,6 +379,25 @@ form#issue-form div.box {
 div#quick-search a {
   padding-left: 20px;
 	background: url(/themes/squeejee/images/fugue/magnifier_left.png) left center no-repeat;
+}
+
+
+#history ul {
+	clear: top;
+	list-style: none;
+	margin: 0 0 0 1em;
+	padding: 0;
+}
+
+#history .journal {
+	clear: both;
+	border-bottom: solid 1px #d5d5d5;
+	padding-bottom: 1em;
+}
+
+#history .journal p {
+	padding-left: 20px;
+	background: url(/themes/squeejee/images/fugue/sticky_note.png) left top no-repeat;
 }
 
 /* Goalisitcs styles */
