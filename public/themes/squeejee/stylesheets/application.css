@@ -35,6 +35,7 @@ a:hover {
 	background: #fff url(/themes/squeejee/images/shadow_top.png) top left repeat-x;
 	border-top: solid 1px #fff;
 	border-right: solid 1px #fff;
+	-webkit-box-shadow: 5px 5px 30px rgba(0,0,0,.8);
 }
 
 #top-menu,
@@ -84,6 +85,7 @@ body.no-project #header h1 {
 #main-menu li a:hover {
  text-decoration: none;
  line-height: 20px;
+ text-shadow: 1px 1px 1px rgba(0,0,0,.8);
 }
 
 #main-menu li {
@@ -95,7 +97,7 @@ body.no-project #header h1 {
 #main-menu li a,
 #main-menu li a:hover {
   background: none;
-  color: #999;
+  color: #aaa;
   padding: 5px 12px 5px 12px;
   font-weight: normal;
 }
@@ -223,18 +225,20 @@ h1, h2, h3, h4, h5{
 	text-decoration: none;
 }
 
-#sidebar,
+
 #sidebar h1, #sidebar h2, #sidebar h3, #sidebar h4, #sidebar h5 {
 	color: #efefef;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.8);
 }
 
 #sidebar {
 	color: #ccc;
 	width: 18%;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.6);
 }
 
 #sidebar a {
-	color: #d5d5d5;
+	color: #aaa;
 }
 
 table.list {
@@ -257,7 +261,8 @@ table.list thead th {
 
 table.list thead th a,
 table.list thead th a:hover {
-	color: #555;
+	color: #444;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.3);
 	padding: 10px;
 	border: none;
 }
@@ -371,7 +376,7 @@ vertical-align: middle;
 .icon22-plugin { background-image: url(/images/22x22/plugin.png); }
 
 
-form#issue-form div.box {
+div.box {
 	border: none;
 	background: none;
 }
