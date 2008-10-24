@@ -448,3 +448,13 @@ body.mindbites #header h1 {
 	text-indent: -9999px;
 	background: url(/themes/squeejee/images/mb.png) top left no-repeat;
 }
+
+/* Blockshopper styles */
+
+body.blockshopper #header h1 {
+	width: 200;
+	height: 60px;
+	overflow: hidden;
+	text-indent: -9999px;
+	background: url(/themes/squeejee/images/blockshopper.png) top left no-repeat;
+}
