@@ -408,8 +408,11 @@ div#quick-search a {
 /* Goalisitcs styles */
 
 body.cbr #header h1 {
-	padding-left: 60px;
 	background: url(/themes/squeejee/images/goalistics_logo.png) top left no-repeat;
+	width: 60px;
+	height: 60px;
+	overflow: hidden;
+	text-indent: -9999px;
 }
 
 /*body.cbr #main-menu li:hover {
@@ -428,6 +431,9 @@ body.praexis #header h1 {
 /* Official Team Gear styles */
 
 body.otg #header h1 {
-	padding-left: 170px;
+	width: 170px;
+	height: 60px;
+	overflow: hidden;
+	text-indent: -9999px;
 	background: url(/themes/squeejee/images/otg_logo.png) top left no-repeat;
 }
