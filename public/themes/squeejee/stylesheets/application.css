@@ -256,6 +256,7 @@ table.list thead th {
 	border-color:#d5d5d5 #d5d5d5 #aaa;
 	border-style:solid;
 	border-width:1px;
+	text-shadow: -1px 1px 0px #efefef;
 }
 
 
