@@ -1,5 +1,5 @@
-# redMine - project management software
-# Copyright (C) 2006  Jean-Philippe Lang
+# Redmine - project management software
+# Copyright (C) 2006-2009  Jean-Philippe Lang
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -17,26 +17,40 @@
 
 class Member < ActiveRecord::Base
   belongs_to :user
-  belongs_to :role
+  has_many :member_roles, :dependent => :delete_all
+  has_many :roles, :through => :member_roles
   belongs_to :project
 
-  validates_presence_of :role, :user, :project
+  validates_presence_of :user, :project
   validates_uniqueness_of :user_id, :scope => :project_id
-
-  def validate
-    errors.add :role_id, :activerecord_error_invalid if role && !role.member?
-  end
   
   def name
     self.user.name
   end
   
+  # Sets user by login
+  def user_login=(login)
+    login = login.to_s
+    unless login.blank?
+      if (u = User.find_by_login(login))
+        self.user = u
+      end
+    end
+  end
+  
   def <=>(member)
-    role == member.role ? (user <=> member.user) : (role <=> member.role)
+    a, b = roles.sort.first, member.roles.sort.first
+    a == b ? (user <=> member.user) : (a <=> b)
   end
   
   def before_destroy
     # remove category based auto assignments for this member
     IssueCategory.update_all "assigned_to_id = NULL", ["project_id = ? AND assigned_to_id = ?", project.id, user.id]
+  end
+  
+  protected
+  
+  def validate
+    errors.add_to_base "Role can't be blank" if roles.empty?
   end
 end

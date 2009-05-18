@@ -20,6 +20,7 @@ class Role < ActiveRecord::Base
   BUILTIN_NON_MEMBER = 1
   BUILTIN_ANONYMOUS  = 2
 
+  named_scope :givable, { :conditions => "builtin = 0", :order => 'position' }
   named_scope :builtin, lambda { |*args|
     compare = 'not' if args.first == true
     { :conditions => "#{compare} builtin = 0" }
@@ -31,14 +32,15 @@ class Role < ActiveRecord::Base
       raise "Can not copy workflow from a #{role.class}" unless role.is_a?(Role)
       raise "Can not copy workflow from/to an unsaved role" if proxy_owner.new_record? || role.new_record?
       clear
-      connection.insert "INSERT INTO workflows (tracker_id, old_status_id, new_status_id, role_id)" +
+      connection.insert "INSERT INTO #{Workflow.table_name} (tracker_id, old_status_id, new_status_id, role_id)" +
                         " SELECT tracker_id, old_status_id, new_status_id, #{proxy_owner.id}" +
-                        " FROM workflows" +
+                        " FROM #{Workflow.table_name}" +
                         " WHERE role_id = #{role.id}"
     end
   end
   
-  has_many :members
+  has_many :member_roles, :dependent => :destroy
+  has_many :members, :through => :member_roles
   acts_as_list
   
   serialize :permissions, Array
@@ -82,7 +84,11 @@ class Role < ActiveRecord::Base
   end
   
   def <=>(role)
-    position <=> role.position
+    role ? position <=> role.position : -1
+  end
+  
+  def to_s
+    name
   end
   
   # Return true if the role is a builtin role

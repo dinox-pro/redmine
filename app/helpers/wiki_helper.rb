@@ -16,21 +16,18 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 module WikiHelper
-
-  def render_page_hierarchy(pages, node=nil)
-    content = ''
-    if pages[node]
-      content << "<ul class=\"pages-hierarchy\">\n"
-      pages[node].each do |page|
-        content << "<li>"
-        content << link_to(h(page.pretty_title), {:action => 'index', :page => page.title},
-                           :title => (page.respond_to?(:updated_on) ? l(:label_updated_time, distance_of_time_in_words(Time.now, page.updated_on)) : nil))
-        content << "\n" + render_page_hierarchy(pages, page.id) if pages[page.id]
-        content << "</li>\n"
-      end
-      content << "</ul>\n"
+  
+  def wiki_page_options_for_select(pages, selected = nil, parent = nil, level = 0)
+    s = ''
+    pages.select {|p| p.parent == parent}.each do |page|
+      attrs = "value='#{page.id}'"
+      attrs << " selected='selected'" if selected == page
+      indent = (level > 0) ? ('&nbsp;' * level * 2 + '&#187; ') : nil
+      
+      s << "<option value='#{page.id}'>#{indent}#{h page.pretty_title}</option>\n" + 
+             wiki_page_options_for_select(pages, selected, page, level + 1)
     end
-    content
+    s
   end
   
   def html_diff(wdiff)

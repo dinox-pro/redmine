@@ -35,6 +35,7 @@ class DocumentsController < ApplicationController
     else
       @grouped = documents.group_by(&:category)
     end
+    @document = @project.documents.build
     render :layout => false if request.xhr?
   end
   
@@ -47,13 +48,12 @@ class DocumentsController < ApplicationController
     if request.post? and @document.save	
       attach_files(@document, params[:attachments])
       flash[:notice] = l(:notice_successful_create)
-      Mailer.deliver_document_added(@document) if Setting.notified_events.include?('document_added')
       redirect_to :action => 'index', :project_id => @project
     end
   end
   
   def edit
-    @categories = Enumeration::get_values('DCAT')
+    @categories = Enumeration.document_categories
     if request.post? and @document.update_attributes(params[:document])
       flash[:notice] = l(:notice_successful_update)
       redirect_to :action => 'show', :id => @document
@@ -68,11 +68,6 @@ class DocumentsController < ApplicationController
   def add_attachment
     attachments = attach_files(@document, params[:attachments])
     Mailer.deliver_attachments_added(attachments) if !attachments.empty? && Setting.notified_events.include?('document_added')
-    redirect_to :action => 'show', :id => @document
-  end
-  
-  def destroy_attachment
-    @document.attachments.find(params[:attachment_id]).destroy
     redirect_to :action => 'show', :id => @document
   end
 

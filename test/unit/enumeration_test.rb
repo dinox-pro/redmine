@@ -37,6 +37,43 @@ class EnumerationTest < Test::Unit::TestCase
     assert !Enumeration.find(7).in_use?
   end
   
+  def test_default
+    e = Enumeration.priorities.default
+    assert e.is_a?(Enumeration)
+    assert e.is_default?
+    assert_equal 'Normal', e.name
+  end
+  
+  def test_create
+    e = Enumeration.new(:opt => 'IPRI', :name => 'Very urgent', :is_default => false)
+    assert e.save
+    assert_equal 'Normal', Enumeration.priorities.default.name
+  end
+  
+  def test_create_as_default
+    e = Enumeration.new(:opt => 'IPRI', :name => 'Very urgent', :is_default => true)
+    assert e.save
+    assert_equal e, Enumeration.priorities.default
+  end
+  
+  def test_update_default
+    e = Enumeration.priorities.default
+    e.update_attributes(:name => 'Changed', :is_default => true)
+    assert_equal e, Enumeration.priorities.default
+  end
+  
+  def test_update_default_to_non_default
+    e = Enumeration.priorities.default
+    e.update_attributes(:name => 'Changed', :is_default => false)
+    assert_nil Enumeration.priorities.default
+  end
+  
+  def test_change_default
+    e = Enumeration.find_by_name('Urgent')
+    e.update_attributes(:name => 'Urgent', :is_default => true)
+    assert_equal e, Enumeration.priorities.default
+  end
+  
   def test_destroy_with_reassign
     Enumeration.find(4).destroy(Enumeration.find(6))
     assert_nil Issue.find(:first, :conditions => {:priority_id => 4})

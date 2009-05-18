@@ -30,18 +30,22 @@ class UsersController < ApplicationController
 
   def list
     sort_init 'login', 'asc'
-    sort_update
+    sort_update %w(login firstname lastname mail admin created_on last_login_on)
     
     @status = params[:status] ? params[:status].to_i : 1
-    conditions = "status <> 0"
-    conditions = ["status=?", @status] unless @status == 0
+    c = ARCondition.new(@status == 0 ? "status <> 0" : ["status = ?", @status])
+
+    unless params[:name].blank?
+      name = "%#{params[:name].strip.downcase}%"
+      c << ["LOWER(login) LIKE ? OR LOWER(firstname) LIKE ? OR LOWER(lastname) LIKE ?", name, name, name]
+    end
     
-    @user_count = User.count(:conditions => conditions)
+    @user_count = User.count(:conditions => c.conditions)
     @user_pages = Paginator.new self, @user_count,
 								per_page_option,
 								params['page']								
     @users =  User.find :all,:order => sort_clause,
-                        :conditions => conditions,
+                        :conditions => c.conditions,
 						:limit  =>  @user_pages.items_per_page,
 						:offset =>  @user_pages.current.offset
 
@@ -71,17 +75,18 @@ class UsersController < ApplicationController
       @user.admin = params[:user][:admin] if params[:user][:admin]
       @user.login = params[:user][:login] if params[:user][:login]
       @user.password, @user.password_confirmation = params[:password], params[:password_confirmation] unless params[:password].nil? or params[:password].empty? or @user.auth_source_id
-      if @user.update_attributes(params[:user])
+      @user.attributes = params[:user]
+      # Was the account actived ? (do it before User#save clears the change)
+      was_activated = (@user.status_change == [User::STATUS_REGISTERED, User::STATUS_ACTIVE])
+      if @user.save
+        Mailer.deliver_account_activated(@user) if was_activated
         flash[:notice] = l(:notice_successful_update)
         # Give a string to redirect_to otherwise it would use status param as the response code
         redirect_to(url_for(:action => 'list', :status => params[:status], :page => params[:page]))
       end
     end
     @auth_sources = AuthSource.find(:all)
-    @roles = Role.find_all_givable
-    @projects = Project.find(:all, :order => 'name', :conditions => "status=#{Project::STATUS_ACTIVE}") - @user.projects
     @membership ||= Member.new
-    @memberships = @user.memberships
   end
   
   def edit_membership
@@ -89,12 +94,23 @@ class UsersController < ApplicationController
     @membership = params[:membership_id] ? Member.find(params[:membership_id]) : Member.new(:user => @user)
     @membership.attributes = params[:membership]
     @membership.save if request.post?
-    redirect_to :action => 'edit', :id => @user, :tab => 'memberships'
+    respond_to do |format|
+       format.html { redirect_to :controller => 'users', :action => 'edit', :id => @user, :tab => 'memberships' }
+       format.js { 
+         render(:update) {|page| 
+           page.replace_html "tab-content-memberships", :partial => 'users/memberships'
+           page.visual_effect(:highlight, "member-#{@membership.id}")
+         }
+       }
+     end
   end
   
   def destroy_membership
     @user = User.find(params[:id])
     Member.find(params[:membership_id]).destroy if request.post?
-    redirect_to :action => 'edit', :id => @user, :tab => 'memberships'
+    respond_to do |format|
+      format.html { redirect_to :controller => 'users', :action => 'edit', :id => @user, :tab => 'memberships' }
+      format.js { render(:update) {|page| page.replace_html "tab-content-memberships", :partial => 'users/memberships'} }
+    end
   end
 end

@@ -26,7 +26,7 @@ class AdminTest < ActionController::IntegrationTest
     assert_response :success
     assert_template "users/add"
     post "/users/add", :user => { :login => "psmith", :firstname => "Paul", :lastname => "Smith", :mail => "psmith@somenet.foo", :language => "en" }, :password => "psmith09", :password_confirmation => "psmith09"
-    assert_redirected_to "users/list"
+    assert_redirected_to "/users"
     
     user = User.find_by_login("psmith")
     assert_kind_of User, user
@@ -35,32 +35,8 @@ class AdminTest < ActionController::IntegrationTest
     assert_equal "Paul", logged_user.firstname
     
     post "users/edit", :id => user.id, :user => { :status => User::STATUS_LOCKED }
-    assert_redirected_to "users/list"
+    assert_redirected_to "/users"
     locked_user = User.try_to_login("psmith", "psmith09")
     assert_equal nil, locked_user
   end
-  
-  def test_add_project
-    log_user("admin", "admin")
-    get "projects/add"
-    assert_response :success
-    assert_template "projects/add"
-    post "projects/add", :project => { :name => "blog", 
-                                       :description => "weblog",
-                                       :identifier => "blog",
-                                       :is_public => 1,
-                                       :custom_field_values => { '3' => 'Beta' }
-                                       }
-    assert_redirected_to "admin/projects"
-    assert_equal 'Successful creation.', flash[:notice]
-    
-    project = Project.find_by_name("blog")
-    assert_kind_of Project, project
-    assert_equal "weblog", project.description 
-    assert_equal true, project.is_public?
-    
-    get "admin/projects"
-    assert_response :success
-    assert_template "admin/projects"
-  end  
 end

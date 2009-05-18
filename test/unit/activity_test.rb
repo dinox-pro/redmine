@@ -18,7 +18,7 @@
 require File.dirname(__FILE__) + '/../test_helper'
 
 class ActivityTest < Test::Unit::TestCase
-  fixtures :projects, :versions, :users, :roles, :members, :issues, :journals, :journal_details,
+  fixtures :projects, :versions, :attachments, :users, :roles, :members, :member_roles, :issues, :journals, :journal_details,
            :trackers, :projects_trackers, :issue_statuses, :enabled_modules, :enumerations, :boards, :messages
 
   def setup
@@ -61,6 +61,27 @@ class ActivityTest < Test::Unit::TestCase
     assert events.include?(Issue.find(1))
     # Issue of a private project the user belongs to
     assert events.include?(Issue.find(4))
+  end
+  
+  def test_user_activity
+    user = User.find(2)
+    events = Redmine::Activity::Fetcher.new(User.anonymous, :author => user).events(nil, nil, :limit => 10)
+    
+    assert(events.size > 0)
+    assert(events.size <= 10)
+    assert_nil(events.detect {|e| e.event_author != user})
+  end
+  
+  def test_files_activity
+    f = Redmine::Activity::Fetcher.new(User.anonymous, :project => Project.find(1))
+    f.scope = ['files']
+    events = f.events
+    
+    assert_kind_of Array, events
+    assert events.include?(Attachment.find_by_container_type_and_container_id('Project', 1))
+    assert events.include?(Attachment.find_by_container_type_and_container_id('Version', 1))
+    assert_equal [Attachment], events.collect(&:class).uniq
+    assert_equal %w(Project Version), events.collect(&:container_type).uniq.sort
   end
   
   private

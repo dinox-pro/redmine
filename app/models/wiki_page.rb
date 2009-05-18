@@ -21,8 +21,8 @@ require 'enumerator'
 class WikiPage < ActiveRecord::Base
   belongs_to :wiki
   has_one :content, :class_name => 'WikiContent', :foreign_key => 'page_id', :dependent => :destroy
-  has_many :attachments, :as => :container, :dependent => :destroy
-  acts_as_tree :order => 'title'
+  acts_as_attachable :delete_permission => :delete_wiki_pages_attachments
+  acts_as_tree :dependent => :nullify, :order => 'title'
   
   acts_as_event :title => Proc.new {|o| "#{l(:label_wiki)}: #{o.title}"},
                 :description => :text,
@@ -111,6 +111,10 @@ class WikiPage < ActiveRecord::Base
   def editable_by?(usr)
     !protected? || usr.allowed_to?(:protect_wiki_pages, wiki.project)
   end
+        
+  def attachments_deletable?(usr=User.current)
+    editable_by?(usr) && super(usr)
+  end
   
   def parent_title
     @parent_title || (self.parent && self.parent.pretty_title)
@@ -125,9 +129,9 @@ class WikiPage < ActiveRecord::Base
   protected
   
   def validate
-    errors.add(:parent_title, :activerecord_error_invalid) if !@parent_title.blank? && parent.nil?
-    errors.add(:parent_title, :activerecord_error_circular_dependency) if parent && (parent == self || parent.ancestors.include?(self))
-    errors.add(:parent_title, :activerecord_error_not_same_project) if parent && (parent.wiki_id != wiki_id)
+    errors.add(:parent_title, :invalid) if !@parent_title.blank? && parent.nil?
+    errors.add(:parent_title, :circular_dependency) if parent && (parent == self || parent.ancestors.include?(self))
+    errors.add(:parent_title, :not_same_project) if parent && (parent.wiki_id != wiki_id)
   end
 end
 

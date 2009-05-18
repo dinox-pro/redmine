@@ -33,11 +33,12 @@ class Journal < ActiveRecord::Base
 
   acts_as_activity_provider :type => 'issues',
                             :permission => :view_issues,
+                            :author_key => :user_id,
                             :find_options => {:include => [{:issue => :project}, :details, :user],
                                               :conditions => "#{Journal.table_name}.journalized_type = 'Issue' AND" +
                                                              " (#{JournalDetail.table_name}.prop_key = 'status_id' OR #{Journal.table_name}.notes <> '')"}
   
-  def save
+  def save(*args)
     # Do not save an empty journal
     (details.empty? && notes.blank?) ? false : super
   end

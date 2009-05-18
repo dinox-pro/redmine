@@ -22,8 +22,14 @@ class WikiContent < ActiveRecord::Base
   belongs_to :page, :class_name => 'WikiPage', :foreign_key => 'page_id'
   belongs_to :author, :class_name => 'User', :foreign_key => 'author_id'
   validates_presence_of :text
+  validates_length_of :comments, :maximum => 255, :allow_nil => true
   
   acts_as_versioned
+    
+  def project
+    page.project
+  end
+  
   class Version
     belongs_to :page, :class_name => '::WikiPage', :foreign_key => 'page_id'
     belongs_to :author, :class_name => '::User', :foreign_key => 'author_id'
@@ -37,6 +43,7 @@ class WikiContent < ActiveRecord::Base
 
     acts_as_activity_provider :type => 'wiki_edits',
                               :timestamp => "#{WikiContent.versioned_table_name}.updated_on",
+                              :author_key => "#{WikiContent.versioned_table_name}.author_id",
                               :permission => :view_wiki_edits,
                               :find_options => {:select => "#{WikiContent.versioned_table_name}.updated_on, #{WikiContent.versioned_table_name}.comments, " +
                                                            "#{WikiContent.versioned_table_name}.#{WikiContent.version_column}, #{WikiPage.table_name}.title, " +
@@ -85,5 +92,4 @@ class WikiContent < ActiveRecord::Base
                                               :conditions => ["wiki_content_id = ? AND version < ?", wiki_content_id, version])
     end
   end
-  
 end

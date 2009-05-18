@@ -23,18 +23,23 @@ class ProjectsController < ApplicationController
   menu_item :settings, :only => :settings
   menu_item :issues, :only => [:changelog]
   
-  before_filter :find_project, :except => [ :index, :list, :add, :activity ]
+  before_filter :find_project, :except => [ :index, :list, :add, :copy, :activity ]
   before_filter :find_optional_project, :only => :activity
-  before_filter :authorize, :except => [ :index, :list, :add, :archive, :unarchive, :destroy, :activity ]
-  before_filter :require_admin, :only => [ :add, :archive, :unarchive, :destroy ]
+  before_filter :authorize, :except => [ :index, :list, :add, :copy, :archive, :unarchive, :destroy, :activity ]
+  before_filter :authorize_global, :only => :add
+  before_filter :require_admin, :only => [ :copy, :archive, :unarchive, :destroy ]
   accept_key_auth :activity
+  
+  after_filter :only => [:add, :edit, :archive, :unarchive, :destroy] do |controller|
+    if controller.request.post?
+      controller.send :expire_action, :controller => 'welcome', :action => 'robots.txt'
+    end
+  end
   
   helper :sort
   include SortHelper
   helper :custom_fields
   include CustomFieldsHelper   
-  helper :ifpdf
-  include IfpdfHelper
   helper :issues
   helper IssuesHelper
   helper :queries
@@ -45,17 +50,14 @@ class ProjectsController < ApplicationController
   
   # Lists visible projects
   def index
-    projects = Project.find :all,
-                            :conditions => Project.visible_by(User.current),
-                            :include => :parent
     respond_to do |format|
       format.html { 
-        @project_tree = projects.group_by {|p| p.parent || p}
-        @project_tree.keys.each {|p| @project_tree[p] -= [p]} 
+        @projects = Project.visible.find(:all, :order => 'lft') 
       }
       format.atom {
-        render_feed(projects.sort_by(&:created_on).reverse.slice(0, Setting.feeds_limit.to_i), 
-                                  :title => "#{Setting.app_title}: #{l(:label_project_latest)}")
+        projects = Project.visible.find(:all, :order => 'created_on DESC',
+                                              :limit => Setting.feeds_limit.to_i)
+        render_feed(projects, :title => "#{Setting.app_title}: #{l(:label_project_latest)}")
       }
     end
   end
@@ -64,9 +66,6 @@ class ProjectsController < ApplicationController
   def add
     @issue_custom_fields = IssueCustomField.find(:all, :order => "#{CustomField.table_name}.position")
     @trackers = Tracker.all
-    @root_projects = Project.find(:all,
-                                  :conditions => "parent_id IS NULL AND status = #{Project::STATUS_ACTIVE}",
-                                  :order => 'name')
     @project = Project.new(params[:project])
     if request.get?
       @project.identifier = Project.next_identifier if Setting.sequential_project_identifiers?
@@ -76,28 +75,64 @@ class ProjectsController < ApplicationController
     else
       @project.enabled_module_names = params[:enabled_modules]
       if @project.save
+        @project.set_parent!(params[:project]['parent_id']) if User.current.admin? && params[:project].has_key?('parent_id')
+        # Add current user as a project member if he is not admin
+        unless User.current.admin?
+          r = Role.givable.find_by_id(Setting.new_project_user_role_id.to_i) || Role.givable.first
+          m = Member.new(:user => User.current, :roles => [r])
+          @project.members << m
+        end
         flash[:notice] = l(:notice_successful_create)
-        redirect_to :controller => 'admin', :action => 'projects'
-	  end		
+        redirect_to :controller => 'projects', :action => 'settings', :id => @project
+      end
     end	
   end
+  
+  def copy
+    @issue_custom_fields = IssueCustomField.find(:all, :order => "#{CustomField.table_name}.position")
+    @trackers = Tracker.all
+    @root_projects = Project.find(:all,
+                                  :conditions => "parent_id IS NULL AND status = #{Project::STATUS_ACTIVE}",
+                                  :order => 'name')
+    if request.get?
+      @project = Project.copy_from(params[:id])
+      if @project
+        @project.identifier = Project.next_identifier if Setting.sequential_project_identifiers?
+      else
+        redirect_to :controller => 'admin', :action => 'projects'
+      end  
+    else
+      @project = Project.new(params[:project])
+      @project.enabled_module_names = params[:enabled_modules]
+      if @project.copy(params[:id])
+        flash[:notice] = l(:notice_successful_create)
+        redirect_to :controller => 'admin', :action => 'projects'
+      end		
+    end	
+  end
+
 	
   # Show @project
   def show
-    @members_by_role = @project.members.find(:all, :include => [:user, :role], :order => 'position').group_by {|m| m.role}
-    @subprojects = @project.children.find(:all, :conditions => Project.visible_by(User.current))
+    if params[:jump]
+      # try to redirect to the requested menu item
+      redirect_to_project_menu_item(@project, params[:jump]) && return
+    end
+    
+    @users_by_role = @project.users_by_role
+    @subprojects = @project.children.visible
     @news = @project.news.find(:all, :limit => 5, :include => [ :author, :project ], :order => "#{News.table_name}.created_on DESC")
     @trackers = @project.rolled_up_trackers
     
     cond = @project.project_condition(Setting.display_subprojects_issues?)
-    Issue.visible_by(User.current) do
-      @open_issues_by_tracker = Issue.count(:group => :tracker,
+    
+    @open_issues_by_tracker = Issue.visible.count(:group => :tracker,
                                             :include => [:project, :status, :tracker],
                                             :conditions => ["(#{cond}) AND #{IssueStatus.table_name}.is_closed=?", false])
-      @total_issues_by_tracker = Issue.count(:group => :tracker,
+    @total_issues_by_tracker = Issue.visible.count(:group => :tracker,
                                             :include => [:project, :status, :tracker],
                                             :conditions => cond)
-    end
+    
     TimeEntry.visible_by(User.current) do
       @total_hours = TimeEntry.sum(:hours, 
                                    :include => :project,
@@ -107,9 +142,6 @@ class ProjectsController < ApplicationController
   end
 
   def settings
-    @root_projects = Project.find(:all,
-                                  :conditions => ["parent_id IS NULL AND status = #{Project::STATUS_ACTIVE} AND id <> ?", @project.id],
-                                  :order => 'name')
     @issue_custom_fields = IssueCustomField.find(:all, :order => "#{CustomField.table_name}.position")
     @issue_category ||= IssueCategory.new
     @member ||= @project.members.new
@@ -123,6 +155,7 @@ class ProjectsController < ApplicationController
     if request.post?
       @project.attributes = params[:project]
       if @project.save
+        @project.set_parent!(params[:project]['parent_id']) if User.current.admin? && params[:project].has_key?('parent_id')
         flash[:notice] = l(:notice_successful_update)
         redirect_to :action => 'settings', :id => @project
       else
@@ -188,18 +221,26 @@ class ProjectsController < ApplicationController
 
   def add_file
     if request.post?
-      @version = @project.versions.find_by_id(params[:version_id])
-      attachments = attach_files(@version, params[:attachments])
-      Mailer.deliver_attachments_added(attachments) if !attachments.empty? && Setting.notified_events.include?('file_added')
+      container = (params[:version_id].blank? ? @project : @project.versions.find_by_id(params[:version_id]))
+      attachments = attach_files(container, params[:attachments])
+      if !attachments.empty? && Setting.notified_events.include?('file_added')
+        Mailer.deliver_attachments_added(attachments)
+      end
       redirect_to :controller => 'projects', :action => 'list_files', :id => @project
+      return
     end
     @versions = @project.versions.sort
   end
   
   def list_files
-    sort_init "#{Attachment.table_name}.filename", "asc"
-    sort_update
-    @versions = @project.versions.find(:all, :include => :attachments, :order => sort_clause).sort.reverse
+    sort_init 'filename', 'asc'
+    sort_update 'filename' => "#{Attachment.table_name}.filename",
+                'created_on' => "#{Attachment.table_name}.created_on",
+                'size' => "#{Attachment.table_name}.filesize",
+                'downloads' => "#{Attachment.table_name}.downloads"
+                
+    @containers = [ Project.find(@project.id, :include => :attachments, :order => sort_clause)]
+    @containers += @project.versions.find(:all, :include => :attachments, :order => sort_clause).sort.reverse
     render :layout => !request.xhr?
   end
   
@@ -221,16 +262,19 @@ class ProjectsController < ApplicationController
     @days = Setting.activity_days_default.to_i
     
     if params[:from]
-      begin; @date_to = params[:from].to_date; rescue; end
+      begin; @date_to = params[:from].to_date + 1; rescue; end
     end
 
     @date_to ||= Date.today + 1
     @date_from = @date_to - @days
     @with_subprojects = params[:with_subprojects].nil? ? Setting.display_subprojects_issues? : (params[:with_subprojects] == '1')
+    @author = (params[:user_id].blank? ? nil : User.active.find(params[:user_id]))
     
-    @activity = Redmine::Activity::Fetcher.new(User.current, :project => @project, :with_subprojects => @with_subprojects)
+    @activity = Redmine::Activity::Fetcher.new(User.current, :project => @project, 
+                                                             :with_subprojects => @with_subprojects,
+                                                             :author => @author)
     @activity.scope_select {|t| !params["show_#{t}"].nil?}
-    @activity.default_scope! if @activity.scope.empty?
+    @activity.scope = (@author.nil? ? :default : :all) if @activity.scope.empty?
 
     events = @activity.events(@date_from, @date_to)
     
@@ -240,10 +284,18 @@ class ProjectsController < ApplicationController
         render :layout => false if request.xhr?
       }
       format.atom {
-        title = (@activity.scope.size == 1) ? l("label_#{@activity.scope.first.singularize}_plural") : l(:label_activity)
+        title = l(:label_activity)
+        if @author
+          title = @author.name
+        elsif @activity.scope.size == 1
+          title = l("label_#{@activity.scope.first.singularize}_plural")
+        end
         render_feed(events, :title => "#{@project || Setting.app_title}: #{title}")
       }
     end
+    
+  rescue ActiveRecord::RecordNotFound
+    render_404
   end
   
 private

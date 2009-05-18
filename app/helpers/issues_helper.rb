@@ -40,6 +40,7 @@ module IssuesHelper
       # Project specific queries and global queries
       visible << (@project.nil? ? ["project_id IS NULL"] : ["project_id IS NULL OR project_id = ?", @project.id])
       @sidebar_queries = Query.find(:all, 
+                                    :select => 'id, name',
                                     :order => "name ASC",
                                     :conditions => visible.conditions)
     end
@@ -111,7 +112,7 @@ module IssuesHelper
       case detail.property
       when 'attr', 'cf'
         if !detail.old_value.blank?
-          label + " " + l(:text_journal_changed, old_value, value)
+          label + " " + l(:text_journal_changed, :old => old_value, :new => value)
         else
           label + " " + l(:text_journal_set_to, value)
         end

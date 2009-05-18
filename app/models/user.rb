@@ -33,13 +33,17 @@ class User < ActiveRecord::Base
     :username => '#{login}'
   }
 
-  has_many :memberships, :class_name => 'Member', :include => [ :project, :role ], :conditions => "#{Project.table_name}.status=#{Project::STATUS_ACTIVE}", :order => "#{Project.table_name}.name"
+  has_many :memberships, :class_name => 'Member', :include => [ :project, :roles ], :conditions => "#{Project.table_name}.status=#{Project::STATUS_ACTIVE}", :order => "#{Project.table_name}.name"
   has_many :members, :dependent => :delete_all
   has_many :projects, :through => :memberships
   has_many :issue_categories, :foreign_key => 'assigned_to_id', :dependent => :nullify
+  has_many :changesets, :dependent => :nullify
   has_one :preference, :dependent => :destroy, :class_name => 'UserPreference'
   has_one :rss_token, :dependent => :destroy, :class_name => 'Token', :conditions => "action='feeds'"
   belongs_to :auth_source
+  
+  # Active non-anonymous users scope
+  named_scope :active, :conditions => "#{User.table_name}.status = #{STATUS_ACTIVE}"
   
   acts_as_customizable
   
@@ -50,7 +54,7 @@ class User < ActiveRecord::Base
 	
   validates_presence_of :login, :firstname, :lastname, :mail, :if => Proc.new { |user| !user.is_a?(AnonymousUser) }
   validates_uniqueness_of :login, :if => Proc.new { |user| !user.login.blank? }
-  validates_uniqueness_of :mail, :if => Proc.new { |user| !user.mail.blank? }
+  validates_uniqueness_of :mail, :if => Proc.new { |user| !user.mail.blank? }, :case_sensitive => false
   # Login must contain lettres, numbers, underscores only
   validates_format_of :login, :with => /^[a-z0-9_\-@\.]*$/i
   validates_length_of :login, :maximum => 30
@@ -58,7 +62,6 @@ class User < ActiveRecord::Base
   validates_length_of :firstname, :lastname, :maximum => 30
   validates_format_of :mail, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :allow_nil => true
   validates_length_of :mail, :maximum => 60, :allow_nil => true
-  validates_length_of :password, :minimum => 4, :allow_nil => true
   validates_confirmation_of :password, :allow_nil => true
 
   def before_create
@@ -70,17 +73,23 @@ class User < ActiveRecord::Base
     # update hashed_password if password was set
     self.hashed_password = User.hash_password(self.password) if self.password
   end
-
-  def self.active
-    with_scope :find => { :conditions => [ "status = ?", STATUS_ACTIVE ] } do 
-      yield 
-    end 
+  
+  def reload(*args)
+    @name = nil
+    super
   end
   
-  def self.find_active(*args)
-    active do
-      find(*args)
+  def identity_url=(url)
+    if url.blank?
+      write_attribute(:identity_url, '')
+    else
+      begin
+        write_attribute(:identity_url, OpenIdAuthentication.normalize_identifier(url))
+      rescue OpenIdAuthentication::InvalidOpenId
+        # Invlaid url, don't save
+      end
     end
+    self.read_attribute(:identity_url)
   end
   
   # Returns the user that matches provided login and password, or nil
@@ -116,11 +125,27 @@ class User < ActiveRecord::Base
   rescue => text
     raise text
   end
+  
+  # Returns the user who matches the given autologin +key+ or nil
+  def self.try_to_autologin(key)
+    tokens = Token.find_all_by_action_and_value('autologin', key)
+    # Make sure there's only 1 token that matches the key
+    if tokens.size == 1
+      token = tokens.first
+      if (token.created_on > Setting.autologin.to_i.day.ago) && token.user && token.user.active?
+        token.user.update_attribute(:last_login_on, Time.now)
+        token.user
+      end
+    end
+  end
 	
   # Return user's full name for display
   def name(formatter = nil)
-    f = USER_FORMATS[formatter || Setting.user_format] || USER_FORMATS[:firstname_lastname]
-    eval '"' + f + '"'
+    if formatter
+      eval('"' + (USER_FORMATS[formatter] || USER_FORMATS[:firstname_lastname]) + '"')
+    else
+      @name ||= eval('"' + (USER_FORMATS[Setting.user_format] || USER_FORMATS[:firstname_lastname]) + '"')
+    end
   end
   
   def active?
@@ -138,13 +163,25 @@ class User < ActiveRecord::Base
   def check_password?(clear_password)
     User.hash_password(clear_password) == self.hashed_password
   end
+
+  # Generate and set a random password.  Useful for automated user creation
+  # Based on Token#generate_token_value
+  #
+  def random_password
+    chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
+    password = ''
+    40.times { |i| password << chars[rand(chars.size-1)] }
+    self.password = password
+    self.password_confirmation = password
+    self
+  end
   
   def pref
     self.preference ||= UserPreference.new(:user => self)
   end
   
   def time_zone
-    @time_zone ||= (self.pref.time_zone.blank? ? nil : TimeZone[self.pref.time_zone])
+    @time_zone ||= (self.pref.time_zone.blank? ? nil : ActiveSupport::TimeZone[self.pref.time_zone])
   end
   
   def wants_comments_in_reverse_order?
@@ -174,19 +211,14 @@ class User < ActiveRecord::Base
     token && token.user.active? ? token.user : nil
   end
   
-  def self.find_by_autologin_key(key)
-    token = Token.find_by_action_and_value('autologin', key)
-    token && (token.created_on > Setting.autologin.to_i.day.ago) && token.user.active? ? token.user : nil
+  # Makes find_by_mail case-insensitive
+  def self.find_by_mail(mail)
+    find(:first, :conditions => ["LOWER(mail) = ?", mail.to_s.downcase])
   end
 
+  # Sort users by their display names
   def <=>(user)
-    if user.nil?
-      -1
-    elsif lastname.to_s.downcase == user.lastname.to_s.downcase
-      firstname.to_s.downcase <=> user.firstname.to_s.downcase
-    else
-      lastname.to_s.downcase <=> user.lastname.to_s.downcase
-    end
+    self.to_s.downcase <=> user.to_s.downcase
   end
   
   def to_s
@@ -201,26 +233,30 @@ class User < ActiveRecord::Base
     !logged?
   end
   
-  # Return user's role for project
-  def role_for_project(project)
+  # Return user's roles for project
+  def roles_for_project(project)
+    roles = []
     # No role on archived projects
-    return nil unless project && project.active?
+    return roles unless project && project.active?
     if logged?
       # Find project membership
       membership = memberships.detect {|m| m.project_id == project.id}
       if membership
-        membership.role
+        roles = membership.roles
       else
         @role_non_member ||= Role.non_member
+        roles << @role_non_member
       end
     else
       @role_anonymous ||= Role.anonymous
+      roles << @role_anonymous
     end
+    roles
   end
   
   # Return true if the user is a member of project
   def member_of?(project)
-    role_for_project(project).member?
+    !roles_for_project(project).detect {|role| role.member?}.nil?
   end
   
   # Return true if the user is allowed to do the specified action on project
@@ -236,13 +272,16 @@ class User < ActiveRecord::Base
       # Admin users are authorized for anything else
       return true if admin?
       
-      role = role_for_project(project)
-      return false unless role
-      role.allowed_to?(action) && (project.is_public? || role.member?)
+      roles = roles_for_project(project)
+      return false unless roles
+      roles.detect {|role| (project.is_public? || role.member?) && role.allowed_to?(action)}
       
     elsif options[:global]
+      # Admin users are always authorized
+      return true if admin?
+      
       # authorize if user has at least one role that has this permission
-      roles = memberships.collect {|m| m.role}.uniq
+      roles = memberships.collect {|m| m.roles}.flatten.uniq
       roles.detect {|r| r.allowed_to?(action)} || (self.logged? ? Role.non_member.allowed_to?(action) : Role.anonymous.allowed_to?(action))
     else
       false
@@ -257,6 +296,8 @@ class User < ActiveRecord::Base
     @current_user ||= User.anonymous
   end
   
+  # Returns the anonymous user.  If the anonymous user does not exist, it is created.  There can be only
+  # one anonymous user per database.
   def self.anonymous
     anonymous_user = AnonymousUser.find(:first)
     if anonymous_user.nil?
@@ -266,7 +307,17 @@ class User < ActiveRecord::Base
     anonymous_user
   end
   
-private
+  protected
+  
+  def validate
+    # Password length validation based on setting
+    if !password.nil? && password.size < Setting.password_min_length.to_i
+      errors.add(:password, :too_short, :count => Setting.password_min_length.to_i)
+    end
+  end
+  
+  private
+  
   # Return password digest
   def self.hash_password(clear_password)
     Digest::SHA1.hexdigest(clear_password || "")
