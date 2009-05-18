@@ -19,16 +19,17 @@ require 'redmine'
 
 RAILS_DEFAULT_LOGGER.info 'Google Calendar'
 
-# Redmine ticket emailer plugin
+# Redmine Google Calendar plugin
 Redmine::Plugin.register :redmine_google_calendar do
   name 'Google Calendar Plugin'
   author 'Jim Mulholland'
   description 'A plugin to allow users to add a new tab with an embedded Google Calendar Iframe.'
-  version '0.1.0'
+  version '0.2.0'
   
-  # The data necessary to log into your email server.
-  # For this first rev, I am assuming you have an IMAP server
-  settings :default => {'iframe_text' => ''}, :partial => 'settings/settings'
+  # This plugin contains settings
+  settings :default => {
+    'iframe_text' => ''
+  }, :partial => 'settings/googlecalendar_settings'
 
   # This plugin adds a project module
   # It can be enabled/disabled at project level (Project settings -> Modules)
@@ -42,10 +43,13 @@ Redmine::Plugin.register :redmine_google_calendar do
   menu :project_menu, :google_calendar, :controller => 'google_calendar', :action => 'show'
 end
 
-Rails::Plugin.class_eval do
-   def reloadable!
-     load_paths.each { |p| Dependencies.load_once_paths.delete(p) }
-   end
-end
+## Commented-out for Redmine 0.9-devel compatibility
+## TODO Fix development-mode compatibility
 
-reloadable!
+# Rails::Plugin.class_eval do
+#    def reloadable!
+#      load_paths.each { |p| Dependencies.load_once_paths.delete(p) }
+#    end
+# end
+# 
+# reloadable!
