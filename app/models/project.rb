@@ -61,8 +61,11 @@ class Project < ActiveRecord::Base
   validates_length_of :name, :maximum => 30
   validates_length_of :homepage, :maximum => 255
   validates_length_of :identifier, :in => 1..20
-  validates_format_of :identifier, :with => /^[a-z0-9\-]*$/
-  
+  # donwcase letters, digits, dashes but not digits only
+  validates_format_of :identifier, :with => /^(?!\d+$)[a-z0-9\-]*$/, :if => Proc.new { |p| p.identifier_changed? }
+  # reserved words
+  validates_exclusion_of :identifier, :in => %w( new )
+
   before_destroy :delete_all_members
 
   named_scope :has_module, lambda { |mod| { :conditions => ["#{Project.table_name}.id IN (SELECT em.project_id FROM #{EnabledModule.table_name} em WHERE em.name=?)", mod.to_s] } }
@@ -390,11 +393,6 @@ class Project < ActiveRecord::Base
     rescue ActiveRecord::RecordNotFound
       return nil
     end
-  end
-  
-protected
-  def validate
-    errors.add(:identifier, :invalid) if !identifier.blank? && identifier.match(/^\d*$/)
   end
   
 private

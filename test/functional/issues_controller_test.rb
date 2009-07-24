@@ -369,6 +369,14 @@ class IssuesControllerTest < Test::Unit::TestCase
                         :descendant => { :tag => 'a', :content => /#4$/ }
   end
   
+  def test_show_atom
+    get :show, :id => 2, :format => 'atom'
+    assert_response :success
+    assert_template 'changes.rxml'
+    # Inline image
+    assert @response.body.include?("&lt;img src=&quot;http://test.host/attachments/download/10&quot; alt=&quot;&quot; /&gt;")
+  end
+  
   def test_new_routing
     assert_routing(
       {:method => :get, :path => '/projects/1/issues/new'},
@@ -707,7 +715,7 @@ class IssuesControllerTest < Test::Unit::TestCase
            :id => 1,
            :issue => { :status_id => 2, :assigned_to_id => 3 },
            :notes => 'Assigned to dlopper',
-           :time_entry => { :hours => '', :comments => '', :activity_id => Enumeration.activities.first }
+           :time_entry => { :hours => '', :comments => '', :activity_id => TimeEntryActivity.first }
     end
     assert_redirected_to :action => 'show', :id => '1'
     issue.reload
@@ -745,7 +753,7 @@ class IssuesControllerTest < Test::Unit::TestCase
       post :edit,
            :id => 1,
            :notes => '2.5 hours added',
-           :time_entry => { :hours => '2.5', :comments => '', :activity_id => Enumeration.activities.first }
+           :time_entry => { :hours => '2.5', :comments => '', :activity_id => TimeEntryActivity.first }
     end
     assert_redirected_to :action => 'show', :id => '1'
     
