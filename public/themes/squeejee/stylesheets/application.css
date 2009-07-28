@@ -472,3 +472,13 @@ body.clockwork #header h1 {
   text-indent: -9999px;
   background: url(/themes/squeejee/images/tickstart.png) top left no-repeat;
 }
+
+/* The Hype styles */
+
+body.hype #header h1 {
+  width: 200;
+  height: 60px;
+  overflow: hidden;
+  text-indent: -9999px;
+  background: url(/themes/squeejee/images/the_hype.png) top left no-repeat;
+}
