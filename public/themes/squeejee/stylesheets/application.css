@@ -3,20 +3,20 @@
 @import url(../../../themes/alternate/stylesheets/application.css);
 
 body {
-	font-size: 80%;
+  font-size: 80%;
   font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
   background: #333 url(/themes/squeejee/images/bottom_shine.png) bottom left repeat-x;
 }
 
 /* global styles */
 a, a:link, a:visited {
-	color: #666;
-	text-decoration:none;
+  color: #666;
+  text-decoration:none;
 }
 
 a:hover {
-	color: #999;
-	text-decoration:none;
+  color: #999;
+  text-decoration:none;
 }
 
 #wrapper, 
@@ -26,62 +26,62 @@ a:hover {
 }
 
 #main {
-	margin: 0;
+  margin: 0;
 }
 
 #content {
-	margin: 1em;
-	width: 77%;
-	background: #fff url(/themes/squeejee/images/shadow_top.png) top left repeat-x;
-	border-top: solid 1px #fff;
-	border-right: solid 1px #fff;
-	-webkit-box-shadow: 5px 5px 30px rgba(0,0,0,.8);
+  margin: 1em;
+  width: 77%;
+  background: #fff url(/themes/squeejee/images/shadow_top.png) top left repeat-x;
+  border-top: solid 1px #fff;
+  border-right: solid 1px #fff;
+  -webkit-box-shadow: 5px 5px 30px rgba(0,0,0,.8);
 }
 
 #top-menu,
 #header {
   background: #000 url(/themes/squeejee/images/bottom_shine.png) bottom left repeat-x;
-	margin: 0;
-	padding: 1em 1em 2em 1em;
-	font-family: "Myriad Pro", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+  margin: 0;
+  padding: 1em 1em 2em 1em;
+  font-family: "Myriad Pro", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
 }
 
 #top-menu {
-	padding: 1em 1em 0 1em;
-	color: #999;
+  padding: 1em 1em 0 1em;
+  color: #999;
 }
 
 #top-menu #loggedas {
-	color: #ccc;
+  color: #ccc;
 }
 
 #top-menu a {
-	font-weight: normal;
-	color: #999;
+  font-weight: normal;
+  color: #999;
 }
 
 #top-menu a:hover {
-	text-decoration: none;
-	color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 
 #header h1 {
-	line-height: 50px;
+  line-height: 50px;
 }
 
 body.no-project #header h1 {
-	padding-left: 60px;
-	background: url(/themes/squeejee/images/squeejee_logo.png) top left no-repeat;
+  padding-left: 60px;
+  background: url(/themes/squeejee/images/squeejee_logo.png) top left no-repeat;
 }
 
 #main-menu li {
-	margin: 0;
-	font-size: .85em;
-	font-family: "Myriad Pro", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+  margin: 0;
+  font-size: .85em;
+  font-family: "Myriad Pro", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
 }
 
 #main-menu li a,
-#main-menu li.selected a,
+#main-menu li a.selected,
 #main-menu li a:hover {
  text-decoration: none;
  line-height: 20px;
@@ -89,8 +89,8 @@ body.no-project #header h1 {
 }
 
 #main-menu li {
-	background: #111 url(/themes/squeejee/images/bottom_shine.png) 0px -40px repeat-x;
-	border: solid 1px #333;
+  background: #111 url(/themes/squeejee/images/bottom_shine.png) 0px -40px repeat-x;
+  border: solid 1px #333;
   border-width: 1px 1px 0px 0px;
 }
 
@@ -102,18 +102,14 @@ body.no-project #header h1 {
   font-weight: normal;
 }
 
-#main-menu li.selected ,
-#main-menu li.selected:hover {
-  background: #222 url(/themes/squeejee/images/bottom_shine.png) 0px -36px repeat-x;
-  border-color: #444;
-}
 
-#main-menu li.selected a,
+
+/*#main-menu li.selected a,
 #main-menu li.selected:hover a {
   background: none;
   color: #d5d5d5;
   font-weight: bold;
-}
+}*/
 
 #main-menu li:hover {
   background: #333 url(/themes/squeejee/images/bottom_shine.png) 0px -40px repeat-x;  
@@ -125,91 +121,98 @@ body.no-project #header h1 {
 }
 
 #main-menu li:last-child  {
-	-moz-border-radius-topright:5px;
-	-webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topright:5px;
+  -webkit-border-top-right-radius: 5px;
 }
 
 #main-menu li:first-child  {
-	-moz-border-radius-topleft:5px;
-	-webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topleft:5px;
+  -webkit-border-top-left-radius: 5px;
 }
 
-#main-menu li.overview a,
-#main-menu li.overview a:hover {
-	background: url(/themes/squeejee/images/fugue/document_text_image.png) 6px center no-repeat;
+#main-menu li a.overview,
+#main-menu li a.overview:hover {
+  background: url(/themes/squeejee/images/fugue/document_text_image.png) 6px center no-repeat;
   padding-left: 24px;
 }
 
-#main-menu li.activity a,
-#main-menu li.activity a:hover {
-	background: url(/themes/squeejee/images/fugue/lightning.png) 6px center no-repeat;
+#main-menu li a.activity,
+#main-menu li a.activity:hover {
+  background: url(/themes/squeejee/images/fugue/lightning.png) 6px center no-repeat;
   padding-left: 24px;
 }
 
-#main-menu li.roadmap a,
-#main-menu li.roadmap a:hover {
-	background: url(/themes/squeejee/images/fugue/map.png) 4px center no-repeat;
+#main-menu li a.roadmap,
+#main-menu li a.roadmap:hover {
+  background: url(/themes/squeejee/images/fugue/map.png) 4px center no-repeat;
   padding-left: 26px;
 }
 
-#main-menu li.tickets a,
-#main-menu li.tickets a:hover {
-	background: url(/themes/squeejee/images/fugue/ticket.png) 4px center no-repeat;
+#main-menu li a.issues,
+#main-menu li a.issues:hover {
+  background: url(/themes/squeejee/images/fugue/ticket.png) 4px center no-repeat;
   padding-left: 26px;
 }
 
-#main-menu li.new-ticket a,
-#main-menu li.new-ticket a:hover {
-	background: url(/themes/squeejee/images/fugue/ticket_plus.png) 6px center no-repeat;
+#main-menu li a.new-issue,
+#main-menu li a.new-issue:hover {
+  background: url(/themes/squeejee/images/fugue/ticket_plus.png) 6px center no-repeat;
   padding-left: 26px;
 }
 
-#main-menu li.news a,
-#main-menu li.news a:hover {
-	background: url(/themes/squeejee/images/fugue/newspaper.png) 6px center no-repeat;
+#main-menu li a.news,
+#main-menu li a.news:hover {
+  background: url(/themes/squeejee/images/fugue/newspaper.png) 6px center no-repeat;
   padding-left: 26px;
 }
 
-#main-menu li.documents a,
-#main-menu li.documents a:hover {
-	background: url(/themes/squeejee/images/fugue/documents_text.png) 6px center no-repeat;
+#main-menu li a.documents,
+#main-menu li a.documents:hover {
+  background: url(/themes/squeejee/images/fugue/documents_text.png) 6px center no-repeat;
   padding-left: 26px;
 }
 
-#main-menu li.wiki a,
-#main-menu li.wiki a:hover {
-	background: url(/themes/squeejee/images/fugue/document_horizontal_text.png) 6px center no-repeat;
+#main-menu li a.wiki,
+#main-menu li a.wiki:hover {
+  background: url(/themes/squeejee/images/fugue/document_horizontal_text.png) 6px center no-repeat;
   padding-left: 26px;
 }
 
-#main-menu li.forums a,
-#main-menu li.forums a:hover {
-	background: url(/themes/squeejee/images/fugue/balloons.png) 6px center no-repeat;
+#main-menu li a.forums,
+#main-menu li a.forums:hover {
+  background: url(/themes/squeejee/images/fugue/balloons.png) 6px center no-repeat;
   padding-left: 26px;
 }
 
-#main-menu li.files a,
-#main-menu li.files a:hover {
-	background: url(/themes/squeejee/images/fugue/document_zipper.png) 6px center no-repeat;
+#main-menu li a.files,
+#main-menu li a.files:hover {
+  background: url(/themes/squeejee/images/fugue/document_zipper.png) 6px center no-repeat;
   padding-left: 26px;
 }
 
-#main-menu li.repository a,
-#main-menu li.repository a:hover {
-	background: url(/themes/squeejee/images/fugue/safe.png) 6px center no-repeat;
+#main-menu li a.repository,
+#main-menu li a.repository:hover {
+  background: url(/themes/squeejee/images/fugue/safe.png) 6px center no-repeat;
   padding-left: 26px;
 }
 
-#main-menu li.google-calendar a,
-#main-menu li.google-calendar a:hover {
-	background: url(/themes/squeejee/images/fugue/calendar_month.png) 6px center no-repeat;
+#main-menu li a.google-calendar,
+#main-menu li a.google-calendar:hover {
+  background: url(/themes/squeejee/images/fugue/calendar_month.png) 6px center no-repeat;
   padding-left: 26px;
 }
 
-#main-menu li.settings a,
-#main-menu li.settings a:hover {
-	background: url(/themes/squeejee/images/fugue/equalizer.png) 6px center no-repeat;
+#main-menu li a.settings,
+#main-menu li a.settings:hover {
+  background: url(/themes/squeejee/images/fugue/equalizer.png) 6px center no-repeat;
   padding-left: 26px;
+}
+
+#main-menu li a.selected,
+#main-menu li a.selected:hover {
+  background-color: #333;
+  border-color: #999;
+  color: #ddd;
 }
 
 h1, h2, h3, h4, h5{
@@ -217,63 +220,63 @@ h1, h2, h3, h4, h5{
 }
 
 #footer a {
-	color: #ccc;
+  color: #ccc;
 }
 
 #footer a:hover {
-	color: #fff;
-	text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 
 #sidebar h1, #sidebar h2, #sidebar h3, #sidebar h4, #sidebar h5 {
-	color: #efefef;
-	text-shadow: 1px 1px 1px rgba(0,0,0,.8);
+  color: #efefef;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.8);
 }
 
 #sidebar {
-	color: #ccc;
-	width: 18%;
-	text-shadow: 1px 1px 1px rgba(0,0,0,.6);
+  color: #ccc;
+  width: 18%;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.6);
 }
 
 #sidebar a {
-	color: #aaa;
+  color: #aaa;
 }
 
 table.list {
-	border: none;
+  border: none;
 }
 
 table.list a:hover {
-	border-bottom: dotted 1px #999;
+  border-bottom: dotted 1px #999;
 }
 
 table.list thead th {
   background: #ccc url(/themes/squeejee/images/top-shadow.png) left center  repeat-x;
-	font-size: .9em;
-	border-color: #999;
-	border-color:#d5d5d5 #d5d5d5 #aaa;
-	border-style:solid;
-	border-width:1px;
-	text-shadow: -1px 1px 0px #efefef;
+  font-size: .9em;
+  border-color: #999;
+  border-color:#d5d5d5 #d5d5d5 #aaa;
+  border-style:solid;
+  border-width:1px;
+  text-shadow: -1px 1px 0px #efefef;
 }
 
 
 table.list thead th a,
 table.list thead th a:hover {
-	color: #444;
-	text-shadow: 1px 1px 1px rgba(0,0,0,.3);
-	padding: 10px;
-	border: none;
+  color: #444;
+  text-shadow: 1px 1px 1px rgba(255,255,255,.3);
+  padding: 10px;
+  border: none;
 }
 
 table.list td {
-	background-image: url(/themes/squeejee/images/shadow_top.png);
-	background-repeat: repeat-x;
-	background-position:  0px -65px;
-	vertical-align: middle;
-	font-size: .9em;
+  background-image: url(/themes/squeejee/images/shadow_top.png);
+  background-repeat: repeat-x;
+  background-position:  0px -65px;
+  vertical-align: middle;
+  font-size: .9em;
 }
 
 table.list tr.priority-5  a,
@@ -286,29 +289,29 @@ table.list tr.priority-1 a  { color: #559; }
 table.progress td.todo,
 table.progress td.done,
 table.progress td.closed {
-	background: #666 url(/themes/squeejee/images/middle_shine.png) left center repeat-x;
-	height: 25px;
-	border: none;
+  background: #666 url(/themes/squeejee/images/middle_shine.png) left center repeat-x;
+  height: 25px;
+  border: none;
 }
 
 table.progress td.todo {
-	background: #fff;
+  background: #fff;
 }
 
 table.progress td.done {
-	background-color: #37b3ff;
+  background-color: #37b3ff;
 }
 
 table.progress td.closed {
-	background-color: #2187C6;
+  background-color: #2187C6;
 }
 
 table.list table.progress td {
-	height: 15px;
+  height: 15px;
 }
 
 p.pourcent {
-	font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 .icon {
@@ -378,42 +381,42 @@ vertical-align: middle;
 
 
 div.box {
-	border: none;
-	background: none;
+  border: none;
+  background: none;
 }
 
 div#quick-search a {
   padding-left: 20px;
-	background: url(/themes/squeejee/images/fugue/magnifier_left.png) left center no-repeat;
+  background: url(/themes/squeejee/images/fugue/magnifier_left.png) left center no-repeat;
 }
 
 
 #history ul {
-	clear: top;
-	list-style: none;
-	margin: 0 0 0 1em;
-	padding: 0;
+  clear: top;
+  list-style: none;
+  margin: 0 0 0 1em;
+  padding: 0;
 }
 
 #history .journal {
-	clear: both;
-	border-bottom: solid 1px #d5d5d5;
-	padding-bottom: 1em;
+  clear: both;
+  border-bottom: solid 1px #d5d5d5;
+  padding-bottom: 1em;
 }
 
 #history .journal p {
-	padding-left: 20px;
-	background: url(/themes/squeejee/images/fugue/sticky_note.png) left top no-repeat;
+  padding-left: 20px;
+  background: url(/themes/squeejee/images/fugue/sticky_note.png) left top no-repeat;
 }
 
 /* Goalisitcs styles */
 
 body.cbr #header h1 {
-	background: url(/themes/squeejee/images/goalistics_logo.png) top left no-repeat;
-	width: 250px;
-	height: 60px;
-	overflow: hidden;
-	text-indent: -9999px;
+  background: url(/themes/squeejee/images/goalistics_logo.png) top left no-repeat;
+  width: 250px;
+  height: 60px;
+  overflow: hidden;
+  text-indent: -9999px;
 }
 
 /*body.cbr #main-menu li:hover {
@@ -425,47 +428,57 @@ body.cbr #header h1 {
 /* Squeejee styles */
 
 body.praexis #header h1 {
-	padding-left: 60px;
-	background: url(/themes/squeejee/images/squeejee_logo.png) top left no-repeat;
+  padding-left: 60px;
+  background: url(/themes/squeejee/images/squeejee_logo.png) top left no-repeat;
 }
 
 /* Official Team Gear styles */
 
 body.otg #header h1 {
-	width: 170px;
-	height: 60px;
-	overflow: hidden;
-	text-indent: -9999px;
-	background: url(/themes/squeejee/images/otg_logo.png) top left no-repeat;
+  width: 170px;
+  height: 60px;
+  overflow: hidden;
+  text-indent: -9999px;
+  background: url(/themes/squeejee/images/otg_logo.png) top left no-repeat;
 }
 
 
 /* MindBites styles */
 
 body.mindbites #header h1 {
-	width: 200;
-	height: 60px;
-	overflow: hidden;
-	text-indent: -9999px;
-	background: url(/themes/squeejee/images/mb.png) top left no-repeat;
+  width: 200;
+  height: 60px;
+  overflow: hidden;
+  text-indent: -9999px;
+  background: url(/themes/squeejee/images/mb.png) top left no-repeat;
 }
 
 /* Blockshopper styles */
 
 body.blockshopper #header h1 {
-	width: 200;
-	height: 60px;
-	overflow: hidden;
-	text-indent: -9999px;
-	background: url(/themes/squeejee/images/blockshopper.png) top left no-repeat;
+  width: 200;
+  height: 60px;
+  overflow: hidden;
+  text-indent: -9999px;
+  background: url(/themes/squeejee/images/blockshopper.png) top left no-repeat;
 }
 
 /* TickStart styles */
 
 body.clockwork #header h1 {
-	width: 200;
-	height: 60px;
-	overflow: hidden;
-	text-indent: -9999px;
-	background: url(/themes/squeejee/images/tickstart.png) top left no-repeat;
+  width: 200;
+  height: 60px;
+  overflow: hidden;
+  text-indent: -9999px;
+  background: url(/themes/squeejee/images/tickstart.png) top left no-repeat;
+}
+
+/* The Hype styles */
+
+body.hype #header h1 {
+  width: 200;
+  height: 60px;
+  overflow: hidden;
+  text-indent: -9999px;
+  background: url(/themes/squeejee/images/the_hype.png) top left no-repeat;
 }
