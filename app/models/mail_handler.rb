@@ -121,6 +121,9 @@ class MailHandler < ActionMailer::Base
       issue.status = status
     end
     issue.subject = email.subject.chomp.toutf8
+    if issue.subject.blank?
+      issue.subject = '(no subject)'
+    end
     issue.description = plain_text_body
     # custom fields
     issue.custom_field_values = issue.available_custom_fields.inject({}) do |h, c|
@@ -224,7 +227,7 @@ class MailHandler < ActionMailer::Base
       @keywords[attr]
     else
       @keywords[attr] = begin
-        if (options[:override] || @@handler_options[:allow_override].include?(attr.to_s)) && plain_text_body.gsub!(/^#{attr}:[ \t]*(.+)\s*$/i, '')
+        if (options[:override] || @@handler_options[:allow_override].include?(attr.to_s)) && plain_text_body.gsub!(/^#{attr}[ \t]*:[ \t]*(.+)\s*$/i, '')
           $1.strip
         elsif !@@handler_options[:issue][attr].blank?
           @@handler_options[:issue][attr]
