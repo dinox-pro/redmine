@@ -155,6 +155,10 @@ a.sort { padding-right: 16px; background-position: 100% 50%; background-repeat: 
 a.sort.asc  { background-image: url(../images/sort_asc.png); }
 a.sort.desc { background-image: url(../images/sort_desc.png); }
 
+table.attributes { width: 100% }
+table.attributes th { vertical-align: top; text-align: left; }
+table.attributes td { vertical-align: top; }
+
 .highlight { background-color: #FCFD8D;}
 .highlight.token-1 { background-color: #faa;}
 .highlight.token-2 { background-color: #afa;}
@@ -177,7 +181,7 @@ div.square {
  width: .6em; height: .6em;
 }
 .contextual {float:right; white-space: nowrap; line-height:1.4em;margin-top:5px; padding-left: 10px; font-size:0.9em;}
-.contextual input {font-size:0.9em;}
+.contextual input, .contextual select {font-size:0.9em;}
 .message .contextual { margin-top: 0; }
 
 .splitcontentleft{float:left; width:49%;}
@@ -240,6 +244,7 @@ dt.wiki-page { background-image: url(../images/wiki_edit.png); }
 dt.attachment { background-image: url(../images/attachment.png); }
 dt.document { background-image: url(../images/document.png); }
 dt.project { background-image: url(../images/projects.png); }
+dt.time-entry { background-image: url(../images/time.png); }
 
 #search-results dt.issue.closed { background-image: url(../images/ticket_checked.png); }
 
@@ -338,12 +343,14 @@ p.other-formats { text-align: right; font-size:0.9em; color: #666; }
 a.atom { background: url(../images/feed.png) no-repeat 1px 50%; padding: 2px 0px 3px 16px; }
 
 /* Project members tab */
-div#tab-content-members .splitcontentleft, div#tab-content-memberships .splitcontentleft { width: 64% }
-div#tab-content-members .splitcontentright, div#tab-content-memberships .splitcontentright { width: 34% }
-div#tab-content-members fieldset, div#tab-content-memberships fieldset { padding:1em; margin-bottom: 1em; }
-div#tab-content-members fieldset legend, div#tab-content-memberships fieldset legend { font-weight: bold; }
-div#tab-content-members fieldset label, div#tab-content-memberships fieldset label { display: block; }
-div#tab-content-members fieldset div { max-height: 400px; overflow:auto; }
+div#tab-content-members .splitcontentleft, div#tab-content-memberships .splitcontentleft, div#tab-content-users .splitcontentleft { width: 64% }
+div#tab-content-members .splitcontentright, div#tab-content-memberships .splitcontentright, div#tab-content-users .splitcontentright { width: 34% }
+div#tab-content-members fieldset, div#tab-content-memberships fieldset, div#tab-content-users fieldset { padding:1em; margin-bottom: 1em; }
+div#tab-content-members fieldset legend, div#tab-content-memberships fieldset legend, div#tab-content-users fieldset legend { font-weight: bold; }
+div#tab-content-members fieldset label, div#tab-content-memberships fieldset label, div#tab-content-users fieldset label { display: block; }
+div#tab-content-members fieldset div, div#tab-content-users fieldset div { max-height: 400px; overflow:auto; }
+
+table.members td.group { padding-left: 20px; background: url(../images/users.png) no-repeat 0% 0%; }
 
 * html div#tab-content-members fieldset div { height: 450px; }
 
@@ -721,6 +728,7 @@ vertical-align: middle;
 
 .icon22-projects { background-image: url(../images/22x22/projects.png); }
 .icon22-users { background-image: url(../images/22x22/users.png); }
+.icon22-groups { background-image: url(../images/22x22/groups.png); }
 .icon22-tracker { background-image: url(../images/22x22/tracker.png); }
 .icon22-role { background-image: url(../images/22x22/role.png); }
 .icon22-workflow { background-image: url(../images/22x22/workflow.png); }
@@ -772,6 +780,10 @@ td.username img.gravatar {
 #activity dt,
 .journal {
 	clear: left;
+}
+
+.gravatar-margin {
+  margin-left: 40px;
 }
 
 h2 img { vertical-align:middle; }
