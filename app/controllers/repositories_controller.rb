@@ -24,6 +24,8 @@ class InvalidRevisionParam < Exception; end
 
 class RepositoriesController < ApplicationController
   menu_item :repository
+  default_search_scope :changesets
+  
   before_filter :find_repository, :except => :edit
   before_filter :find_project, :only => :edit
   before_filter :authorize
@@ -130,7 +132,7 @@ class RepositoriesController < ApplicationController
   end
   
   def revision
-    @changeset = @repository.changesets.find(:first, :conditions => ["revision LIKE ?", @rev + '%'])
+    @changeset = @repository.find_changeset_by_name(@rev)
     raise ChangesetNotFound unless @changeset
 
     respond_to do |format|

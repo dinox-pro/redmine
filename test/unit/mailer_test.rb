@@ -103,7 +103,8 @@ class MailerTest < ActiveSupport::TestCase
     journal = Journal.find(2)
     Mailer.deliver_issue_edit(journal)
     mail = ActionMailer::Base.deliveries.last
-    assert_equal 1, mail.parts.size
+    assert_equal "text/plain", mail.content_type
+    assert_equal 0, mail.parts.size
     assert !mail.encoded.include?('href')
   end
 
@@ -133,7 +134,7 @@ class MailerTest < ActiveSupport::TestCase
     mail = ActionMailer::Base.deliveries.last
     assert_not_nil mail
     assert_equal Mailer.message_id_for(journal), mail.message_id
-    assert_equal Mailer.message_id_for(journal.issue), mail.references.to_s
+    assert_equal Mailer.message_id_for(journal.issue), mail.references.first.to_s
   end
   
   def test_message_posted_message_id
@@ -153,7 +154,7 @@ class MailerTest < ActiveSupport::TestCase
     mail = ActionMailer::Base.deliveries.last
     assert_not_nil mail
     assert_equal Mailer.message_id_for(message), mail.message_id
-    assert_equal Mailer.message_id_for(message.parent), mail.references.to_s
+    assert_equal Mailer.message_id_for(message.parent), mail.references.first.to_s
   end
   
   # test mailer methods for each language

@@ -44,12 +44,17 @@ module ApplicationHelper
     link_to_remote(name, options, html_options) if authorize_for(url[:controller] || params[:controller], url[:action])
   end
 
-  # Display a link to user's account page
+  # Displays a link to user's account page if active
   def link_to_user(user, options={})
     if user.is_a?(User)
-      !user.anonymous? ? link_to(user.name(options[:format]), :controller => 'account', :action => 'show', :id => user) : 'Anonymous'
+      name = h(user.name(options[:format]))
+      if user.active?
+        link_to name, :controller => 'users', :action => 'show', :id => user
+      else
+        name
+      end
     else
-      user.to_s
+      h(user.to_s)
     end
   end
 
@@ -147,9 +152,9 @@ module ApplicationHelper
     projects = User.current.projects.all
     if projects.any?
       s = '<select onchange="if (this.value != \'\') { window.location = this.value; }">' +
-            "<option selected='selected'>#{ l(:label_jump_to_a_project) }</option>" +
-            '<option disabled="disabled">---</option>'
-      s << project_tree_options_for_select(projects) do |p|
+            "<option value=''>#{ l(:label_jump_to_a_project) }</option>" +
+            '<option value="" disabled="disabled">---</option>'
+      s << project_tree_options_for_select(projects, :selected => @project) do |p|
         { :value => url_for(:controller => 'projects', :action => 'show', :id => p, :jump => current_menu_item) }
       end
       s << '</select>'
@@ -206,7 +211,7 @@ module ApplicationHelper
   
   def principals_check_box_tags(name, principals)
     s = ''
-    principals.each do |principal|
+    principals.sort.each do |principal|
       s << "<label>#{ check_box_tag name, principal.id, false } #{h principal}</label>\n"
     end
     s 
@@ -214,7 +219,7 @@ module ApplicationHelper
 
   # Truncates and returns the string as a single line
   def truncate_single_line(string, *args)
-    truncate(string, *args).gsub(%r{[\r\n]+}m, ' ')
+    truncate(string.to_s, *args).gsub(%r{[\r\n]+}m, ' ')
   end
 
   def html_hours(text)
@@ -222,8 +227,7 @@ module ApplicationHelper
   end
 
   def authoring(created, author, options={})
-    author_tag = (author.is_a?(User) && !author.anonymous?) ? link_to(h(author), :controller => 'account', :action => 'show', :id => author) : h(author || 'Anonymous')
-    l(options[:label] || :label_added_time_by, :author => author_tag, :age => time_tag(created))
+    l(options[:label] || :label_added_time_by, :author => link_to_user(author), :age => time_tag(created))
   end
   
   def time_tag(time)
@@ -330,7 +334,7 @@ module ApplicationHelper
       title << @project.name if @project
       title += @html_title if @html_title
       title << Setting.app_title
-      title.compact.join(' - ')
+      title.select {|t| !t.blank? }.join(' - ')
     else
       @html_title ||= []
       @html_title += args

@@ -157,8 +157,8 @@ ActionController::Routing::Routes.draw do |map|
   
   map.with_options :controller => 'users' do |users|
     users.with_options :conditions => {:method => :get} do |user_views|
-      user_views.connect 'users', :action => 'list'
       user_views.connect 'users', :action => 'index'
+      user_views.connect 'users/:id', :action => 'show', :id => /\d+/
       user_views.connect 'users/new', :action => 'add'
       user_views.connect 'users/:id/edit/:tab', :action => 'edit', :tab => nil
     end
@@ -200,6 +200,17 @@ ActionController::Routing::Routes.draw do |map|
       project_actions.connect 'projects/:id/files/new', :action => 'add_file'
       project_actions.connect 'projects/:id/versions/new', :action => 'add_version'
       project_actions.connect 'projects/:id/categories/new', :action => 'add_issue_category'
+      project_actions.connect 'projects/:id/activities/save', :action => 'save_activities'
+    end
+
+    projects.with_options :conditions => {:method => :delete} do |project_actions|
+      project_actions.conditions 'projects/:id/reset_activities', :action => 'reset_activities'
+    end
+  end
+  
+  map.with_options :controller => 'versions' do |versions|
+    versions.with_options :conditions => {:method => :post} do |version_actions|
+      version_actions.connect 'projects/:project_id/versions/close_completed', :action => 'close_completed'
     end
   end
   

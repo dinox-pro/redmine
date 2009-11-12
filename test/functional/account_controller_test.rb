@@ -31,19 +31,6 @@ class AccountControllerTest < ActionController::TestCase
     User.current = nil
   end
   
-  def test_show
-    get :show, :id => 2
-    assert_response :success
-    assert_template 'show'
-    assert_not_nil assigns(:user)
-  end
-  
-  def test_show_inactive
-    get :show, :id => 5
-    assert_response 404
-    assert_nil assigns(:user)
-  end
-  
   def test_login_should_redirect_to_back_url_param
     # request.uri is "test.host" in test environment
     post :login, :username => 'jsmith', :password => 'jsmith', :back_url => 'http%3A%2F%2Ftest.host%2Fissues%2Fshow%2F1'

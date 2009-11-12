@@ -180,10 +180,13 @@ class IssuesControllerTest < ActionController::TestCase
   end
   
   def test_index_csv_with_project
+    Setting.default_language = 'en'
+    
     get :index, :format => 'csv'
     assert_response :success
     assert_not_nil assigns(:issues)
     assert_equal 'text/csv', @response.content_type
+    assert @response.body.starts_with?("#,")
 
     get :index, :project_id => 1, :format => 'csv'
     assert_response :success
@@ -375,7 +378,7 @@ class IssuesControllerTest < ActionController::TestCase
     assert_response :success
     assert_template 'changes.rxml'
     # Inline image
-    assert @response.body.include?("&lt;img src=&quot;http://test.host/attachments/download/10&quot; alt=&quot;&quot; /&gt;")
+    assert @response.body.include?("&lt;img src=\"http://test.host/attachments/download/10\" alt=\"\" /&gt;")
   end
   
   def test_new_routing
@@ -787,7 +790,7 @@ class IssuesControllerTest < ActionController::TestCase
     post :edit,
          :id => 1,
          :notes => '',
-         :attachments => {'1' => {'file' => test_uploaded_file('testfile.txt', 'text/plain')}}
+         :attachments => {'1' => {'file' => uploaded_test_file('testfile.txt', 'text/plain')}}
     assert_redirected_to :action => 'show', :id => '1'
     j = Issue.find(1).journals.find(:first, :order => 'id DESC')
     assert j.notes.blank?
@@ -1092,5 +1095,12 @@ class IssuesControllerTest < ActionController::TestCase
     assert !(Issue.find_by_id(1) || Issue.find_by_id(3))
     assert_equal 2, TimeEntry.find(1).issue_id
     assert_equal 2, TimeEntry.find(2).issue_id
+  end
+  
+  def test_default_search_scope
+    get :index
+    assert_tag :div, :attributes => {:id => 'quick-search'},
+                     :child => {:tag => 'form',
+                                :child => {:tag => 'input', :attributes => {:name => 'issues', :type => 'hidden', :value => '1'}}}
   end
 end
