@@ -10,6 +10,7 @@ class CreateHarvestTimes < ActiveRecord::Migration
       t.column :hours, :float
       t.column :user_id, :integer
       t.column :issue_id, :integer
+      t.column :timer_started_at, :datetime
       t.timestamps
     end
   end

@@ -2,6 +2,7 @@ class HarvestTime < ActiveRecord::Base
   
   belongs_to :issue
   belongs_to :project
+  belongs_to :user
   
   # Find the Harvest Project ID for a Redmine project. 
   def self.project_id(project)

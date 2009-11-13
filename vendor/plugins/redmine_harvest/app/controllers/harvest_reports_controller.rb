@@ -8,8 +8,8 @@ class HarvestReportsController < ApplicationController
   def index    
     sort_init 'created_at', 'desc'
     sort_update 'spent_at' => 'spent_at',
-                'user_id' => 'user_id',
-                'issue_id' => 'issue_id',
+                'user' => 'user_id',
+                'issue' => 'issue_id',
                 'hours' => 'hours'
                 
     cond = ARCondition.new
@@ -22,9 +22,10 @@ class HarvestReportsController < ApplicationController
       respond_to do |format|
         format.html {
           # Paginate results
-          @entry_count = HarvestTime.count()
+          @entry_count = HarvestTime.count(:include => :project, :conditions => cond.conditions)
           @entry_pages = Paginator.new self, @entry_count, per_page_option, params['page']
           @entries = HarvestTime.find(:all, 
+                                    :include => [:project, :user], 
                                     :conditions => cond.conditions,
                                     :order => sort_clause,
                                     :limit  =>  @entry_pages.items_per_page,
