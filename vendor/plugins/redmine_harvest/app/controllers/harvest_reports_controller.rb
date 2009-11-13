@@ -3,7 +3,11 @@ class HarvestReportsController < ApplicationController
   include SortHelper
   unloadable
   
+  before_filter :find_project, :authorize
+  
   def index
+    @project = Project.find(params[:id])
+
     Harvest.domain = "squeejee"
     Harvest.email = "jim@squeejee.com"
     Harvest.password = "BigLeague!"
@@ -37,4 +41,10 @@ class HarvestReportsController < ApplicationController
 
   def show
   end
+  
+  
+  private
+    def find_project   
+      @project = Project.find(params[:id])
+    end
 end
