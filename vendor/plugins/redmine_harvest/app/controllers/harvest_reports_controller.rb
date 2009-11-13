@@ -5,21 +5,18 @@ class HarvestReportsController < ApplicationController
   
   before_filter :find_project, :authorize
   
-  def index
-    @project = Project.find(params[:id])
-
-    Harvest.domain = "squeejee"
-    Harvest.email = "jim@squeejee.com"
-    Harvest.password = "BigLeague!"
-    report = Harvest::Reports.new
-
-    #@entries = report.project_entries(404146, 1.week.ago, Time.now)
-    
+  def index    
     sort_init 'created_at', 'desc'
     sort_update 'spent_at' => 'spent_at',
                 'user_id' => 'user_id',
                 'issue_id' => 'issue_id',
                 'hours' => 'hours'
+                
+    cond = ARCondition.new
+    cond << ['project_id = ?', @project.id]
+    
+    # retrieve_date_range
+    # cond << ['spent_on BETWEEN ? AND ?', @from, @to]
                       
     # HarvestTime.visible_by(User.current) do
       respond_to do |format|
@@ -28,6 +25,7 @@ class HarvestReportsController < ApplicationController
           @entry_count = HarvestTime.count()
           @entry_pages = Paginator.new self, @entry_count, per_page_option, params['page']
           @entries = HarvestTime.find(:all, 
+                                    :conditions => cond.conditions,
                                     :order => sort_clause,
                                     :limit  =>  @entry_pages.items_per_page,
                                     :offset =>  @entry_pages.current.offset)
