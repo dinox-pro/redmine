@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  project_id: 1
+  task_id: 1
+  spent_at: 2009-11-11 23:53:38
+  is_billed: false
+  is_closed: false
+  notes: MyString
+  hours: 1.5
+  user_id: 1
+  issue_id: 1
+two:
+  id: 2
+  project_id: 1
+  task_id: 1
+  spent_at: 2009-11-11 23:53:38
+  is_billed: false
+  is_closed: false
+  notes: MyString
+  hours: 1.5
+  user_id: 1
+  issue_id: 1
