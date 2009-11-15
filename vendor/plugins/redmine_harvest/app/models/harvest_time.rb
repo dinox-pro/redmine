@@ -26,8 +26,6 @@ class HarvestTime < ActiveRecord::Base
     harvest_user_custom_field_id = Setting.plugin_redmine_harvest['harvest_user_id']
     
     Harvest.report.project_entries(harvest_project_id, from_date, to_date).each do |entry|
-      next if HarvestTime.find_by_id(entry.id)
-      
       entry.project_id = project.id
       
       # Find the Redmine user id through the CustomValue data
@@ -36,9 +34,9 @@ class HarvestTime < ActiveRecord::Base
 
       entry.issue_id = entry.notes[/#\D*(\d+)/, 1] if entry.notes
 
-      harvest_entry = HarvestTime.new(entry.to_hash)
-      harvest_entry.id = entry.id
-      harvest_entry.save
+      ht = HarvestTime.find_or_create_by_id(entry.id)
+      
+      ht.update_attributes(entry.to_hash)
     end
     
     

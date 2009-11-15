@@ -28,5 +28,5 @@ Redmine::Plugin.register :redmine_harvest do
     permission :view_harvest, {:harvest_reports => :index}
   end
   
-  menu :project_menu, :harvest, :controller => 'harvest_reports', :action => 'index'
+  menu :project_menu, :harvest, {:controller => 'harvest_reports', :action => 'index'}, :caption => 'Harvest', :param => :project_id
 end
