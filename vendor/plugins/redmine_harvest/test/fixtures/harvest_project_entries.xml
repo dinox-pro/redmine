@@ -19,7 +19,7 @@
     <id type="integer">14316569</id>
     <is-billed type="boolean">false</is-billed>
     <is-closed type="boolean">false</is-closed>
-    <notes>Signing contracts</notes>
+    <notes>Ticket #1234 - Working on stuff</notes>
     <project-id type="integer">408960</project-id>
     <spent-at type="date">2009-07-31</spent-at>
     <task-id type="integer">333867</task-id>
