@@ -6,7 +6,7 @@ class HarvestTime < ActiveRecord::Base
   
   # Find the Harvest Project ID for a Redmine project. 
   def self.project_id(project)
-    # Find all of the projects that have enabled the "google calendar" plugin
+    # Find the custom value of type "harvest_project_id"
     custom_value = project.custom_values.detect {|v| v.custom_field_id == Setting.plugin_redmine_harvest['harvest_project_id'].to_i}
     harvest_project_id = custom_value.value.to_i if custom_value
   end
@@ -19,8 +19,9 @@ class HarvestTime < ActiveRecord::Base
   
   def self.import_time(project)
     harvest_project_id = self.project_id(project)
-    # From date of last job for project;  Default to 1 year ago.
-    from_date = HarvestTime.minimum(:created_at, :conditions=>{:project_id => project.id}) || 1.week.ago
+    #harvest_project_id = 408960
+    # From date of last job for project minus 1 week;  Default to 1 year ago.
+    from_date = HarvestTime.maximum(:created_at, :conditions=>{:project_id => project.id}) - 1.week || 1.year.ago
     to_date = Time.now
     
     harvest_user_custom_field_id = Setting.plugin_redmine_harvest['harvest_user_id']

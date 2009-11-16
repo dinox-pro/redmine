@@ -2,11 +2,13 @@ require 'redmine'
 require 'harvestr'
 require 'vendor/plugins/redmine_harvest/lib/harvest'
 
-config = YAML::load(File.read(RAILS_ROOT + "/config/harvest.yml"))
-Harvest.domain = config["domain"]
-Harvest.email = config["email"]
-Harvest.password = config["password"]
-Harvest.report = Harvest::Reports.new
+unless RAILS_ENV == 'test'
+  config = YAML::load(File.read(RAILS_ROOT + "/config/harvest.yml"))
+  Harvest.domain = config["domain"]
+  Harvest.email = config["email"]
+  Harvest.password = config["password"]
+  Harvest.report = Harvest::Reports.new
+end
 
 Redmine::Plugin.register :redmine_harvest do
   name 'Redmine Harvest plugin'
