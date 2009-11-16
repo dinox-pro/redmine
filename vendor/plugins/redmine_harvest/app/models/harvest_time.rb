@@ -21,7 +21,9 @@ class HarvestTime < ActiveRecord::Base
     harvest_project_id = self.project_id(project)
     #harvest_project_id = 408960
     # From date of last job for project minus 1 week;  Default to 1 year ago.
-    from_date = HarvestTime.maximum(:created_at, :conditions=>{:project_id => project.id}) - 1.week || 1.year.ago
+    from_date = HarvestTime.maximum(:created_at, :conditions=>{:project_id => project.id})
+    from_date = from_date.nil? ? 1.year.ago : from_date - 1.week 
+    
     to_date = Time.now
     
     harvest_user_custom_field_id = Setting.plugin_redmine_harvest['harvest_user_id']
