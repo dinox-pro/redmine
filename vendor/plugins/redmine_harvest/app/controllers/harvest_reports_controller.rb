@@ -16,6 +16,7 @@ class HarvestReportsController < ApplicationController
                 
     cond = ARCondition.new
     cond << ['project_id = ?', @project.id]
+    cond << ["issue_id = ?", @issue.id] if @issue
     
     retrieve_date_range
     cond << ['spent_at BETWEEN ? AND ?', @from, @to]
@@ -47,7 +48,12 @@ class HarvestReportsController < ApplicationController
   private
     def find_project   
       @project = Project.find(params[:project_id])
+      @issue = Issue.find(params[:issue_id]) if params[:issue_id]      
+      rescue ActiveRecord::RecordNotFound
+        render_404
     end
+    
+
     
     def import_time
       HarvestTime.import_time(@project)

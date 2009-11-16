@@ -1,6 +1,7 @@
 require 'redmine'
 require 'harvestr'
 require 'vendor/plugins/redmine_harvest/lib/harvest'
+require 'vendor/plugins/redmine_harvest/lib/harvest/hooks/harvest_hooks.rb'
 
 unless RAILS_ENV == 'test'
   config = YAML::load(File.read(RAILS_ROOT + "/config/harvest.yml"))
