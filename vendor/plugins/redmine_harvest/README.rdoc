@@ -33,3 +33,9 @@ Before you can actually use the plugin within the preferred projects some setup 
 
 After you have completed the global setup of the plugin you can select which projects will actually be able to use the feature brought by the plugin. Due to the way the plugin implements this feature it is also possible to configure which Google Calendar is actually being displayed on a project level base.
 The project level setup consists of the following two tasks:
+
+==Permissions
+
+- Go to "Administration" top menu and click on "Roles and permissions"
+- Click on a role which you would like to have access to the Harvest reports
+- Check the box next to "View Harvest" and click "Save"
