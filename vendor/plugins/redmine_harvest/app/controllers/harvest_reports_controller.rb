@@ -101,7 +101,7 @@ class HarvestReportsController < ApplicationController
       end
     
       @from, @to = @to, @from if @from && @to && @from > @to
-      @from ||= (HarvestTime.minimum(:spent_at, :include => :project, :conditions => Project.allowed_to_condition(User.current, :view_time_entries)) || Date.today).to_date - 1
-      @to   ||= (HarvestTime.maximum(:spent_at, :include => :project, :conditions => Project.allowed_to_condition(User.current, :view_time_entries)) || Date.today).to_date
+      @from ||= (HarvestTime.minimum(:spent_at, :include => :project, :conditions => Project.allowed_to_condition(User.current, :view_harvest)) || Date.today).to_date - 1
+      @to   ||= (HarvestTime.maximum(:spent_at, :include => :project, :conditions => Project.allowed_to_condition(User.current, :view_harvest)) || Date.today).to_date
     end
 end
