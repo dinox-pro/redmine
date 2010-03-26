@@ -1,25 +1,3 @@
-// The MIT License
-// 
-// Copyright (c) 2009 Mark Maglana
-// 
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-// 
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
-
 var RBL = {};
 
 RBL.init = function(){
@@ -34,7 +12,11 @@ RBL.init = function(){
   $("new_item_button").observe("change", function() { RBL.newItem(); });
   $("hide_closed_backlogs").checked = (document.cookie.match(/hide_closed_backlogs=true/)!=null);
   $("hide_closed_backlogs").observe("click", function() { RBL.storePreferences(); RBL.processClosedBacklogs() });
+  $("hide_tasks").checked = (document.cookie.match(/hide_tasks=true/)!=null);
+  $("hide_tasks").observe("click", function() { RBL.storePreferences(); RBL.hideOrShowTasks(); });
   
+	RBL.hideOrShowTasks();
+
   RBL.log("Backlogs Plugin initialized.");
 }
 
@@ -84,6 +66,18 @@ RBL.newItem = function(){
   new PeriodicalExecuter(function(pe){ item.edit(); pe.stop() }, 0.15);
 }
 
+RBL.hideOrShowTasks = function() {
+	console.log($("hide_tasks").checked);
+  if($("hide_tasks").checked) {
+		$$(".item_tasks").each(function(e) { e.hide() });
+		$$(".add_task").each(function(e) { e.hide() });
+	}
+	else {
+		$$(".item_tasks").each(function(e) { e.show() });
+		$$(".add_task").each(function(e) { e.show() });		
+	}
+}
+
 RBL.processClosedBacklogs = function(){
   if(document.cookie.match(/hide_closed_backlogs=true/)!=null){
     RBL.Backlog.findAll().each(function(backlog){
@@ -100,6 +94,8 @@ RBL.storePreferences = function(){
 
   document.cookie = "hide_closed_backlogs=" + ($("hide_closed_backlogs").checked ? "true" : "false") + "; " +
                     "expires=" + expiration.toGMTString();
+	document.cookie =  "hide_tasks=" + ($("hide_tasks").checked ? "true" : "false") + "; " +
+	                 	 "expires=" + expiration.toGMTString();
 }
 
 

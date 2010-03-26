@@ -2,13 +2,15 @@ class CommentsController < ApplicationController
   unloadable
   before_filter :find_item, :only => [:index, :create ]
   before_filter :find_project, :authorize
-    
+
+  protect_from_forgery :only => []
+  
   def index
     @journals = @item.issue.journals.find(:all, 
                                           :include => [:user, :details], 
                                           :order => "#{Journal.table_name}.created_on DESC",
                                           :conditions => "notes!=''")
-    render :partial => "comment", :collection => @journals, :as => :journal
+    render :layout => false
   end
   
   def create

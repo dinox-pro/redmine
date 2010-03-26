@@ -1,38 +1,18 @@
-/*
-The MIT License
-
-Copyright (c) 2009 Mark Maglana
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-*/
-
 /***************************************
   ITEM STYLES
 ***************************************/
 
 li.item {
-  background-color: #ccc;
+  background-color: #bbf;
   display: block;
   height: 25px;
   margin: 1px 0px 1px 0px;
   position: relative;
   width: 100%;
+}
+
+li.item_double {
+  height: 35px;
 }
 
 li.item.will_be_late {
@@ -49,6 +29,10 @@ li.item:hover {
 
 li.item.maximized {
   height: 250px;
+}
+
+li.item.maximized_without_tasks {
+  height: 130px;
 }
 
 li.item.discussion {
@@ -222,6 +206,10 @@ li.item div.subject {
   width: 388px;
 }
 
+li.item_double div.subject {
+  height: 35px;
+}
+
 li.item.editing > .body div.subject,
 li.item > .body input.subject {
   display: none;
@@ -251,7 +239,7 @@ li.item  > .body div.assigned_to_id .t {
   display: block;
   overflow:hidden;
   white-space:nowrap;
-  width:92px;  
+  width:100px;
 }
 
 li.item  > .body div.assigned_to_id {
@@ -301,7 +289,7 @@ li.item  > .body div.status_id .t {
   top: 0;
   width: 68px;
   -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;  
+  -webkit-border-radius: 4px;
 }
 
 li.item  > .body div.status_id {
@@ -392,7 +380,7 @@ li.item.maximized.editing > .body textarea.description {
   left: 5px;
   overflow: auto;
   position: absolute;
-  top: 25px;
+  top: 40px;
   width: 689px;
 }
 
@@ -436,7 +424,7 @@ li.item.maximized > .add_task {
   left: 5px;
   position: absolute;
   text-align: center;
-  top: 110px;
+  top: 125px;
   width: 25px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -456,7 +444,7 @@ li.item.maximized > .item_tasks {
   overflow: auto;
   padding: 0px;
   position: absolute;
-  top: 130px;
+  top: 145px;
   width: 688px;
 }
 
@@ -487,7 +475,7 @@ li.item.discussion .discussion {
   padding: 0px;
   position: absolute;
   top: 30px;
-  width: 688px;  
+  width: 688px;
 }
 
 .backlog.main li.item.discussion .discussion {
