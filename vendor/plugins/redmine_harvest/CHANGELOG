@@ -1,5 +1,6 @@
 0.1.1 (3-27-2010):
     * Feature: Added project-menu item (tab) highlighting
+    * Featuer: Added widget to Version show page to show aggregated time from Harvest
     * Add changelog file
     * Add license file
 
